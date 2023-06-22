@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App integration test should render ok with props 1`] = `
+<DocumentFragment>
+  <main
+    class="heading"
+  >
+    <h1
+      class="heading__title"
+    >
+      Hello 22
+    </h1>
+  </main>
+</DocumentFragment>
+`;
