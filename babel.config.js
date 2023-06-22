@@ -1,7 +1,7 @@
 module.exports = {
-  plugins: ["@babel/syntax-dynamic-import"],
+  plugins: ['@babel/syntax-dynamic-import'],
   presets: [
-    "@babel/preset-env",
-    ["@babel/preset-react", { runtime: "automatic" }],
+    '@babel/preset-env',
+    ['@babel/preset-react', { runtime: 'automatic' }],
   ],
 };
