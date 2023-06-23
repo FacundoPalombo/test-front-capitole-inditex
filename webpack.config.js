@@ -15,10 +15,12 @@ const config = {
   entry: './src/view/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   devServer: {
     open: true,
     host: 'localhost',
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
