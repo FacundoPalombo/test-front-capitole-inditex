@@ -11,14 +11,14 @@ import ErrorPage from './Error';
 import Main from '../main';
 import Podcast from '../podcast';
 import Episode from '../episode';
-import Search from '../search';
+import Search, { loader as searchLoader } from '../search';
 
 const Routes = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
         <Route path="/" element={<Main />} errorElement={<ErrorPage />}>
-          <Route path="/" element={<Search />} />
+          <Route path="/" element={<Search />} loader={searchLoader} />
           <Route
             path="podcast/:podcastId"
             element={<Podcast />}
