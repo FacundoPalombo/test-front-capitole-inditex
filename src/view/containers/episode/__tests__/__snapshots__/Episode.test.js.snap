@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Episode unit test should render ok with props 1`] = `
+<DocumentFragment>
+  <section
+    id="episode"
+  >
+    Episode
+  </section>
+</DocumentFragment>
+`;
