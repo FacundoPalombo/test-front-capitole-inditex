@@ -4,6 +4,7 @@ import { getSongs } from '../../../services/songs';
 import Song from './components/Song';
 import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox';
+import SearchSkeleton from './components/SearchSkeleton/SearchSkeleton';
 
 const Search = () => {
   const { songs } = useLoaderData();
@@ -49,7 +50,7 @@ const Search = () => {
     );
   }
   return (
-    <React.Suspense fallback={<section>loading</section>}>
+    <React.Suspense fallback={<SearchSkeleton />}>
       <Await
         resolve={songs}
         errorElement={<div>Ups! An errror ocurred fetching songs</div>}
