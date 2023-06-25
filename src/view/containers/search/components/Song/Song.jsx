@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
+import { string, number } from 'prop-types';
 
 const Song = ({ image, artist, title, podcastId }) => {
   return (
@@ -12,6 +13,13 @@ const Song = ({ image, artist, title, podcastId }) => {
       </div>
     </Link>
   );
+};
+
+Song.PropTypes = {
+  image: string,
+  artist: string,
+  title: string,
+  podcastId: number,
 };
 
 export default Song;
