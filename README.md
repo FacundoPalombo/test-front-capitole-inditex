@@ -2,13 +2,35 @@
 
 Prueba técnica frontend de capitole para el cliente inditex
 
+### Prerrequisitos
+
+Esta aplicación utiliza Node v18.
+Recomiendo utilizar NVM para poder mantener las versiones de node actualizadas y los entornos separados entre si.
+
+Para utilizar la version de node del proyecto. Solo debes pararte en el root de esta app y correr en tu consola:
+
+```bash
+
+  nvm use
+
+```
+
+Si no tienes la version de node adecuada. Puede que algunas funcionalidades no te funcionen.
+Para ello puedes instalar la version de node con el comando de NVM:
+
+```bash
+
+  nvm install v18
+
+```
+
 ### Correr la aplicacion
 
 #### Production
 
 Para correr la app en modo production ejecuta en tu consola:
 
-```npm
+```bash
 
   npm run prod
 
@@ -18,7 +40,7 @@ Para correr la app en modo production ejecuta en tu consola:
 
 Para correr la app en modo development ejecuta en tu consola:
 
-```npm
+```bash
 
   npm run dev
 
@@ -28,7 +50,7 @@ Para correr la app en modo development ejecuta en tu consola:
 
 Para correr las pruebas ejecuta en tu consola:
 
-```npm
+```bash
 
   npm test
 

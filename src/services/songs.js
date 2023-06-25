@@ -1,6 +1,6 @@
 import URL, { GET_SONGS } from '../utils/constants/URL.js';
 
-export const getSongs = async () => {
+export const getSongs = () => {
   const req = new Request(URL[GET_SONGS], {
     cache: 'default',
   });
@@ -12,8 +12,9 @@ export const getSongs = async () => {
       }
       throw new Error('Error processing response');
     })
-    .then((data) => data.contents)
-    .catch((err) => console.error(err));
-  console.log(response);
+    .then((data) => JSON.parse(data.contents))
+    .catch((err) => {
+      throw err;
+    });
   return response;
 };
