@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useLoaderData, Await, defer } from 'react-router-dom';
 import { getSongs } from '../../../services/songs';
 import Song from './components/Song';
@@ -9,14 +9,12 @@ import SearchSkeleton from './components/SearchSkeleton/SearchSkeleton';
 const Search = () => {
   const { songs } = useLoaderData();
   const [searchValue, setSearchValue] = useState('');
+  const handleSearchBox = useCallback((e) => setSearchValue(e.target.value));
 
   function renderComponent(songs) {
     return (
       <section id="search" className={styles.search__container}>
-        <SearchBox
-          onChange={(e) => setSearchValue(e.target.value)}
-          value={searchValue}
-        />
+        <SearchBox onChange={handleSearchBox} value={searchValue} />
         {searchValue.length > 0
           ? songs.feed.entry
               .filter(

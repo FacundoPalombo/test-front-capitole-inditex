@@ -8,9 +8,10 @@ import {
 import ErrorPage from './Error';
 
 import Main from '../main';
-import Podcast from '../podcast';
+import Podcast, { loader as podcastLoader } from '../podcast';
 import Episode from '../episode';
 import Search, { loader as searchLoader } from '../search';
+import PodcastList from '../podcast/components/PodcastList/PodcastList';
 
 const Routes = [
   {
@@ -20,17 +21,27 @@ const Routes = [
       {
         element: <Search />,
         path: '/',
+        id: 'search',
         loader: searchLoader,
       },
       {
         element: <Podcast />,
         path: 'podcast/:podcastId',
         errorElement: <ErrorPage />,
-      },
-      {
-        element: <Episode />,
-        path: 'podcast/:podcastId/episode/:episodeId',
-        errorElement: <ErrorPage />,
+        id: 'podcasts',
+        loader: podcastLoader,
+        children: [
+          {
+            element: <PodcastList />,
+            path: '',
+            errorElement: <ErrorPage />,
+          },
+          {
+            element: <Episode />,
+            path: 'episode/:episodeId',
+            errorElement: <ErrorPage />,
+          },
+        ],
       },
     ],
   },

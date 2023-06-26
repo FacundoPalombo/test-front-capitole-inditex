@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error unit test should handle unexpected error 1`] = `
+<DocumentFragment>
+  <div
+    id="error"
+  >
+    <h1>
+      Oops!
+    </h1>
+    <p>
+      Sorry, an unexpected error has occurred.
+    </p>
+    <p>
+      <i>
+        Unexpected Error
+      </i>
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Error unit test should render ok match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    id="error"
+  >
+    <h1>
+      Oops!
+    </h1>
+    <p>
+      Sorry, an unexpected error has occurred.
+    </p>
+    <p>
+      <i>
+        Not Found
+      </i>
+    </p>
+  </div>
+</DocumentFragment>
+`;

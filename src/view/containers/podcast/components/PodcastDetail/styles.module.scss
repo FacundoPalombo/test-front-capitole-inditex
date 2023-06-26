@@ -1,0 +1,36 @@
+.podcast_detail {
+  &__card {
+    box-shadow: 0px 1px 4px 1px var(--shadow);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 250px;
+    padding: 8px;
+    overflow: visible;
+    margin-top: auto;
+    border-radius: 4px;
+  }
+  &__picture {
+    border-radius: 4px;
+    width: 170px;
+    height: 170px;
+    align-self: center;
+  }
+  &__separator {
+    color: #aaa;
+    width: 95%;
+    opacity: 0.35;
+    border: 1px solid;
+  }
+  &__title {
+    color: var(--font-primary);
+    font-weight: 600;
+  }
+  &__artist {
+  }
+  &__description {
+    text-align: start;
+    margin: 0 4px;
+  }
+}

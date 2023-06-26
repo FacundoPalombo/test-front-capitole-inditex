@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
-import { string, number } from 'prop-types';
+import { string } from 'prop-types';
 
 const Song = ({ image, artist, title, podcastId, skeleton }) => {
   return (
     <Link
+      aria-label={`${title}, Author: ${artist}`}
       to={skeleton ? '/' : `podcast/${podcastId}`}
       className={styles.song__container}
       style={
@@ -30,7 +31,7 @@ Song.propTypes = {
   image: string,
   artist: string,
   title: string,
-  podcastId: number,
+  podcastId: string,
 };
 
 export default Song;

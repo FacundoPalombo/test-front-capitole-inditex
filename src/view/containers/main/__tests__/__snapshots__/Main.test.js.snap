@@ -1,3 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Main unit test should render ok with props 1`] = `<DocumentFragment />`;
+exports[`Main unit test should render ok with props 1`] = `
+<DocumentFragment>
+  <main
+    id="main"
+  >
+    <nav
+      aria-label="Navigate back to list of songs"
+      class="navigation"
+      id="nav"
+    >
+      <div>
+        MockLink
+      </div>
+      <div
+        class="navigation__loader"
+      >
+        <div>
+          Loading...
+        </div>
+      </div>
+    </nav>
+    <hr
+      class="navigation__separator"
+    />
+    <div>
+      MockOutlet
+    </div>
+  </main>
+</DocumentFragment>
+`;

@@ -15,7 +15,7 @@ const SearchSkeleton = () => {
   }));
   return (
     <section id="search-skeleton" className={styles.search_skeleton__container}>
-      <SearchBox onChange={() => {}} value={''} skeleton />
+      <SearchBox onChange={() => {}} value="" skeleton />
       {skeletonMock.map((song) => (
         <Song {...song} />
       ))}

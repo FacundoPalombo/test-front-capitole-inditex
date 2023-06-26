@@ -21,11 +21,12 @@ const SearchBox = ({ onChange, value, skeleton }) => {
       </label>
       <input
         placeholder={skeleton ? '' : 'Filter podcasts...'}
-        id="searchBox"
+        id="search_box"
+        data-testid="search_box"
         style={
           skeleton && { color: '#aaa', transition: 'filter .11s ease-in-out' }
         }
-        name="searchBox"
+        name="search_box"
         type="text"
         className={styles.search_box__input}
         onChange={onChange}
@@ -35,7 +36,7 @@ const SearchBox = ({ onChange, value, skeleton }) => {
   );
 };
 
-SearchBox.PropTypes = {
+SearchBox.propTypes = {
   value: string,
   onChange: func,
 };
