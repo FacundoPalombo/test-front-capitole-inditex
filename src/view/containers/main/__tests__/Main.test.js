@@ -1,20 +1,23 @@
+/* eslint-disable react/display-name, react/prop-types */
 import React from 'react';
 import Main from '../Main';
-import renderWithRouter from '../../../../utils/tests/renderWithRouter';
+import { render } from '@testing-library/react';
 
-jest.mock(
-  'react-spinners',
-  () =>
-    ({ loading }) =>
-      loading ? 'Spinner Component' : ''
-);
+jest.mock('react-router-dom', () => ({
+  Link: () => <div>MockLink</div>,
+  Outlet: () => <div>MockOutlet</div>,
+  useNavigation: jest.fn().mockReturnValue({ state: 'loading' }),
+}));
+
+jest.mock('react-spinners', () => ({
+  BounceLoader: ({ loading }) =>
+    loading ? <div>Loading...</div> : <div>not loading</div>,
+}));
 
 describe('Main unit test', () => {
-  afterAll(jest.clearAllMocks);
+  afterEach(jest.clearAllMocks);
   it('should render ok with props', () => {
-    const { asFragment } = renderWithRouter(<Main />, {
-      route: '/podcast/1234',
-    });
+    const { asFragment } = render(<Main />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

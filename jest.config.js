@@ -1,6 +1,7 @@
 /** @type {import('jest').Config} */
 
 const config = {
+  automock: false,
   projects: [
     {
       displayName: {
