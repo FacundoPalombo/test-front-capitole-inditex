@@ -8,7 +8,7 @@ import {
 import ErrorPage from './Error';
 
 import Main from '../main';
-import Podcast from '../podcast';
+import Podcast, { loader as podcastLoader } from '../podcast';
 import Episode from '../episode';
 import Search, { loader as searchLoader } from '../search';
 
@@ -26,6 +26,7 @@ const Routes = [
         element: <Podcast />,
         path: 'podcast/:podcastId',
         errorElement: <ErrorPage />,
+        loader: podcastLoader,
       },
       {
         element: <Episode />,

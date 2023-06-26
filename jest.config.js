@@ -96,10 +96,16 @@ const config = {
     'dist',
     'build',
     'coverage',
+    'coverage',
+    'test',
+    'tests',
   ],
   collectCoverageFrom: [
-    'src/**/*.(js|jsx)',
+    '**/**/*.(js|jsx)',
     '!**/**/*.(test|spec|config|fixture|mock|story|stories).(js|jsx)',
+    '!<rootDir>/src/assets',
+    '!<rootDir>/src/utils/constants',
+    '!<rootDir>/src/utils/tests',
   ],
   transform: {
     '\\.[jt]sx?$': 'babel-jest',
