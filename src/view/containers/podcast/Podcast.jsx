@@ -1,9 +1,7 @@
 import React from 'react';
 import { getPodcast } from '../../../services/podcast';
-import { Await, defer, useLoaderData } from 'react-router-dom';
+import { Await, Outlet, defer, useLoaderData } from 'react-router-dom';
 import PodcastDetail from '../../components/PodcastDetail';
-import Results from './components/Results';
-import PodcastEpisodesTable from './components/PodcastEpisodesTable';
 import styles from './styles.module.scss';
 
 const Podcasts = () => {
@@ -26,10 +24,7 @@ const Podcasts = () => {
             }
           />
         </section>
-        <section className={styles.podcasts__content}>
-          <Results results={podcasts.resultCount} />
-          <PodcastEpisodesTable podcasts={podcasts.results} />
-        </section>
+        <Outlet />
       </div>
     );
   }
