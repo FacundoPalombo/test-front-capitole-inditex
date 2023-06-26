@@ -11,7 +11,7 @@ const Podcasts = () => {
 
   function renderComponent(podcasts) {
     return (
-      <div className={styles.podcasts__page}>
+      <div data-testid="podcast-detail" className={styles.podcasts__page}>
         <section className={styles.podcasts__detail}>
           <PodcastDetail
             image={

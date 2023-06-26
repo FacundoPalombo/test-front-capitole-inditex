@@ -101,7 +101,7 @@ const config = {
     'tests',
   ],
   collectCoverageFrom: [
-    '**/**/*.(js|jsx)',
+    '<rootDir>/src/**/*.(js|jsx)',
     '!**/**/*.(test|spec|config|fixture|mock|story|stories).(js|jsx)',
     '!<rootDir>/src/assets',
     '!<rootDir>/src/utils/constants',
