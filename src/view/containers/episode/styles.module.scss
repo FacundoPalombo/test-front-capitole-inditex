@@ -1,10 +1,23 @@
 .episode {
+  display: block;
+  box-sizing: border-box;
+  height: auto;
+  width: 100%;
   &__content {
+    display: block;
+    box-sizing: border-box;
+    padding: 16px;
+    box-shadow: 0px 1px 4px 1px var(--shadow);
+    width: 100%;
+    height: auto;
   }
   &__title {
   }
   &__description {
+    word-break: keep-all;
   }
   &__audio {
+    width: 100%;
+    margin-top: 32px;
   }
 }

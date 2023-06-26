@@ -13,13 +13,17 @@ const PodcastDetail = ({ image, title, artist, description }) => {
       />
       <hr className={styles.podcast_detail__separator} />
       <h3 className={styles.podcast_detail__title}>{title}</h3>
-      <em className={styles.podcast_detail__artist}>{artist}</em>
+      <em className={styles.podcast_detail__artist}>by {artist}</em>
       {description && (
         <>
           <hr className={styles.podcast_detail__separator} />
           <p className={styles.podcast_detail__description}>
-            <strong>Description: </strong>
-            <i>{description}</i>
+            <strong className={styles.podcast_detail__description_strong}>
+              Description:{' '}
+            </strong>
+            <i className={styles.podcast_detail__description_empathized}>
+              {description}
+            </i>
           </p>
         </>
       )}

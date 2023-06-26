@@ -6,6 +6,7 @@ import {
   defer,
   useLoaderData,
   useParams,
+  Link,
 } from 'react-router-dom';
 import PodcastDetail, {
   PodcastDetailSkeleton,
@@ -30,14 +31,18 @@ const Podcasts = () => {
                   (song) => song.id.attributes['im:id'] === params.podcastId
                 ).summary.label;
 
-                console.log(songs);
                 return (
-                  <PodcastDetail
-                    image={podcast.artworkUrl600}
-                    title={podcast.trackName}
-                    artist={podcast.artistName}
-                    description={description}
-                  />
+                  <Link
+                    to={`/podcast/${params.podcastId}`}
+                    className={styles.podcasts__detail_navigable}
+                  >
+                    <PodcastDetail
+                      image={podcast.artworkUrl600}
+                      title={podcast.trackName}
+                      artist={podcast.artistName}
+                      description={description}
+                    />
+                  </Link>
                 );
               }}
             </Await>

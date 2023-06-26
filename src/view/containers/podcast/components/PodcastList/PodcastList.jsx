@@ -7,7 +7,6 @@ import PodcastEpisodesTable from '../PodcastEpisodesTable';
 
 const PodcastList = () => {
   const { podcasts } = useRouteLoaderData('podcasts');
-  console.log(podcasts);
   return (
     <section className={styles.podcast_list__content}>
       <React.Suspense fallback={<div>loading...</div>}>
