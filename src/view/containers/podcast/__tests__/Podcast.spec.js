@@ -38,8 +38,10 @@ describe('Podcast integration test', () => {
       name: 'Episode 638 | "Dudecast"',
     });
     expect(linkToPodcast).toBeInTheDocument();
+
     await user.click(linkToPodcast);
     await findByText('Episode');
+
     expect(getByText('Episode')).toBeInTheDocument();
   });
 });
