@@ -1,7 +1,10 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
-jest.mock('react-dom', () => ({ render: jest.fn() }));
-jest.mock('../components/App', () => () => 'MyComponent');
+jest.mock('react-dom/client', () => ({
+  createRoot: jest.fn().mockImplementation(() => ({ render: jest.fn() })),
+}));
+
+jest.mock('../containers/App', () => () => 'MyComponent');
 
 import '../index';
 
@@ -9,6 +12,6 @@ describe('root render unit test', () => {
   afterAll(jest.clearAllMocks);
 
   it('should call react-dom correctly', () => {
-    expect(ReactDOM.render).toHaveBeenCalledTimes(1);
+    expect(createRoot).toHaveBeenCalledTimes(1);
   });
 });

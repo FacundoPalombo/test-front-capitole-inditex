@@ -1,9 +1,8 @@
 import React from 'react';
 import {
+  Route,
   createBrowserRouter,
   createRoutesFromElements,
-  Route,
-  RouterProvider,
 } from 'react-router-dom';
 
 import ErrorPage from './Error';
@@ -11,29 +10,30 @@ import ErrorPage from './Error';
 import Main from '../main';
 import Podcast from '../podcast';
 import Episode from '../episode';
-import Search from '../search';
+import Search, { loader as searchLoader } from '../search';
 
-const Routes = () => {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <>
-        <Route path="/" element={<Main />} errorElement={<ErrorPage />}>
-          <Route path="/" element={<Search />} />
-          <Route
-            path="podcast/:podcastId"
-            element={<Podcast />}
-            errorElement={<ErrorPage />}
-          />
-          <Route
-            path="podcast/:podcastId/episode/:episodeId"
-            element={<Episode />}
-            errorElement={<ErrorPage />}
-          />
-        </Route>
-      </>
-    )
-  );
-  return <RouterProvider router={router} />;
-};
+const Routes = [
+  {
+    element: <Main />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        element: <Search />,
+        path: '/',
+        loader: searchLoader,
+      },
+      {
+        element: <Podcast />,
+        path: 'podcast/:podcastId',
+        errorElement: <ErrorPage />,
+      },
+      {
+        element: <Episode />,
+        path: 'podcast/:podcastId/episode/:episodeId',
+        errorElement: <ErrorPage />,
+      },
+    ],
+  },
+];
 
 export default Routes;

@@ -98,8 +98,8 @@ const config = {
     'coverage',
   ],
   collectCoverageFrom: [
-    'src/**/*.[jt]sx?',
-    '!**/**/*.(test|spec|config|fixture|mock|story|stories).[jt]sx?',
+    'src/**/*.(js|jsx)',
+    '!**/**/*.(test|spec|config|fixture|mock|story|stories).(js|jsx)',
   ],
   transform: {
     '\\.[jt]sx?$': 'babel-jest',

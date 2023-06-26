@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -14,21 +15,49 @@ const stylesHandler = isProduction
 const config = {
   entry: './src/view/index.js',
   output: {
+    filename: '[name][contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
+    clean: true,
   },
   devServer: {
     open: true,
     host: 'localhost',
     historyApiFallback: true,
+    devMiddleware: {
+      writeToDisk: true,
+    },
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        'react-vendors': {
+          test: /[\\/](react|react-dom|react-router-dom)[\\/]/,
+          name: 'react-vendors',
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+    runtimeChunk: 'single',
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new WebpackManifestPlugin({ basePath: '/' }),
   ],
   module: {
     rules: [
@@ -83,6 +112,9 @@ const config = {
       '/shared/vendor/modules',
     ],
   },
+  performance: {
+    hints: false,
+  },
 };
 
 module.exports = () => {
@@ -91,7 +123,24 @@ module.exports = () => {
 
     config.plugins.push(new MiniCssExtractPlugin());
 
-    config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
+    config.plugins.push(
+      new WorkboxWebpackPlugin.GenerateSW({
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) =>
+              url.href.match(/https:\/\/api.allorigins.win\/get\?url=/gi),
+            options: {
+              cacheName: 'allowOrigins-requests',
+              expiration: {
+                maxAgeSeconds: 3600 * 24,
+                maxEntries: 200,
+              },
+            },
+            handler: 'StaleWhileRevalidate',
+          },
+        ],
+      })
+    );
   } else {
     config.mode = 'development';
   }
