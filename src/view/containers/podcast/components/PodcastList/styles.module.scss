@@ -1,5 +1,12 @@
 .podcast_list {
   &__content {
     width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 16px;
   }
 }

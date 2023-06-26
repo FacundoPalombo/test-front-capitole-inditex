@@ -5,7 +5,6 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    max-height: 800px;
     width: 250px;
     padding: 8px;
     overflow: visible;
@@ -32,5 +31,6 @@
   }
   &__description {
     text-align: start;
+    margin: 0 4px;
   }
 }
