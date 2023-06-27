@@ -11,7 +11,11 @@ const Search = () => {
   const handleSearchBox = useCallback((e) => setSearchValue(e.target.value));
 
   return (
-    <section id="search" className={styles.search__container}>
+    <section
+      id="search"
+      data-testid="search"
+      className={styles.search__container}
+    >
       <SearchBox onChange={handleSearchBox} value={searchValue} />
       {channels.feed.entry
         .filter(

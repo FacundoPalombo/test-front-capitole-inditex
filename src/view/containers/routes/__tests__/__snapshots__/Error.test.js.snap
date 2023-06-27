@@ -3,6 +3,7 @@
 exports[`Error unit test should handle unexpected error 1`] = `
 <DocumentFragment>
   <div
+    data-testid="error"
     id="error"
   >
     <h1>
@@ -23,6 +24,7 @@ exports[`Error unit test should handle unexpected error 1`] = `
 exports[`Error unit test should render ok match snapshot 1`] = `
 <DocumentFragment>
   <div
+    data-testid="error"
     id="error"
   >
     <h1>

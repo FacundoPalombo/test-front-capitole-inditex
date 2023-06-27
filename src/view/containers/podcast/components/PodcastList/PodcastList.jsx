@@ -8,7 +8,10 @@ import PodcastEpisodesTable from '../PodcastEpisodesTable';
 const PodcastList = () => {
   const { podcasts } = useRouteLoaderData('podcasts');
   return (
-    <section className={styles.podcast_list__content}>
+    <section
+      data-testid="podcast-list"
+      className={styles.podcast_list__content}
+    >
       <Results results={podcasts.resultCount} />
       <PodcastEpisodesTable podcasts={podcasts.results} />
     </section>

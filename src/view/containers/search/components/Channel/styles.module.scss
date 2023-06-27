@@ -2,7 +2,7 @@
   &__container {
     color: var(--font-primary);
     text-decoration: none;
-    height: 200px;
+    height: 220px;
     width: 200px;
   }
 
@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100px;
+    height: 120px;
     padding: 8px;
     overflow: visible;
     margin-top: auto;
@@ -31,25 +31,28 @@
   &__title {
     font-size: medium;
     text-align: center;
-    margin-block-start: 0;
+    margin-block-start: 8px;
     margin-block-end: 0;
+    display: inline-block;
 
-    height: 20px;
+    height: 42px;
 
     overflow: hidden;
+    white-space: pre-line;
+    word-wrap: break-word;
     word-break: break-all;
     text-overflow: ellipsis;
   }
 
   &__artist {
     font-size: small;
-    width: auto;
+    width: 184px;
     text-align: center;
     margin-block-start: 0;
     margin-block-end: 0;
-    padding: 8px;
-
-    word-break: break-all;
-    text-overflow: ellipsis;
+    padding: 4px;
+    height: 48px;
+    box-sizing: border-box;
+    display: inline-block;
   }
 }

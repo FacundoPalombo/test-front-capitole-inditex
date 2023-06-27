@@ -21,6 +21,7 @@ const Podcasts = () => {
       <div data-testid="podcast-detail" className={styles.podcasts__page}>
         <section className={styles.podcasts__detail}>
           <Link
+            aria-label="Go back to podcast detail page."
             to={`/podcast/${params.podcastId}`}
             className={styles.podcasts__detail_navigable}
           >

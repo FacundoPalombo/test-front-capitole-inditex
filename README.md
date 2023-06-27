@@ -2,6 +2,10 @@
 
 Prueba técnica frontend de capitole para el cliente inditex
 
+## Nota importante:
+
+A lo largo del documento me surgieron dudas para el reviewer o razonamientos que fui anotando con el comentario //?.
+
 ### Prerrequisitos
 
 Esta aplicación utiliza Node v18.

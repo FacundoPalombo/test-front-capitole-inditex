@@ -3,6 +3,7 @@
 exports[`Main unit test should render ok with props 1`] = `
 <DocumentFragment>
   <main
+    data-testid="main"
     id="main"
   >
     <nav
