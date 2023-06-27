@@ -7,7 +7,6 @@ const Episode = () => {
 
   function renderComponent(podcasts) {
     const params = useParams();
-    console.log(podcasts, params);
 
     //? Nota para el reviewer. No entendi en el ejercicio si se quería interpretar solo html o html y markdown,
     //? o solo links de url (como se ve en el ejercicio).

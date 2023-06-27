@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, Outlet, useNavigation } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
 
 import styles from './styles.module.scss';
 
 const Main = () => {
-  const { state } = useNavigation();
+  const { state, location } = useNavigation();
+
+  useEffect(() => {
+    console.log(state, location);
+  }, [state]);
+
   return (
     <main id="main">
       <nav
@@ -22,15 +27,14 @@ const Main = () => {
           <h2 className={styles.navigation__title}>Podcaster</h2>
         </Link>
         <div className={styles.navigation__loader}>
-          {/* This component behavior just show when 
-          loading prop is true... identical 
-          to {loading && <Component />} behavior */}
-          <BounceLoader
-            size={40}
-            color="#3976a8"
-            loading={state === 'loading'}
-            speedMultiplier={1.25}
-          />
+          {state === 'loading' && (
+            <BounceLoader
+              size={40}
+              color="#3976a8"
+              loading={true}
+              speedMultiplier={1.25}
+            />
+          )}
         </div>
       </nav>
       <hr className={styles.navigation__separator} />
