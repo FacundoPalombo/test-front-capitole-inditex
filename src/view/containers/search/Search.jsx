@@ -1,35 +1,35 @@
 import React, { useCallback, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { getSongs } from '../../../services/songs';
-import Song from './components/Song';
+import { getPodcastChannels } from '../../../services/podcast';
+import Channel from './components/Channel';
 import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox';
 
 const Search = () => {
-  const { songs } = useLoaderData();
+  const { channels } = useLoaderData();
   const [searchValue, setSearchValue] = useState('');
   const handleSearchBox = useCallback((e) => setSearchValue(e.target.value));
 
   return (
     <section id="search" className={styles.search__container}>
       <SearchBox onChange={handleSearchBox} value={searchValue} />
-      {songs.feed.entry
+      {channels.feed.entry
         .filter(
-          (song) =>
-            song['im:artist']?.label
+          (channel) =>
+            channel['im:artist']?.label
               .toLowerCase()
               ?.includes(searchValue.toLowerCase().trim()) ||
-            song['im:name']?.label
+            channel['im:name']?.label
               .toLowerCase()
               ?.includes(searchValue.toLowerCase().trim())
         )
-        .map((song) => (
-          <Song
-            key={song.id.attributes['im:id']}
-            podcastId={song.id.attributes['im:id']}
-            image={song['im:image'].at(-1).label}
-            artist={song['im:artist'].label}
-            title={song['im:name'].label}
+        .map((channel) => (
+          <Channel
+            key={channel.id.attributes['im:id']}
+            podcastId={channel.id.attributes['im:id']}
+            image={channel['im:image'].at(-1).label}
+            artist={channel['im:artist'].label}
+            title={channel['im:name'].label}
           />
         ))}
     </section>
@@ -37,8 +37,8 @@ const Search = () => {
 };
 
 export async function loader() {
-  const songs = await getSongs();
-  return { songs };
+  const channels = await getPodcastChannels();
+  return { channels };
 }
 
 export default Search;

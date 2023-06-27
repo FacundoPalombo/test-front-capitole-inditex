@@ -7,16 +7,12 @@ import styles from './styles.module.scss';
 const Main = () => {
   const { state, location } = useNavigation();
 
-  useEffect(() => {
-    console.log(state, location);
-  }, [state]);
-
   return (
     <main id="main">
       <nav
         id="nav"
         className={styles.navigation}
-        aria-label="Navigate back to list of songs"
+        aria-label="Navigate back to list of channels"
       >
         <Link
           className={styles.navigation__linkBack}

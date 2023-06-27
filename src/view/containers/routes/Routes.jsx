@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from 'react-router-dom';
 
 import ErrorPage from './Error';
-
 import Main from '../main';
 import Podcast, { loader as podcastLoader } from '../podcast';
 import Episode from '../episode';

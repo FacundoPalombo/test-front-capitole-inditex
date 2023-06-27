@@ -1,12 +1,12 @@
 import { renderWithMemoryRouter } from '../../../../utils/tests/renderWithRouter';
-import searchFixture from './search.fixture';
-import { getSongs } from '../../../../services/songs';
+import searchFixture from './podcastChannels.fixture';
+import { getPodcastChannels } from '../../../../services/podcast';
 
-jest.mock('../../../../services/songs');
+jest.mock('../../../../services/podcast');
 
 describe('Search integration tests', () => {
-  it('should list songs by default', async () => {
-    getSongs.mockResolvedValueOnce(searchFixture);
+  it('should list channels by default', async () => {
+    getPodcastChannels.mockResolvedValueOnce(searchFixture);
     const { getByRole, getByTestId, findByRole } = renderWithMemoryRouter();
 
     await findByRole('textbox', {
@@ -20,8 +20,8 @@ describe('Search integration tests', () => {
     ).toBeInTheDocument();
   });
 
-  it('should list songs and handle search input filter', async () => {
-    getSongs.mockResolvedValueOnce(searchFixture);
+  it('should list channels and handle search input filter', async () => {
+    getPodcastChannels.mockResolvedValueOnce(searchFixture);
     const { getByRole, getAllByRole, getByTestId, findByRole, user } =
       renderWithMemoryRouter();
 
