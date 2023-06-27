@@ -1,67 +1,44 @@
 import React, { useCallback, useState } from 'react';
-import { useLoaderData, Await, defer } from 'react-router-dom';
-import { getSongs } from '../../../services/songs';
-import Song from './components/Song';
+import { useLoaderData } from 'react-router-dom';
+import { getPodcastChannels } from '../../../services/podcast';
+import Channel from './components/Channel';
 import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox';
-import SearchSkeleton from './components/SearchSkeleton/SearchSkeleton';
 
 const Search = () => {
-  const { songs } = useLoaderData();
+  const { channels } = useLoaderData();
   const [searchValue, setSearchValue] = useState('');
   const handleSearchBox = useCallback((e) => setSearchValue(e.target.value));
 
-  function renderComponent(songs) {
-    return (
-      <section id="search" className={styles.search__container}>
-        <SearchBox onChange={handleSearchBox} value={searchValue} />
-        {searchValue.length > 0
-          ? songs.feed.entry
-              .filter(
-                (song) =>
-                  song['im:artist']?.label
-                    .toLowerCase()
-                    ?.includes(searchValue.toLowerCase().trim()) ||
-                  song['im:name']?.label
-                    .toLowerCase()
-                    ?.includes(searchValue.toLowerCase().trim())
-              )
-              .map((song) => (
-                <Song
-                  key={song.id.attributes['im:id']}
-                  podcastId={song.id.attributes['im:id']}
-                  image={song['im:image'].at(0).label}
-                  artist={song['im:artist'].label}
-                  title={song['im:name'].label}
-                />
-              ))
-          : songs.feed.entry.map((song) => (
-              <Song
-                key={song.id.attributes['im:id']}
-                podcastId={song.id.attributes['im:id']}
-                image={song['im:image'].at(0).label}
-                artist={song['im:artist'].label}
-                title={song['im:name'].label}
-              />
-            ))}
-      </section>
-    );
-  }
   return (
-    <React.Suspense fallback={<SearchSkeleton />}>
-      <Await
-        resolve={songs}
-        errorElement={<div>Ups! An errror ocurred fetching songs</div>}
-      >
-        {renderComponent}
-      </Await>
-    </React.Suspense>
+    <section id="search" className={styles.search__container}>
+      <SearchBox onChange={handleSearchBox} value={searchValue} />
+      {channels.feed.entry
+        .filter(
+          (channel) =>
+            channel['im:artist']?.label
+              .toLowerCase()
+              ?.includes(searchValue.toLowerCase().trim()) ||
+            channel['im:name']?.label
+              .toLowerCase()
+              ?.includes(searchValue.toLowerCase().trim())
+        )
+        .map((channel) => (
+          <Channel
+            key={channel.id.attributes['im:id']}
+            podcastId={channel.id.attributes['im:id']}
+            image={channel['im:image'].at(-1).label}
+            artist={channel['im:artist'].label}
+            title={channel['im:name'].label}
+          />
+        ))}
+    </section>
   );
 };
 
-export function loader() {
-  const songs = getSongs();
-  return defer({ songs });
+export async function loader() {
+  const channels = await getPodcastChannels();
+  return { channels };
 }
 
 export default Search;

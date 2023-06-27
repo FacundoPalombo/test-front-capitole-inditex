@@ -13,5 +13,14 @@
   &__detail {
     width: auto;
     height: auto;
+    display: inline-block;
+    box-sizing: content-box;
+    &_navigable {
+      text-decoration: none;
+      color: inherit;
+      &:visited {
+        color: inherit;
+      }
+    }
   }
 }
