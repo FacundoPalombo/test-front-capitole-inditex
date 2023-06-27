@@ -8,7 +8,7 @@ const Main = () => {
   const { state, location } = useNavigation();
 
   return (
-    <main id="main">
+    <main id="main" data-testid="main">
       <nav
         id="nav"
         className={styles.navigation}

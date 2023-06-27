@@ -2,6 +2,7 @@
 
 const config = {
   automock: false,
+  silent: true,
   projects: [
     {
       displayName: {

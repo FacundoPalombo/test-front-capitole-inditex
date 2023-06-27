@@ -6,7 +6,7 @@ const Error = () => {
   console.error(error);
 
   return (
-    <div id="error">
+    <div id="error" data-testid="error">
       <h1>Oops!</h1>
       <Link to="/">Go back to home</Link>
       <p>Sorry, an unexpected error has occurred.</p>

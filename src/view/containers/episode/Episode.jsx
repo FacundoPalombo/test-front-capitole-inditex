@@ -6,6 +6,10 @@ const Episode = () => {
   const { podcasts } = useRouteLoaderData('podcasts');
   const params = useParams();
 
+  const trackName = podcasts.results.find(
+    (podcast) => podcast.trackId.toString() === params.episodeId
+  ).trackName;
+
   //? Nota para el reviewer. No entendi en el ejercicio si se quería interpretar solo html o html y markdown,
   //? o solo links de url (como se ve en el ejercicio).
   //? Pues en las listas de podcasts vi que utilizan algo de sintaxis md. Dejé la solución nativa de react con los riesgos de
@@ -19,20 +23,15 @@ const Episode = () => {
   }
 
   return (
-    <section id="episode" className={styles.episode}>
+    <section id="episode" data-testid="episode" className={styles.episode}>
       <div className={styles.episode__content}>
-        <h2 className={styles.episode__title}>
-          {
-            podcasts.results.find(
-              (podcast) => podcast.trackId.toString() === params.episodeId
-            ).trackName
-          }
-        </h2>
+        <h2 className={styles.episode__title}>{trackName}</h2>
         <em
           className={styles.episode__description}
           dangerouslySetInnerHTML={createMarkup()}
         />
         <audio
+          aria-label={`audio:${trackName}`}
           className={styles.episode__audio}
           src={
             podcasts.results.find(
