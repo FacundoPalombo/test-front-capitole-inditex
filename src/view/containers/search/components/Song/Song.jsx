@@ -3,20 +3,12 @@ import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { string } from 'prop-types';
 
-const Song = ({ image, artist, title, podcastId, skeleton }) => {
+const Song = ({ image, artist, title, podcastId }) => {
   return (
     <Link
       aria-label={`${title}, Author: ${artist}`}
-      to={skeleton ? '/' : `podcast/${podcastId}`}
+      to={`podcast/${podcastId}`}
       className={styles.song__container}
-      style={
-        skeleton && {
-          cursor: 'none',
-          pointerEvents: 'none',
-          color: '#aaa',
-          transition: 'filter .23s ease-in-out',
-        }
-      }
     >
       <div className={styles.song__card}>
         <img className={styles.song__picture} alt={title} src={image} />
