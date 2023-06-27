@@ -98,9 +98,6 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: 'asset',
       },
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
   resolve: {
@@ -127,6 +124,9 @@ module.exports = () => {
       new WorkboxWebpackPlugin.GenerateSW({
         runtimeCaching: [
           {
+            //? esta es la feature que almacena el cache por un día, se pudo haber hecho también con react query,
+            // o con un transport de axios (intente primero eso).
+            // Pero esta me parecía mas general y sencilla de implementar, ademas que esta el beneficio de registrar el serviceWorker.
             urlPattern: ({ url }) =>
               url.href.match(/https:\/\/api.allorigins.win\/get\?url=/gi),
             options: {
