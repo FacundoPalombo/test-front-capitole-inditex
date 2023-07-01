@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { useParams, useRouteLoaderData } from 'react-router-dom';
 import styles from './styles.module.scss';
 import Markdown from '../../components/Markdown';
@@ -7,12 +7,8 @@ const Episode = () => {
   const { podcasts } = useRouteLoaderData('podcasts');
   const params = useParams();
 
-  const podcast = useMemo(
-    () =>
-      podcasts.results.find(
-        (podcast) => podcast.trackId.toString() === params.episodeId
-      ),
-    [podcasts, params]
+  const podcast = podcasts.results.find(
+    (podcast) => podcast.trackId.toString() === params.episodeId
   );
 
   const { episodeUrl: audioSource, trackName, description } = podcast;

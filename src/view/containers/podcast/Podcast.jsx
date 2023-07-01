@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { getPodcastEpisodes } from '../../../services/podcast';
 import { Outlet, useLoaderData, useParams, Link } from 'react-router-dom';
 import PodcastDetail from './components/PodcastDetail';
@@ -12,13 +12,9 @@ const Podcasts = () => {
 
   /* Quite a bit overkill all this implementation because
     description is on a different api call. But there it is.*/
-  const description = useMemo(
-    () =>
-      channels.feed.entry.find(
-        (channel) => channel.id.attributes['im:id'] === params.podcastId
-      ).summary.label,
-    [channels, params]
-  );
+  const description = channels.feed.entry.find(
+    (channel) => channel.id.attributes['im:id'] === params.podcastId
+  ).summary.label;
 
   return (
     <section id="podcasts" className={styles.podcasts}>

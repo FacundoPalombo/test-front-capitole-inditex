@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 
@@ -8,18 +8,9 @@ const PodcastEpisodesTableRow = ({
   releaseDate,
   trackTimeMillis,
 }) => {
-  const { trackMinutes, trackSeconds } = useMemo(
-    () => ({
-      trackMinutes: (trackTimeMillis - (trackTimeMillis % 60000)) / 60000,
-      trackSeconds: ((trackTimeMillis % 60000) / 1000).toFixed(0),
-    }),
-    [trackTimeMillis]
-  );
-
-  const trackDateCreation = useMemo(
-    () => new Date(releaseDate).toLocaleDateString(),
-    [trackDateCreation]
-  );
+  const trackMinutes = (trackTimeMillis - (trackTimeMillis % 60000)) / 60000;
+  const trackSeconds = ((trackTimeMillis % 60000) / 1000).toFixed(0);
+  const trackDateCreation = new Date(releaseDate).toLocaleDateString();
 
   return (
     <tr className={styles.table__row} key={trackId}>
