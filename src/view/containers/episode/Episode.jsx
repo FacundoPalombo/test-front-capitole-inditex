@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams, useRouteLoaderData } from 'react-router-dom';
 import styles from './styles.module.scss';
+import Markdown from '../../components/Markdown';
 
 const Episode = () => {
   const { podcasts } = useRouteLoaderData('podcasts');
@@ -16,24 +17,13 @@ const Episode = () => {
 
   const { episodeUrl: audioSource, trackName, description } = podcast;
 
-  //? Nota para el reviewer. No entendi en el ejercicio si se quería interpretar solo html o html y markdown,
-  //? o solo links de url (como se ve en el ejercicio).
-  //? Pues en las listas de podcasts vi que utilizan algo de sintaxis md. Dejé la solución nativa de react con los riesgos de
-  //? seguridad que puede tener pero se puede mejorar, por ej: con alguna lib externa que interprete MD y maneje xss.
-  function createMarkup() {
-    return {
-      __html: description,
-    };
-  }
-
   return (
     <section id="episode" data-testid="episode" className={styles.episode}>
       <div className={styles.episode__content}>
         <h2 className={styles.episode__title}>{trackName}</h2>
-        <em
-          className={styles.episode__description}
-          dangerouslySetInnerHTML={createMarkup()}
-        />
+        <em className={styles.episode__description}>
+          <Markdown>{description}</Markdown>
+        </em>
         <audio
           aria-label={`audio:${trackName}`}
           className={styles.episode__audio}

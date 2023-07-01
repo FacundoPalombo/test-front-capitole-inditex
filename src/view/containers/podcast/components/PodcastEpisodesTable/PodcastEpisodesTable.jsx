@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { number, shape, string, arrayOf } from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
 import PodcastEpisodesTableRow from './PodcastEpisodesTableRow';
@@ -54,9 +54,14 @@ const PodcastEpisodesTable = ({ podcasts }) => {
 };
 
 PodcastEpisodesTable.propTypes = {
-  podcasts: PropTypes.shape({
-    map: PropTypes.func,
-  }),
+  podcasts: arrayOf(
+    shape({
+      trackId: number,
+      trackName: string,
+      releaseDate: string,
+      trackTimeMillis: number,
+    })
+  ),
 };
 
 export default PodcastEpisodesTable;
