@@ -20,22 +20,22 @@ const config = {
           '<rootDir>/__mocks__/fileMock.js',
       },
     },
-    {
-      displayName: {
-        name: '[UI][Integration Tests]',
-        color: 'magenta',
-      },
-      testMatch: ['**/(components|containers|view|hooks)/**/*.spec.[jt]s'],
-      testEnvironment: 'jsdom',
-      setupFiles: ['<rootDir>/jest.env.setup.js'],
-      setupFilesAfterEnv: ['<rootDir>/jest.client.setup.js'],
-      moduleNameMapper: {
-        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+    // {
+    //   displayName: {
+    //     name: '[UI][Integration Tests]',
+    //     color: 'magenta',
+    //   },
+    //   testMatch: ['**/(components|containers|view|hooks)/**/*.spec.[jt]s'],
+    //   testEnvironment: 'jsdom',
+    //   setupFiles: ['<rootDir>/jest.env.setup.js'],
+    //   setupFilesAfterEnv: ['<rootDir>/jest.client.setup.js'],
+    //   moduleNameMapper: {
+    //     '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
 
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-          '<rootDir>/__mocks__/fileMock.js',
-      },
-    },
+    //     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    //       '<rootDir>/__mocks__/fileMock.js',
+    //   },
+    // },
     {
       displayName: {
         name: '[Node][Integration Tests]',

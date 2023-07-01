@@ -10,32 +10,47 @@ const Search = () => {
   const [searchValue, setSearchValue] = useState('');
   const handleSearchBox = useCallback((e) => setSearchValue(e.target.value));
 
+  const channelsFiltered = channels.feed.entry.filter(
+    (channel) =>
+      channel['im:artist']?.label
+        .toLowerCase()
+        ?.includes(searchValue.toLowerCase().trim()) ||
+      channel['im:name']?.label
+        .toLowerCase()
+        ?.includes(searchValue.toLowerCase().trim())
+  );
+
+  const resultsCount = channelsFiltered?.length;
+
+  const renderChannels = () =>
+    channelsFiltered.map((channel) => {
+      const podcastId = channel.id.attributes['im:id'];
+      const image = channel['im:image'].at(-1).label;
+      const artist = channel['im:artist'].label;
+      const title = channel['im:name'].label;
+      return (
+        <Channel
+          key={podcastId}
+          podcastId={podcastId}
+          image={image}
+          artist={artist}
+          title={title}
+        />
+      );
+    });
+
   return (
     <section
       id="search"
       data-testid="search"
       className={styles.search__container}
     >
-      <SearchBox onChange={handleSearchBox} value={searchValue} />
-      {channels.feed.entry
-        .filter(
-          (channel) =>
-            channel['im:artist']?.label
-              .toLowerCase()
-              ?.includes(searchValue.toLowerCase().trim()) ||
-            channel['im:name']?.label
-              .toLowerCase()
-              ?.includes(searchValue.toLowerCase().trim())
-        )
-        .map((channel) => (
-          <Channel
-            key={channel.id.attributes['im:id']}
-            podcastId={channel.id.attributes['im:id']}
-            image={channel['im:image'].at(-1).label}
-            artist={channel['im:artist'].label}
-            title={channel['im:name'].label}
-          />
-        ))}
+      <SearchBox
+        onChange={handleSearchBox}
+        value={searchValue}
+        resultsCount={resultsCount}
+      />
+      {renderChannels()}
     </section>
   );
 };

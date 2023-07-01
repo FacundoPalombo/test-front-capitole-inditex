@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams, useRouteLoaderData } from 'react-router-dom';
 import styles from './styles.module.scss';
 
@@ -6,9 +6,15 @@ const Episode = () => {
   const { podcasts } = useRouteLoaderData('podcasts');
   const params = useParams();
 
-  const trackName = podcasts.results.find(
-    (podcast) => podcast.trackId.toString() === params.episodeId
-  ).trackName;
+  const podcast = useMemo(
+    () =>
+      podcasts.results.find(
+        (podcast) => podcast.trackId.toString() === params.episodeId
+      ),
+    [podcasts, params]
+  );
+
+  const { episodeUrl: audioSource, trackName, description } = podcast;
 
   //? Nota para el reviewer. No entendi en el ejercicio si se quería interpretar solo html o html y markdown,
   //? o solo links de url (como se ve en el ejercicio).
@@ -16,9 +22,7 @@ const Episode = () => {
   //? seguridad que puede tener pero se puede mejorar, por ej: con alguna lib externa que interprete MD y maneje xss.
   function createMarkup() {
     return {
-      __html: podcasts.results.find(
-        (podcast) => podcast.trackId.toString() === params.episodeId
-      ).description,
+      __html: description,
     };
   }
 
@@ -33,11 +37,7 @@ const Episode = () => {
         <audio
           aria-label={`audio:${trackName}`}
           className={styles.episode__audio}
-          src={
-            podcasts.results.find(
-              (podcast) => podcast.trackId.toString() === params.episodeId
-            ).episodeUrl
-          }
+          src={audioSource}
           controls
         ></audio>
       </div>

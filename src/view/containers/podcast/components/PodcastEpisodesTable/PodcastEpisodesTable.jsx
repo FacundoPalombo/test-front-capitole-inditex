@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
+import PodcastEpisodesTableRow from './PodcastEpisodesTableRow';
 
 const PodcastEpisodesTable = ({ podcasts }) => {
   return (
@@ -38,43 +39,24 @@ const PodcastEpisodesTable = ({ podcasts }) => {
         </thead>
         <tbody className={styles.table__body}>
           {podcasts.map((episode) => (
-            <tr className={styles.table__row} key={episode.trackId}>
-              <th
-                className={styles.table__row_item}
-                align="left"
-                headers="col-title"
-              >
-                <Link
-                  to={`episode/${episode.trackId}`}
-                  className={styles.table__row_link}
-                >
-                  {episode.trackName}
-                </Link>
-              </th>
-              <th
-                className={styles.table__row_item}
-                align="right"
-                style={{ textAlign: 'left' }}
-                headers="col-date"
-              >
-                {new Date(episode.releaseDate).toLocaleDateString()}
-              </th>
-              <th
-                className={styles.table__row_item}
-                align="right"
-                style={{ textAlign: 'left' }}
-                headers="col-duration"
-              >
-                {(episode.trackTimeMillis - (episode.trackTimeMillis % 60000)) /
-                  60000}
-                min {((episode.trackTimeMillis % 60000) / 1000).toFixed(0)}s
-              </th>
-            </tr>
+            <PodcastEpisodesTableRow
+              key={episode.trackId}
+              trackId={episode.trackId}
+              trackName={episode.trackName}
+              releaseDate={episode.releaseDate}
+              trackTimeMillis={episode.trackTimeMillis}
+            />
           ))}
         </tbody>
       </table>
     </div>
   );
+};
+
+PodcastEpisodesTable.propTypes = {
+  podcasts: PropTypes.shape({
+    map: PropTypes.func,
+  }),
 };
 
 export default PodcastEpisodesTable;
