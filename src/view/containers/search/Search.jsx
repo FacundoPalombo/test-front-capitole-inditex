@@ -4,6 +4,7 @@ import { getPodcastChannels } from '../../../services/podcast';
 import Channel from './components/Channel';
 import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox';
+import { DAY_IN_MILLISECONDS } from '../../../utils/constants/various';
 
 const Search = () => {
   const { channels } = useLoaderData();
@@ -55,9 +56,19 @@ const Search = () => {
   );
 };
 
-export async function loader() {
-  const channels = await getPodcastChannels();
+export const loader = (queryClient) => async () => {
+  const channelsInCache = queryClient.getQueryData('channels');
+  let channels = channelsInCache;
+
+  if (!channelsInCache) {
+    channels = await queryClient.fetchQuery(
+      'channels',
+      async () => await getPodcastChannels(),
+      { staleTime: DAY_IN_MILLISECONDS }
+    );
+  }
+
   return { channels };
-}
+};
 
 export default Search;

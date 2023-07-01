@@ -6,6 +6,15 @@ import Podcast, { loader as podcastLoader } from '../podcast';
 import Episode from '../episode';
 import Search, { loader as searchLoader } from '../search';
 import PodcastList from '../podcast/components/PodcastList/PodcastList';
+import { QueryClient } from 'react-query';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 10,
+    },
+  },
+});
 
 //? Al inicio no sabía si hacer la pagina con todas las features de react 18 inclusive las nuevas de react router o hacer
 // custom hooks y utilizar el ciclo de vida de react de manera vanilla... Opte por la solucion sencilla de hacer la
@@ -19,14 +28,14 @@ const Routes = [
         element: <Search />,
         path: '/',
         id: 'search',
-        loader: searchLoader,
+        loader: searchLoader(queryClient),
       },
       {
         element: <Podcast />,
         path: 'podcast/:podcastId',
         errorElement: <ErrorPage />,
         id: 'podcasts',
-        loader: podcastLoader,
+        loader: podcastLoader(queryClient),
         children: [
           {
             element: <PodcastList />,

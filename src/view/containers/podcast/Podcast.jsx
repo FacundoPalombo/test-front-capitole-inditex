@@ -1,17 +1,17 @@
 import React from 'react';
-import { getPodcastEpisodes } from '../../../services/podcast';
 import { Outlet, useLoaderData, useParams, Link } from 'react-router-dom';
 import PodcastDetail from './components/PodcastDetail';
 import styles from './styles.module.scss';
-import { getPodcastChannels } from '../../../services/podcast';
+import {
+  episodes as episodesQuery,
+  channels as channelsQuery,
+} from '../../../queries/podcasts';
 
 const Podcasts = () => {
   const { podcasts, channels } = useLoaderData();
   const podcast = podcasts.results.find((p) => p.kind === 'podcast');
   const params = useParams();
 
-  /* Quite a bit overkill all this implementation because
-    description is on a different api call. But there it is.*/
   const description = channels.feed.entry.find(
     (channel) => channel.id.attributes['im:id'] === params.podcastId
   ).summary.label;
@@ -39,13 +39,15 @@ const Podcasts = () => {
   );
 };
 
-export async function loader({ params }) {
-  const [podcasts, channels] = await Promise.all([
-    getPodcastEpisodes({ podcastId: params.podcastId }),
-    getPodcastChannels(),
-  ]);
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    const [podcasts, channels] = await Promise.all([
+      episodesQuery(queryClient)({ podcastId: params.podcastId }),
+      channelsQuery(queryClient)(),
+    ]);
 
-  return { podcasts, channels };
-}
+    return { podcasts, channels };
+  };
 
 export default Podcasts;

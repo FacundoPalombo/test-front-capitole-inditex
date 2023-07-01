@@ -9,14 +9,10 @@ export const getPodcastEpisodes = ({ podcastId }) => {
   });
 
   const response = fetch(req)
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      throw new Error('Error processing response');
-    })
+    .then((res) => res.json())
     .then((data) => JSON.parse(data.contents))
     .catch((err) => {
+      console.error(err);
       throw err;
     });
   return response;
@@ -28,14 +24,10 @@ export const getPodcastChannels = () => {
   });
 
   const response = fetch(req)
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      throw new Error('Error processing response');
-    })
+    .then((res) => res.json())
     .then((data) => JSON.parse(data.contents))
     .catch((err) => {
+      console.error(err);
       throw err;
     });
   return response;
