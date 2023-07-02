@@ -10,6 +10,7 @@ const PodcastDetail = ({ image, title, artist, description }) => {
         src={image}
         alt={artist}
         aria-label={title}
+        loading="lazy"
       />
       <hr className={styles.podcast_detail__separator} />
       <h3 className={styles.podcast_detail__title}>{title}</h3>

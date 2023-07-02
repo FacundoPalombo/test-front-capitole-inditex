@@ -1,30 +1,31 @@
 import React, { useCallback, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { getPodcastChannels } from '../../../services/podcast';
 import Channel from './components/Channel';
 import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox';
-import { DAY_IN_MILLISECONDS } from '../../../utils/constants/various';
+import { channels as channelsQuery } from '../../../queries/podcasts';
+import { useIsFetching, useQuery } from '@tanstack/react-query';
+import SearchSkeleton from '../../components/SearchSkeleton';
 
 const Search = () => {
-  const { channels } = useLoaderData();
+  const { data: channels } = useQuery(channelsQuery());
   const [searchValue, setSearchValue] = useState('');
   const handleSearchBox = useCallback((e) => setSearchValue(e.target.value));
+  const isLoading = useIsFetching() > 0;
 
-  const channelsFiltered = channels.feed.entry.filter(
+  const channelsFiltered = channels?.feed.entry.filter(
     (channel) =>
-      channel['im:artist']?.label
+      channel['im:artist'].label
         .toLowerCase()
-        ?.includes(searchValue.toLowerCase().trim()) ||
-      channel['im:name']?.label
+        .includes(searchValue.toLowerCase().trim()) ||
+      channel['im:name'].label
         .toLowerCase()
-        ?.includes(searchValue.toLowerCase().trim())
+        .includes(searchValue.toLowerCase().trim())
   );
 
   const resultsCount = channelsFiltered?.length;
 
   const renderChannels = () =>
-    channelsFiltered.map((channel) => {
+    channelsFiltered?.map((channel) => {
       const podcastId = channel.id.attributes['im:id'];
       const image = channel['im:image'].at(-1).label;
       const artist = channel['im:artist'].label;
@@ -40,35 +41,29 @@ const Search = () => {
       );
     });
 
+  if (isLoading) return <SearchSkeleton />;
   return (
-    <section
-      id="search"
-      data-testid="search"
-      className={styles.search__container}
-    >
-      <SearchBox
-        onChange={handleSearchBox}
-        value={searchValue}
-        resultsCount={resultsCount}
-      />
-      {renderChannels()}
-    </section>
+    channels && (
+      <section
+        id="search"
+        data-testid="search"
+        className={styles.search__container}
+      >
+        <SearchBox
+          onChange={handleSearchBox}
+          value={searchValue}
+          resultsCount={resultsCount}
+        />
+        {renderChannels()}
+      </section>
+    )
   );
 };
 
 export const loader = (queryClient) => async () => {
-  const channelsInCache = queryClient.getQueryData('channels');
-  let channels = channelsInCache;
-
-  if (!channelsInCache) {
-    channels = await queryClient.fetchQuery(
-      'channels',
-      async () => await getPodcastChannels(),
-      { staleTime: DAY_IN_MILLISECONDS }
-    );
-  }
-
-  return { channels };
+  const query = channelsQuery();
+  const channels = await queryClient.ensureQueryData(query);
+  return channels;
 };
 
 export default Search;

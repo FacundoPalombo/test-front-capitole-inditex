@@ -31,6 +31,7 @@
     "@babel/preset-react": "^7.22.5",
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
+    "@tanstack/react-query-devtools": "^4.29.19",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
@@ -69,7 +70,9 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
-    "react-query": "^3.39.3",
+    "@tanstack/query-sync-storage-persister": "^4.29.19",
+    "@tanstack/react-query": "^4.29.19",
+    "@tanstack/react-query-persist-client": "^4.29.19",
     "jest-fetch-mock": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

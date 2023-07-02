@@ -38,7 +38,7 @@ const PodcastEpisodesTable = ({ podcasts }) => {
           </tr>
         </thead>
         <tbody className={styles.table__body}>
-          {podcasts.map((episode) => (
+          {podcasts?.map((episode) => (
             <PodcastEpisodesTableRow
               key={episode.trackId}
               trackId={episode.trackId}
