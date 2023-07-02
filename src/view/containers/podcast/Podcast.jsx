@@ -1,21 +1,27 @@
 import React from 'react';
-import { getPodcastEpisodes } from '../../../services/podcast';
-import { Outlet, useLoaderData, useParams, Link } from 'react-router-dom';
+import { Outlet, useParams, Link } from 'react-router-dom';
 import PodcastDetail from './components/PodcastDetail';
 import styles from './styles.module.scss';
-import { getPodcastChannels } from '../../../services/podcast';
+import {
+  episodes as episodesQuery,
+  channels as channelsQuery,
+} from '../../../queries/podcasts';
+import { useIsFetching, useQuery } from '@tanstack/react-query';
+import DetailSkeleton from '../../components/DetailSkeleton';
 
 const Podcasts = () => {
-  const { podcasts, channels } = useLoaderData();
-  const podcast = podcasts.results.find((p) => p.kind === 'podcast');
   const params = useParams();
+  const { data: podcasts } = useQuery(episodesQuery(params.podcastId));
+  const { data: channels } = useQuery(channelsQuery());
+  const isLoading = useIsFetching() > 0;
+  const podcast = podcasts?.results.find((p) => p.kind === 'podcast');
 
-  /* Quite a bit overkill all this implementation because
-    description is on a different api call. But there it is.*/
-  const description = channels.feed.entry.find(
+  const description = channels?.feed.entry.find(
     (channel) => channel.id.attributes['im:id'] === params.podcastId
   ).summary.label;
 
+  // skeleton for early feedback
+  if (isLoading) return <DetailSkeleton />;
   return (
     <section id="podcasts" className={styles.podcasts}>
       <div data-testid="podcast-detail" className={styles.podcasts__page}>
@@ -25,12 +31,14 @@ const Podcasts = () => {
             to={`/podcast/${params.podcastId}`}
             className={styles.podcasts__detail_navigable}
           >
-            <PodcastDetail
-              image={podcast.artworkUrl600}
-              title={podcast.trackName}
-              artist={podcast.artistName}
-              description={description}
-            />
+            {podcast && (
+              <PodcastDetail
+                image={podcast.artworkUrl600}
+                title={podcast.trackName}
+                artist={podcast.artistName}
+                description={description}
+              />
+            )}
           </Link>
         </section>
         <Outlet />
@@ -39,13 +47,14 @@ const Podcasts = () => {
   );
 };
 
-export async function loader({ params }) {
-  const [podcasts, channels] = await Promise.all([
-    getPodcastEpisodes({ podcastId: params.podcastId }),
-    getPodcastChannels(),
-  ]);
-
-  return { podcasts, channels };
-}
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    const podcastsResolvedQuery = episodesQuery(params.podcastId);
+    const channelsResolvedQuery = channelsQuery();
+    const podcasts = await queryClient.ensureQueryData(podcastsResolvedQuery);
+    const channels = await queryClient.ensureQueryData(channelsResolvedQuery);
+    return { channels, podcasts };
+  };
 
 export default Podcasts;

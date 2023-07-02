@@ -11,7 +11,12 @@ const Channel = ({ image, artist, title, podcastId }) => {
       className={styles.channel__container}
     >
       <div className={styles.channel__card}>
-        <img className={styles.channel__picture} alt={title} src={image} />
+        <img
+          className={styles.channel__picture}
+          alt={title}
+          src={image}
+          loading="lazy"
+        />
         <h3 className={styles.channel__title}>{title}</h3>
         <p className={styles.channel__artist}>Author: {artist}</p>
       </div>

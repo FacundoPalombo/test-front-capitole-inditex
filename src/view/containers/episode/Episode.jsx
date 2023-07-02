@@ -1,47 +1,38 @@
 import React from 'react';
-import { useParams, useRouteLoaderData } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from './styles.module.scss';
+import Markdown from '../../components/Markdown';
+import { useIsFetching, useQuery } from '@tanstack/react-query';
+import { episodes as episodesQuery } from '../../../queries/podcasts';
+import DetailSkeleton from '../../components/DetailSkeleton/DetailSkeleton';
 
 const Episode = () => {
-  const { podcasts } = useRouteLoaderData('podcasts');
   const params = useParams();
+  const { data: podcasts } = useQuery(episodesQuery(params.podcastId));
+  const isLoading = useIsFetching() > 0;
 
-  const trackName = podcasts.results.find(
+  const podcast = podcasts?.results.find(
     (podcast) => podcast.trackId.toString() === params.episodeId
-  ).trackName;
+  );
 
-  //? Nota para el reviewer. No entendi en el ejercicio si se quería interpretar solo html o html y markdown,
-  //? o solo links de url (como se ve en el ejercicio).
-  //? Pues en las listas de podcasts vi que utilizan algo de sintaxis md. Dejé la solución nativa de react con los riesgos de
-  //? seguridad que puede tener pero se puede mejorar, por ej: con alguna lib externa que interprete MD y maneje xss.
-  function createMarkup() {
-    return {
-      __html: podcasts.results.find(
-        (podcast) => podcast.trackId.toString() === params.episodeId
-      ).description,
-    };
-  }
-
+  if (isLoading) return <DetailSkeleton />;
   return (
-    <section id="episode" data-testid="episode" className={styles.episode}>
-      <div className={styles.episode__content}>
-        <h2 className={styles.episode__title}>{trackName}</h2>
-        <em
-          className={styles.episode__description}
-          dangerouslySetInnerHTML={createMarkup()}
-        />
-        <audio
-          aria-label={`audio:${trackName}`}
-          className={styles.episode__audio}
-          src={
-            podcasts.results.find(
-              (podcast) => podcast.trackId.toString() === params.episodeId
-            ).episodeUrl
-          }
-          controls
-        ></audio>
-      </div>
-    </section>
+    podcast && (
+      <section id="episode" data-testid="episode" className={styles.episode}>
+        <div className={styles.episode__content}>
+          <h2 className={styles.episode__title}>{podcast.trackName}</h2>
+          <em className={styles.episode__description}>
+            <Markdown>{podcast.description}</Markdown>
+          </em>
+          <audio
+            aria-label={`audio:${podcast.trackName}`}
+            className={styles.episode__audio}
+            src={podcast.episodeUrl}
+            controls
+          ></audio>
+        </div>
+      </section>
+    )
   );
 };
 

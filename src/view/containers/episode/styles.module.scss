@@ -15,6 +15,13 @@
   }
   &__description {
     word-break: keep-all;
+    a {
+      text-decoration: none;
+      color: var(--link);
+      &:visited {
+        color: var(--link-visited);
+      }
+    }
   }
   &__audio {
     width: 100%;

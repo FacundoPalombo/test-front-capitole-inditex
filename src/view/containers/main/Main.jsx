@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
-import { Link, Outlet, useNavigation } from 'react-router-dom';
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
 
 import styles from './styles.module.scss';
+import { useIsFetching } from '@tanstack/react-query';
 
 const Main = () => {
-  const { state, location } = useNavigation();
+  const isLoading = useIsFetching();
 
   return (
     <main id="main" data-testid="main">
@@ -23,7 +24,7 @@ const Main = () => {
           <h2 className={styles.navigation__title}>Podcaster</h2>
         </Link>
         <div className={styles.navigation__loader}>
-          {state === 'loading' && (
+          {isLoading > 0 && (
             <BounceLoader
               size={40}
               color="#3976a8"

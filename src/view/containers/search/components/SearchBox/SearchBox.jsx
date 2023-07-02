@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import { func, string } from 'prop-types';
+import { func, number, string } from 'prop-types';
 
-const SearchBox = ({ onChange, value }) => {
+const SearchBox = ({ onChange, value, resultsCount = 0 }) => {
   return (
     <span className={styles.search_box}>
       <label
@@ -10,7 +10,7 @@ const SearchBox = ({ onChange, value }) => {
         aria-label="Filter over all the 100 best podcasts on itunes."
         className={styles.search_box__label}
       >
-        100
+        {resultsCount}
       </label>
       <input
         placeholder="Filter podcasts..."
@@ -29,6 +29,7 @@ const SearchBox = ({ onChange, value }) => {
 SearchBox.propTypes = {
   value: string,
   onChange: func,
+  resultsCount: number,
 };
 
 export default SearchBox;
