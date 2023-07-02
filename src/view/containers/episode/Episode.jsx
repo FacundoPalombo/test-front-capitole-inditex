@@ -15,7 +15,7 @@ const Episode = () => {
     (podcast) => podcast.trackId.toString() === params.episodeId
   );
 
-  if (isLoading) return <DetailSkeleton simple />;
+  if (isLoading) return <DetailSkeleton />;
   return (
     podcast && (
       <section id="episode" data-testid="episode" className={styles.episode}>
