@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { bool } from 'prop-types';
 
-const DetailSkeleton = ({ simple = false }) => {
+const DetailSkeleton = ({ simple }) => {
   return (
     <section
       data-testid="detail-skeleton"
@@ -33,6 +33,14 @@ const DetailSkeleton = ({ simple = false }) => {
       <div className={styles.skeleton__content}>
         {/* bad practice i know, but its fully hardcoded and only 2 cases for this skeleton */}
         {simple ? (
+          <div
+            className={styles.skeleton__animation}
+            style={{
+              height: '460px',
+              width: `100%`,
+            }}
+          />
+        ) : (
           [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i, index) => (
             <div
               key={index}
@@ -43,14 +51,6 @@ const DetailSkeleton = ({ simple = false }) => {
               }}
             />
           ))
-        ) : (
-          <div
-            className={styles.skeleton__animation}
-            style={{
-              height: '460px',
-              width: `100%`,
-            }}
-          />
         )}
       </div>
     </section>

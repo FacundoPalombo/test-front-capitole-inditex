@@ -50,9 +50,11 @@ const Podcasts = () => {
 export const loader =
   (queryClient) =>
   async ({ params }) => {
-    const query = episodesQuery(params.podcastId);
-    const podcasts = await queryClient.ensureQueryData(query);
-    return podcasts;
+    const podcastsResolvedQuery = episodesQuery(params.podcastId);
+    const channelsResolvedQuery = channelsQuery();
+    const podcasts = await queryClient.ensureQueryData(podcastsResolvedQuery);
+    const channels = await queryClient.ensureQueryData(channelsResolvedQuery);
+    return { channels, podcasts };
   };
 
 export default Podcasts;
