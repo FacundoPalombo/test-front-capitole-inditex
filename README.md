@@ -2,11 +2,14 @@
 
 Prueba técnica frontend de capitole para el cliente inditex
 
-## Nota importante:
+## Nota importante 🚧:
 
-A lo largo del documento me surgieron dudas para el reviewer o razonamientos que fui anotando con el comentario //?.
+1. A lo largo del documento me surgieron dudas para el reviewer o razonamientos que fui anotando con el comentario //?.
+2. Es importante saber que hay dos implementaciones de cache en este repo:
+a. Service worker. Funciona SOLAMENTE modo producción, corriendo el server con `npm run prod`. Tener en cuenta de que tambien cachea estaticos.
+b. React Query Cache (Con persistencia en localstorage). Corre en ambos entornos, pero las devtools (para limpiar el cache con devtools de react-query) funciona solo en modo development. 
 
-### Prerrequisitos
+### Prerrequisitos 🔢
 
 Esta aplicación utiliza Node v18.
 Recomiendo utilizar NVM para poder mantener las versiones de node actualizadas y los entornos separados entre si.
@@ -28,7 +31,7 @@ Para ello puedes instalar la version de node con el comando de NVM:
 
 ```
 
-### Correr la aplicacion
+### Correr la aplicacion 🚀
 
 #### Production
 
@@ -50,7 +53,7 @@ Para correr la app en modo development ejecuta en tu consola:
 
 ```
 
-#### Pruebas
+#### Pruebas 🧪
 
 Para correr las pruebas ejecuta en tu consola:
 
