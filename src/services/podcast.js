@@ -25,7 +25,7 @@ export const getPodcastEpisodes = ({ podcastId }) => {
       }
       return res.json();
     })
-    .then((data) => data)
+    .then((data) => JSON.parse(data.contents))
     .catch((err) => {
       console.error(err);
       throw err;
@@ -53,10 +53,7 @@ export const getPodcastChannels = () => {
       }
       return res.json();
     })
-    .then((data) => {
-      console.log(data);
-      return data;
-    })
+    .then((data) => JSON.parse(data.contents))
     .catch((err) => {
       console.error(err);
       throw err;
