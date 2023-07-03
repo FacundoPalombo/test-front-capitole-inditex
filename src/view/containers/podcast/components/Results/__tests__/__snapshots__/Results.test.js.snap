@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results unit tests should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="results__card"
+  >
+    <h2
+      class="results__title"
+    >
+      Episodes: 100
+    </h2>
+  </div>
+</DocumentFragment>
+`;

@@ -31,7 +31,11 @@ describe('getPodcastEpisodes service unit test', () => {
 
   it('should return promise fail when api call fails', async () => {
     fetch.mockImplementationOnce(() =>
-      Promise.resolve({ message: 'error unexpected', ok: false })
+      Promise.resolve({
+        ok: false,
+        status: 404,
+        statusText: 'Not Found',
+      })
     );
     try {
       const params = { podcastId: '1234' };
@@ -42,7 +46,7 @@ describe('getPodcastEpisodes service unit test', () => {
 
       expect(fetch).toHaveBeenCalledWith(expectedRequest);
     } catch (error) {
-      expect(error.message).toEqual('Error processing response');
+      expect(error.message).toEqual('Error processing the request: Not Found');
     }
   });
 });
@@ -72,7 +76,11 @@ describe('getPodcastChannels service unit test', () => {
 
   it('should return promise fail when api call fails', async () => {
     fetch.mockImplementationOnce(() =>
-      Promise.resolve({ message: 'error unexpected', ok: false })
+      Promise.resolve({
+        ok: false,
+        status: 404,
+        statusText: 'Not Found',
+      })
     );
     try {
       await getPodcastChannels();
@@ -81,7 +89,7 @@ describe('getPodcastChannels service unit test', () => {
 
       expect(fetch).toHaveBeenCalledWith(expectedRequest);
     } catch (error) {
-      expect(error.message).toEqual('Error processing response');
+      expect(error.message).toEqual('Error processing the request: Not Found');
     }
   });
 });

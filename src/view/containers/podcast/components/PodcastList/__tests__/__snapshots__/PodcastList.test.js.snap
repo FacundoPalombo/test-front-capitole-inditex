@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PodcastList unit tests should match snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="podcast_list__content"
+    data-testid="podcast-list"
+  >
+    <div
+      id="mockResults"
+    >
+      Results
+    </div>
+    <div
+      id="mockPodcastEpisodesTable"
+    >
+      PodcastEpisodesTable
+    </div>
+  </section>
+</DocumentFragment>
+`;

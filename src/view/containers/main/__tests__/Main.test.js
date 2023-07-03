@@ -1,10 +1,10 @@
-/* eslint-disable react/display-name, react/prop-types */
 import React from 'react';
 import Main from '../Main';
 import { render } from '@testing-library/react';
+import { useIsFetching } from '@tanstack/react-query';
 
 jest.mock('react-router-dom', () => ({
-  Link: () => <div>MockLink</div>,
+  Link: ({ to, children }) => <a href={to}>{children}</a>,
   Outlet: () => <div>MockOutlet</div>,
   useNavigation: jest.fn().mockReturnValue({ state: 'loading' }),
 }));
@@ -14,9 +14,17 @@ jest.mock('react-spinners', () => ({
     loading ? <div>Loading...</div> : <div>not loading</div>,
 }));
 
+jest.mock('@tanstack/react-query');
+
 describe('Main unit test', () => {
   afterEach(jest.clearAllMocks);
-  it('should render ok with props', () => {
+  it('should render ok with props, when is loading', () => {
+    useIsFetching.mockReturnValueOnce(0);
+    const { asFragment } = render(<Main />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it('should render ok with props, when loading is false', () => {
+    useIsFetching.mockReturnValueOnce(2);
     const { asFragment } = render(<Main />);
     expect(asFragment()).toMatchSnapshot();
   });

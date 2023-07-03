@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { useIsFetching } from '@tanstack/react-query';
 
 const Main = () => {
-  const isLoading = useIsFetching();
+  const isLoading = useIsFetching() > 0;
 
   return (
     <main id="main" data-testid="main">
@@ -24,7 +24,7 @@ const Main = () => {
           <h2 className={styles.navigation__title}>Podcaster</h2>
         </Link>
         <div className={styles.navigation__loader}>
-          {isLoading > 0 && (
+          {isLoading && (
             <BounceLoader
               size={40}
               color="#3976a8"

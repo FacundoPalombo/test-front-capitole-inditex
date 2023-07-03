@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Channel unit tests should match snapshot 1`] = `
+<DocumentFragment>
+  <a
+    href="podcast/podcastIdMock"
+  >
+    <div
+      class="channel__card"
+    >
+      <img
+        alt="titleMock"
+        class="channel__picture"
+        loading="lazy"
+        src="imageMock"
+      />
+      <h3
+        class="channel__title"
+      >
+        titleMock
+      </h3>
+      <p
+        class="channel__artist"
+      >
+        Author: artistMock
+      </p>
+    </div>
+  </a>
+</DocumentFragment>
+`;
