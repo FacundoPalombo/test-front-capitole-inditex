@@ -9,15 +9,13 @@ describe('getPodcastEpisodes service unit test', () => {
 
   it('should return promise ok when api call is successfull', async () => {
     const mockResponse = {
-      content: 'mock',
+      ok: true,
+      contents: JSON.stringify({
+        content: 'mock',
+      }),
     };
 
-    fetch.mockResponseOnce(
-      JSON.stringify({
-        ok: true,
-        contents: JSON.stringify(mockResponse),
-      })
-    );
+    fetch.mockResponseOnce(JSON.stringify(mockResponse));
 
     const params = { podcastId: '1234' };
 
@@ -56,15 +54,13 @@ describe('getPodcastChannels service unit test', () => {
 
   it('should return promise ok when api call is successfull', async () => {
     const mockResponse = {
-      content: 'mock',
+      ok: true,
+      contents: JSON.stringify({
+        content: 'mock',
+      }),
     };
 
-    fetch.mockResponseOnce(
-      JSON.stringify({
-        ok: true,
-        contents: JSON.stringify(mockResponse),
-      })
-    );
+    fetch.mockResponseOnce(JSON.stringify(mockResponse));
 
     const response = await getPodcastChannels();
 

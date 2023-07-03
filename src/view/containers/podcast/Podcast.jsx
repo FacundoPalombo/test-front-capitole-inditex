@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, useParams, Link } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import PodcastDetail from './components/PodcastDetail';
 import styles from './styles.module.scss';
 import {
@@ -11,10 +11,11 @@ import DetailSkeleton from '../../components/DetailSkeleton';
 
 const Podcasts = () => {
   const params = useParams();
-  const { data: podcasts } = useQuery(episodesQuery(params.podcastId));
+  const { data: episodes } = useQuery(episodesQuery(params.podcastId));
   const { data: channels } = useQuery(channelsQuery());
   const isLoading = useIsFetching() > 0;
-  const podcast = podcasts?.results.find((p) => p.kind === 'podcast');
+
+  const episode = episodes?.results.find((p) => p.kind === 'podcast');
 
   const description = channels?.feed.entry.find(
     (channel) => channel.id.attributes['im:id'] === params.podcastId
@@ -25,22 +26,14 @@ const Podcasts = () => {
   return (
     <section id="podcasts" className={styles.podcasts}>
       <div data-testid="podcast-detail" className={styles.podcasts__page}>
-        <section className={styles.podcasts__detail}>
-          <Link
-            aria-label="Go back to podcast detail page."
-            to={`/podcast/${params.podcastId}`}
-            className={styles.podcasts__detail_navigable}
-          >
-            {podcast && (
-              <PodcastDetail
-                image={podcast.artworkUrl600}
-                title={podcast.trackName}
-                artist={podcast.artistName}
-                description={description}
-              />
-            )}
-          </Link>
-        </section>
+        {episode && (
+          <PodcastDetail
+            image={episode.artworkUrl600}
+            title={episode.trackName}
+            artist={episode.artistName}
+            description={description}
+          />
+        )}
         <Outlet />
       </div>
     </section>
@@ -50,11 +43,11 @@ const Podcasts = () => {
 export const loader =
   (queryClient) =>
   async ({ params }) => {
-    const podcastsResolvedQuery = episodesQuery(params.podcastId);
+    const episodesResolvedQuery = episodesQuery(params.podcastId);
     const channelsResolvedQuery = channelsQuery();
-    const podcasts = await queryClient.ensureQueryData(podcastsResolvedQuery);
+    const episodes = await queryClient.ensureQueryData(episodesResolvedQuery);
     const channels = await queryClient.ensureQueryData(channelsResolvedQuery);
-    return { channels, podcasts };
+    return { channels, episodes };
   };
 
 export default Podcasts;

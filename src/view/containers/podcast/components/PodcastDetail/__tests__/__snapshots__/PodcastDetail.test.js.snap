@@ -2,46 +2,54 @@
 
 exports[`PodcastDetail unit tests should match snapshot 1`] = `
 <DocumentFragment>
-  <aside
-    class="podcast_detail__card"
+  <section
+    class="podcast_detail"
   >
-    <img
-      alt="artistMock"
-      aria-label="titleMock"
-      class="podcast_detail__picture"
-      loading="lazy"
-      src="imageMock.jpg"
-    />
-    <hr
-      class="podcast_detail__separator"
-    />
-    <h3
-      class="podcast_detail__title"
+    <a
+      href="/podcast/1234"
     >
-      titleMock
-    </h3>
-    <em
-      class="podcast_detail__artist"
-    >
-      by artistMock
-    </em>
-    <hr
-      class="podcast_detail__separator"
-    />
-    <p
-      class="podcast_detail__description"
-    >
-      <strong
-        class="podcast_detail__description_strong"
+      <aside
+        class="podcast_detail__card"
       >
-        Description: 
-      </strong>
-      <i
-        class="podcast_detail__description_empathized"
-      >
-        descriptionMock
-      </i>
-    </p>
-  </aside>
+        <img
+          alt="artistMock"
+          aria-label="titleMock"
+          class="podcast_detail__picture"
+          loading="lazy"
+          src="imageMock.jpg"
+        />
+        <hr
+          class="podcast_detail__separator"
+        />
+        <h3
+          class="podcast_detail__title"
+        >
+          titleMock
+        </h3>
+        <em
+          class="podcast_detail__artist"
+        >
+          by artistMock
+        </em>
+        <hr
+          class="podcast_detail__separator"
+        />
+        <p
+          class="podcast_detail__description"
+        >
+          <strong
+            class="podcast_detail__description_strong"
+          >
+            Description: 
+          </strong>
+          <i
+            class="podcast_detail__description_empathized"
+          >
+            descriptionMock
+          </i>
+        </p>
+      </aside>
+    </a>
+  </section>
 </DocumentFragment>
 `;

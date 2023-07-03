@@ -128,9 +128,10 @@ module.exports = () => {
             // o con un transport de axios (intente primero eso).
             // Pero esta me parecía mas general y sencilla de implementar, ademas que esta el beneficio de registrar el serviceWorker.
             urlPattern: ({ url }) =>
-              url.href.match(/https:\/\/api.allorigins.win\/get\?url=/gi),
+              url.href.match(/https:\/\/api.allorigins.win\/get\?url=/gi) ||
+              url.href.match(/https:\/\/corsproxy.io\/\?/gi),
             options: {
-              cacheName: 'allowOrigins-requests',
+              cacheName: 'cors-proxy-requests',
               expiration: {
                 maxAgeSeconds: 3600 * 24,
                 maxEntries: 200,
