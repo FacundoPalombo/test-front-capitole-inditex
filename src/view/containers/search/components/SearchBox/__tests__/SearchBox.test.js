@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import SearchBox from '../SearchBox';
 
 describe('SearchBox unit tests', () => {
@@ -13,5 +14,22 @@ describe('SearchBox unit tests', () => {
       <SearchBox onChange={jest.fn()} value="321" />
     );
     expect(snap2()).toMatchSnapshot();
+  });
+  it('should change value when user type', async () => {
+    const user = userEvent.setup();
+    const onChangeStub = jest.fn();
+
+    const { getByRole } = render(
+      <SearchBox onChange={onChangeStub} resultsCount={2} />
+    );
+
+    const searchInput = getByRole('textbox', {
+      name: 'Filter over all the 100 best podcasts on itunes.',
+    });
+    await user.click(searchInput);
+    await user.keyboard('321');
+
+    expect(searchInput).toHaveValue('321');
+    expect(onChangeStub).toHaveBeenCalledTimes(3);
   });
 });

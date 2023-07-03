@@ -8,7 +8,7 @@ exports[`Results unit tests should match snapshot 1`] = `
     <h2
       class="results__title"
     >
-      Episodes: 
+      Episodes: 100
     </h2>
   </div>
 </DocumentFragment>

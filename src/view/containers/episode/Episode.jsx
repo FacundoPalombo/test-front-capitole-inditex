@@ -8,7 +8,11 @@ import DetailSkeleton from '../../components/DetailSkeleton/DetailSkeleton';
 
 const Episode = () => {
   const params = useParams();
-  const { data: podcasts } = useQuery(episodesQuery(params.podcastId));
+  const { data: podcasts } = useQuery({
+    ...episodesQuery(params.podcastId),
+    networkMode: 'offlineFirst',
+  });
+
   const isLoading = useIsFetching() > 0;
 
   const podcast = podcasts?.results.find(

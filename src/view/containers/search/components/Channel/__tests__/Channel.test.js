@@ -18,4 +18,19 @@ describe('Channel unit tests', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+  it('should build channel component with correct path', () => {
+    const { getByRole } = render(
+      <Channel
+        image="imageMock"
+        artist="Cosme Fulanito"
+        title="El bar de Moe"
+        podcastId="42"
+      />
+    );
+    expect(
+      getByRole('link', {
+        name: 'El bar de Moe El bar de Moe Author: Cosme Fulanito',
+      })
+    ).toHaveAttribute('href', 'podcast/42');
+  });
 });
