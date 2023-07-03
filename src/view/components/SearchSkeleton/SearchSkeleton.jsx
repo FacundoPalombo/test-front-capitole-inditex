@@ -12,6 +12,8 @@ const SearchSkeleton = () => {
     key: i,
     skeleton: true,
   }));
+  /* istanbul ignore next */
+  const noop = () => {};
 
   return (
     <section id="search-skeleton" className={styles.search_skeleton__container}>
@@ -30,7 +32,7 @@ const SearchSkeleton = () => {
           name="search_skeleton__search_box"
           type="text"
           className={styles.search_skeleton__search_box__input}
-          onChange={() => {}}
+          onChange={noop}
           value=""
         />
       </span>

@@ -4,6 +4,7 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
+  "plugins": ["jest", "testing-library"],
 
   "ecmaFeatures": {
     "modules": true,
@@ -22,5 +23,14 @@
   "parser": "@babel/eslint-parser",
   "rules": {
     "linebreak-style": ["error", "unix"] // changes the file to CRLF
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.spec.js"],
+      "rules": {
+        "react/prop-types": 0,
+        "react/display-name": 0
+      }
+    }
+  ]
 }

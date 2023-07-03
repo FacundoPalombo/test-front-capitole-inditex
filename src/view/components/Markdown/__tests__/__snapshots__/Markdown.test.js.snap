@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Markdown unit tests should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    id="react-markdown-wrapper"
+  >
+    <div
+      id="markdown-children"
+    >
+      Hola mundo estoy dentro de markdown
+    </div>
+  </div>
+</DocumentFragment>
+`;

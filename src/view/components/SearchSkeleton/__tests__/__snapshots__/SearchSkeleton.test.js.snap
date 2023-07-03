@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchSkeleton unit tests should match snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="search_skeleton__container"
+    id="search-skeleton"
+  >
+    <span
+      class="search_skeleton__search_box"
+    >
+      <label
+        aria-label="Filter over all the 100 best podcasts on itunes."
+        class="search_skeleton__search_box__label"
+        for="search_skeleton__search_box"
+      >
+        0
+      </label>
+      <input
+        class="search_skeleton__search_box__input"
+        data-testid="search_skeleton__search_box"
+        id="search_skeleton__search_box"
+        name="search_skeleton__search_box"
+        placeholder="..."
+        type="text"
+        value=""
+      />
+    </span>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+    <div
+      id="channel-mock"
+    >
+      Hola, soy un item de channel
+    </div>
+  </section>
+</DocumentFragment>
+`;

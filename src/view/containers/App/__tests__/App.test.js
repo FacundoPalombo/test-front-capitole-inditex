@@ -1,5 +1,3 @@
-/* eslint-disable react/display-name */
-
 import React from 'react';
 import App from '../App';
 import { render } from '@testing-library/react';

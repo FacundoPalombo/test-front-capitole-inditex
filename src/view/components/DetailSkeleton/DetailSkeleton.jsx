@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import { bool } from 'prop-types';
+import randomSizer from '../../../utils/functions/randomSizer';
 
 const DetailSkeleton = () => {
   return (
@@ -24,7 +24,7 @@ const DetailSkeleton = () => {
               className={styles.skeleton__animation}
               style={{
                 height: '24px',
-                width: `calc(100% - ${Math.random() * 30}%)`,
+                width: `calc(100% - ${randomSizer(30, 0)}%)`,
               }}
             />
           ))}
@@ -37,16 +37,13 @@ const DetailSkeleton = () => {
             className={styles.skeleton__animation}
             style={{
               height: '36px',
-              width: `calc(100% - ${Math.random() * 10 + 10}vw)`,
+              width: `calc(100% - ${randomSizer(10, 10)}vw)`,
             }}
           />
         ))}
       </div>
     </section>
   );
-};
-DetailSkeleton.propTypes = {
-  simple: bool,
 };
 
 export default DetailSkeleton;

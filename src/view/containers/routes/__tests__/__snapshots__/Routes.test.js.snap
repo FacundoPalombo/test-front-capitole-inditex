@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes unit tests should return the expected routes 1`] = `
+[
+  {
+    "children": [
+      {
+        "element": <UNDEFINED />,
+        "loader": undefined,
+        "path": "/",
+      },
+      {
+        "children": [
+          {
+            "element": <mockConstructor />,
+            "errorElement": <mockConstructor />,
+            "path": "",
+          },
+          {
+            "element": <mockConstructor />,
+            "errorElement": <mockConstructor />,
+            "path": "episode/:episodeId",
+          },
+        ],
+        "element": <UNDEFINED />,
+        "errorElement": <mockConstructor />,
+        "loader": undefined,
+        "path": "podcast/:podcastId",
+      },
+    ],
+    "element": <mockConstructor />,
+    "errorElement": <mockConstructor />,
+  },
+]
+`;
