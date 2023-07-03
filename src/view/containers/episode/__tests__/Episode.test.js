@@ -6,8 +6,8 @@ import episodesFixture from '../../podcast/__tests__/podcastEpisodes.fixture';
 import Episode from '../Episode';
 import { getPodcastEpisodes } from '../../../../services/podcast';
 
-jest.mock('../../../components/Markdown', () => ({ children }) => (
-  <div id="markdown">{children}</div>
+jest.mock('../components/EpisodeDetail', () => (props) => (
+  <div id="episode-detail">{JSON.stringify(props)}</div>
 ));
 
 jest.mock('../../../components/DetailSkeleton', () => () => (

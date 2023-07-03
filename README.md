@@ -6,8 +6,8 @@ Prueba técnica frontend de capitole para el cliente inditex
 
 1. A lo largo del documento me surgieron dudas para el reviewer o razonamientos que fui anotando con el comentario //?.
 2. Es importante saber que hay dos implementaciones de cache en este repo:
-a. Service worker. Funciona SOLAMENTE modo producción, corriendo el server con `npm run prod`. Tener en cuenta de que tambien cachea estaticos.
-b. React Query Cache (Con persistencia en localstorage). Corre en ambos entornos, pero las devtools (para limpiar el cache con devtools de react-query) funciona solo en modo development. 
+   a. Service worker. Funciona SOLAMENTE modo producción, corriendo el server con `npm run prod`. Tener en cuenta de que tambien cachea estaticos.
+   b. React Query Cache (Con persistencia en localstorage). Corre en ambos entornos, pero las devtools (para limpiar el cache con devtools de react-query) funciona solo en modo development.
 
 ### Prerrequisitos 🔢
 
@@ -43,6 +43,8 @@ Para correr la app en modo production ejecuta en tu consola:
 
 ```
 
+La aplicación correra en localhost:8080
+
 #### Development
 
 Para correr la app en modo development ejecuta en tu consola:
@@ -52,6 +54,8 @@ Para correr la app en modo development ejecuta en tu consola:
   npm run dev
 
 ```
+
+La aplicación correra en localhost:8080
 
 #### Pruebas 🧪
 

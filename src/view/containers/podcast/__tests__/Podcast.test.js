@@ -28,8 +28,7 @@ jest.mock('../../../components/DetailSkeleton', () => () => (
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  Link: ({ to, children }) => <a href={to}>{children}</a>,
-  useParams: jest.fn().mockReturnValue(1234),
+  useParams: jest.fn().mockReturnValue({ podcastId: 1234 }),
 }));
 
 describe('Podcast unit test', () => {

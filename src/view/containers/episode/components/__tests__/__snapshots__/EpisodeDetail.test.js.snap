@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EpisodeDetail unit tests should match to snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="episode"
+    data-testid="episode"
+    id="episode"
+  >
+    <div
+      class="episode__content"
+    >
+      <h2
+        class="episode__title"
+      >
+        One Metallica
+      </h2>
+      <em
+        class="episode__description"
+      >
+        <div
+          id="markdown"
+        >
+          una descripcion de episodio
+        </div>
+      </em>
+      <audio
+        aria-label="audio:One Metallica"
+        class="episode__audio"
+        controls=""
+        src="http://google.com"
+      />
+    </div>
+  </section>
+</DocumentFragment>
+`;

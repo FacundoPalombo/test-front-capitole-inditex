@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, useParams, Link } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import PodcastDetail from './components/PodcastDetail';
 import styles from './styles.module.scss';
 import {
@@ -26,22 +26,14 @@ const Podcasts = () => {
   return (
     <section id="podcasts" className={styles.podcasts}>
       <div data-testid="podcast-detail" className={styles.podcasts__page}>
-        <section className={styles.podcasts__detail}>
-          <Link
-            aria-label="Go back to podcast detail page."
-            to={`/podcast/${params.podcastId}`}
-            className={styles.podcasts__detail_navigable}
-          >
-            {episode && (
-              <PodcastDetail
-                image={episode.artworkUrl600}
-                title={episode.trackName}
-                artist={episode.artistName}
-                description={description}
-              />
-            )}
-          </Link>
-        </section>
+        {episode && (
+          <PodcastDetail
+            image={episode.artworkUrl600}
+            title={episode.trackName}
+            artist={episode.artistName}
+            description={description}
+          />
+        )}
         <Outlet />
       </div>
     </section>
