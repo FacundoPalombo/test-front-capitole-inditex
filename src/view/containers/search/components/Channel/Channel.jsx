@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { string } from 'prop-types';
@@ -31,4 +31,4 @@ Channel.propTypes = {
   podcastId: string,
 };
 
-export default Channel;
+export default memo(Channel);

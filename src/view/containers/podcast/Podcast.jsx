@@ -11,10 +11,11 @@ import DetailSkeleton from '../../components/DetailSkeleton';
 
 const Podcasts = () => {
   const params = useParams();
-  const { data: podcasts } = useQuery(episodesQuery(params.podcastId));
+  const { data: episodes } = useQuery(episodesQuery(params.podcastId));
   const { data: channels } = useQuery(channelsQuery());
   const isLoading = useIsFetching() > 0;
-  const podcast = podcasts?.results.find((p) => p.kind === 'podcast');
+
+  const episode = episodes?.results.find((p) => p.kind === 'podcast');
 
   const description = channels?.feed.entry.find(
     (channel) => channel.id.attributes['im:id'] === params.podcastId
@@ -31,11 +32,11 @@ const Podcasts = () => {
             to={`/podcast/${params.podcastId}`}
             className={styles.podcasts__detail_navigable}
           >
-            {podcast && (
+            {episode && (
               <PodcastDetail
-                image={podcast.artworkUrl600}
-                title={podcast.trackName}
-                artist={podcast.artistName}
+                image={episode.artworkUrl600}
+                title={episode.trackName}
+                artist={episode.artistName}
                 description={description}
               />
             )}
@@ -50,11 +51,11 @@ const Podcasts = () => {
 export const loader =
   (queryClient) =>
   async ({ params }) => {
-    const podcastsResolvedQuery = episodesQuery(params.podcastId);
+    const episodesResolvedQuery = episodesQuery(params.podcastId);
     const channelsResolvedQuery = channelsQuery();
-    const podcasts = await queryClient.ensureQueryData(podcastsResolvedQuery);
+    const episodes = await queryClient.ensureQueryData(episodesResolvedQuery);
     const channels = await queryClient.ensureQueryData(channelsResolvedQuery);
-    return { channels, podcasts };
+    return { channels, episodes };
   };
 
 export default Podcasts;

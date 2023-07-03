@@ -95,7 +95,7 @@ describe('Podcast unit test', () => {
     });
     expect(loader).toEqual({
       channels: { data: 'ok' },
-      podcasts: { data: 'ok' },
+      episodes: { data: 'ok' },
     });
   });
 });
