@@ -4,14 +4,11 @@ import styles from './styles.module.scss';
 import Markdown from '../../components/Markdown';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
 import { episodes as episodesQuery } from '../../../queries/podcasts';
-import DetailSkeleton from '../../components/DetailSkeleton/DetailSkeleton';
+import DetailSkeleton from '../../components/DetailSkeleton';
 
 const Episode = () => {
   const params = useParams();
-  const { data: podcasts } = useQuery({
-    ...episodesQuery(params.podcastId),
-    networkMode: 'offlineFirst',
-  });
+  const { data: podcasts } = useQuery(episodesQuery(params.podcastId));
 
   const isLoading = useIsFetching() > 0;
 

@@ -11,9 +11,15 @@ exports[`Main unit test should render ok with props, when is loading 1`] = `
       class="navigation"
       id="nav"
     >
-      <div>
-        MockLink
-      </div>
+      <a
+        href="/"
+      >
+        <h2
+          class="navigation__title"
+        >
+          Podcaster
+        </h2>
+      </a>
       <div
         class="navigation__loader"
       />
@@ -39,9 +45,15 @@ exports[`Main unit test should render ok with props, when loading is false 1`] =
       class="navigation"
       id="nav"
     >
-      <div>
-        MockLink
-      </div>
+      <a
+        href="/"
+      >
+        <h2
+          class="navigation__title"
+        >
+          Podcaster
+        </h2>
+      </a>
       <div
         class="navigation__loader"
       >

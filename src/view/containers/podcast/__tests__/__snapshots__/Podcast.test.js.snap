@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Podcast unit test should match snapshot when data is provided 1`] = `
+<DocumentFragment>
+  <div>
+    DetailSkeleton
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Podcast unit test should match snapshot when isFetching shows skeleton 1`] = `
+<DocumentFragment>
+  <div>
+    DetailSkeleton
+  </div>
+</DocumentFragment>
+`;

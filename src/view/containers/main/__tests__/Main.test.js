@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import { useIsFetching } from '@tanstack/react-query';
 
 jest.mock('react-router-dom', () => ({
-  Link: () => <div>MockLink</div>,
+  Link: ({ to, children }) => <a href={to}>{children}</a>,
   Outlet: () => <div>MockOutlet</div>,
   useNavigation: jest.fn().mockReturnValue({ state: 'loading' }),
 }));
