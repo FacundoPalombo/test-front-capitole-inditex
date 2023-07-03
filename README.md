@@ -4,10 +4,11 @@ Prueba técnica frontend de capitole para el cliente inditex
 
 ## Nota importante 🚧:
 
-1. A lo largo del documento me surgieron dudas para el reviewer o razonamientos que fui anotando con el comentario //?.
-2. Es importante saber que hay dos implementaciones de cache en este repo:
+1. A lo largo del documento me surgieron dudas para el reviewer o razonamientos que fui anotando con el comentario //? y //!
+2. **Es importante saber que hay dos implementaciones de cache en este repo** ‼️‼️:
    a. Service worker. Funciona SOLAMENTE modo producción, corriendo el server con `npm run prod`. Tener en cuenta de que tambien cachea estaticos.
    b. React Query Cache (Con persistencia en localstorage). Corre en ambos entornos, pero las devtools (para limpiar el cache con devtools de react-query) funciona solo en modo development.
+3. ADVERTENCIA ‼️‼️: Durante el desarrollo me estuvo andando mal la pagina de allOrigins y me quede varias veces sin servidor. Por lo que opte por **_cambiarlo momentaneamente a corsproxy.io_**, si se desea cambiar el reverse proxy, dejaré abierto un pull request con una branch llamada enhancement/change-to-allOrigins para switchear la feature rapidamente y no perder los dos
 
 ### Prerrequisitos 🔢
 
