@@ -2,6 +2,9 @@
 
 Prueba técnica frontend de capitole para el cliente inditex
 
+Visualizar la app en
+https://tourmaline-cactus-b946da.netlify.app
+
 ## Nota importante 🚧:
 
 1. A lo largo del documento me surgieron dudas para el reviewer o razonamientos que fui anotando con el comentario //? y //!
