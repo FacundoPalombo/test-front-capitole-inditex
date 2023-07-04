@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -121,27 +122,36 @@ module.exports = () => {
     config.plugins.push(new MiniCssExtractPlugin());
 
     config.plugins.push(
-      new WorkboxWebpackPlugin.GenerateSW({
-        runtimeCaching: [
+      new CopyWebpackPlugin({
+        patterns: [
           {
-            //? esta es la feature que almacena el cache por un día, se pudo haber hecho también con react query,
-            // o con un transport de axios (intente primero eso).
-            // Pero esta me parecía mas general y sencilla de implementar, ademas que esta el beneficio de registrar el serviceWorker.
-            urlPattern: ({ url }) =>
-              url.href.match(/https:\/\/api.allorigins.win\/get\?url=/gi) ||
-              url.href.match(/https:\/\/corsproxy.io\/\?/gi),
-            options: {
-              cacheName: 'cors-proxy-requests',
-              expiration: {
-                maxAgeSeconds: 3600 * 24,
-                maxEntries: 200,
-              },
-            },
-            handler: 'StaleWhileRevalidate',
+            from: path.join('./_redirects'),
           },
         ],
       })
-    );
+    ),
+      config.plugins.push(
+        new WorkboxWebpackPlugin.GenerateSW({
+          runtimeCaching: [
+            {
+              //? esta es la feature que almacena el cache por un día, se pudo haber hecho también con react query,
+              // o con un transport de axios (intente primero eso).
+              // Pero esta me parecía mas general y sencilla de implementar, ademas que esta el beneficio de registrar el serviceWorker.
+              urlPattern: ({ url }) =>
+                url.href.match(/https:\/\/api.allorigins.win\/get\?url=/gi) ||
+                url.href.match(/https:\/\/corsproxy.io\/\?/gi),
+              options: {
+                cacheName: 'cors-proxy-requests',
+                expiration: {
+                  maxAgeSeconds: 3600 * 24,
+                  maxEntries: 200,
+                },
+              },
+              handler: 'StaleWhileRevalidate',
+            },
+          ],
+        })
+      );
   } else {
     config.mode = 'development';
   }
