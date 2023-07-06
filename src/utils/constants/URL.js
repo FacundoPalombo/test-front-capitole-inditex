@@ -2,7 +2,7 @@
 export const GET_PODCAST_CHANNELS = 'GET_PODCAST_CHANNELS';
 export const GET_PODCAST_EPISODES = 'GET_PODCAST_EPISODES';
 
-const baseUrl = `https://corsproxy.io/?${encodeURIComponent(
+const baseUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(
   'https://itunes.apple.com'
 )}`;
 
