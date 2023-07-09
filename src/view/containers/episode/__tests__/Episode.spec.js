@@ -2,12 +2,12 @@ import { renderWithMemoryRouter } from '../../../../utils/tests/renderWithRouter
 import {
   getPodcastEpisodes,
   getPodcastChannels,
-} from '../../../../services/podcast';
+} from '../../../../services/podcasts';
 
 import podcastFixture from '../../podcast/__tests__/podcastEpisodes.fixture';
 import searchFixture from '../../search/__tests__/podcastChannels.fixture';
 
-jest.mock('../../../../services/podcast');
+jest.mock('../../../../services/podcasts');
 
 describe('Episode integration test', () => {
   it.only('should render ok with props', async () => {

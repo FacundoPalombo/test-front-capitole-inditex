@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import episodesFixture from '../../podcast/__tests__/podcastEpisodes.fixture';
 import Episode from '../Episode';
-import { getPodcastEpisodes } from '../../../../services/podcast';
+import { getPodcastEpisodes } from '../../../../services/podcasts';
 
 jest.mock('../components/EpisodeDetail', () => (props) => (
   <div id="episode-detail">{JSON.stringify(props)}</div>
@@ -14,7 +14,7 @@ jest.mock('../../../components/DetailSkeleton', () => () => (
   <div>DetailSkeleton</div>
 ));
 
-jest.mock('../../../../services/podcast');
+jest.mock('../../../../services/podcasts');
 
 jest.mock('react-router-dom', () => ({
   useParams: jest

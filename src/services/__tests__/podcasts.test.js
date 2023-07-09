@@ -2,7 +2,7 @@ import URL, {
   GET_PODCAST_EPISODES,
   GET_PODCAST_CHANNELS,
 } from '../../utils/constants/URL';
-import { getPodcastEpisodes, getPodcastChannels } from '../podcast';
+import { getPodcastEpisodes, getPodcastChannels } from '../podcasts';
 
 describe('getPodcastEpisodes service unit test', () => {
   afterEach(jest.clearAllMocks);

@@ -2,9 +2,12 @@ import {
   channels as channelsQuery,
   episodes as episodesQuery,
 } from '../podcasts';
-import { getPodcastChannels, getPodcastEpisodes } from '../../services/podcast';
+import {
+  getPodcastChannels,
+  getPodcastEpisodes,
+} from '../../services/podcasts';
 
-jest.mock('../../services/podcast');
+jest.mock('../../services/podcasts');
 
 describe('queries unit tests', () => {
   describe('should return the expected object', () => {
