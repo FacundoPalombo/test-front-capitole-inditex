@@ -125,7 +125,7 @@ module.exports = () => {
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: path.join('./_redirects'),
+            from: path.join('./netlify.toml'),
           },
         ],
       })
