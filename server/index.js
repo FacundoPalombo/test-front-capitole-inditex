@@ -20,7 +20,7 @@ app.use(cacheInterceptor);
 
 app.use(express.static(path.join(__dirname, '../dist/')));
 
-app.use('/api', apiRoutes);
+app.use('/api/', apiRoutes);
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/index.html'));
