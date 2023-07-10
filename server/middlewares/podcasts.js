@@ -14,9 +14,9 @@ const getPodcast = async (req, res, next) => {
 
     next();
   } catch (error) {
-    if (typeof error.statusCode === 'number')
+    if (typeof error.response.status === 'number')
       return next(
-        createHttpError(error.statusCode, {
+        createHttpError(error.response.status, {
           stack: error.stack,
           message: error.message,
         })
@@ -33,9 +33,9 @@ const getPodcasts = async (req, res, next) => {
 
     next();
   } catch (error) {
-    if (typeof error.statusCode === 'number')
+    if (typeof error.response.status === 'number')
       return next(
-        createHttpError(error.statusCode, {
+        createHttpError(error.response.status, {
           stack: error.stack,
           message: error.message,
         })
