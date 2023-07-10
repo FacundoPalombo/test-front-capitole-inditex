@@ -13,8 +13,7 @@ const cacheInterceptor = (req, res, next) => {
     return next();
   }
   res.locals.cached = true;
-  Logger.info(`New resource Cached: [Key:${cacheKey}]`);
-  return res.json(cachedResource).status(304);
+  return res.json(cachedResource).status(201);
 };
 
 const cacheLoader = (req, res, next) => {
@@ -31,7 +30,8 @@ const cacheLoader = (req, res, next) => {
       );
       return next(error);
     }
-    cache.set(res.locals.cacheKey, res.locals.data, 8600000);
+    Logger.info(`New resource Cached: [Key:${res.locals.cacheKey}]`);
+    cache.set(res.locals.cacheKey, res.locals.data, 100);
   }
   return next();
 };
