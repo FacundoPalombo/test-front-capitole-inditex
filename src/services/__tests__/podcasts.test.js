@@ -1,7 +1,4 @@
-import URL, {
-  GET_PODCAST_EPISODES,
-  GET_PODCAST_CHANNELS,
-} from '../../utils/constants/URL';
+import URL from '../../utils/constants/URL';
 import { getPodcastEpisodes, getPodcastChannels } from '../podcasts';
 
 describe('getPodcastEpisodes service unit test', () => {
@@ -21,7 +18,7 @@ describe('getPodcastEpisodes service unit test', () => {
 
     const response = await getPodcastEpisodes(params);
 
-    const expectedRequest = new Request(URL[GET_PODCAST_EPISODES](params));
+    const expectedRequest = new Request(URL.GET_PODCAST(params));
 
     expect(fetch).toHaveBeenCalledWith(expectedRequest);
     expect(response).toEqual(mockResponse);
@@ -40,7 +37,7 @@ describe('getPodcastEpisodes service unit test', () => {
 
       await getPodcastEpisodes(params);
 
-      const expectedRequest = new Request(URL[GET_PODCAST_EPISODES](params));
+      const expectedRequest = new Request(URL.GET_PODCAST(params));
 
       expect(fetch).toHaveBeenCalledWith(expectedRequest);
     } catch (error) {
@@ -64,7 +61,7 @@ describe('getPodcastChannels service unit test', () => {
 
     const response = await getPodcastChannels();
 
-    const expectedRequest = new Request(URL[GET_PODCAST_CHANNELS]);
+    const expectedRequest = new Request(URL.GET_PODCASTS);
 
     expect(fetch).toHaveBeenCalledWith(expectedRequest);
     expect(response).toEqual(mockResponse);
@@ -81,7 +78,7 @@ describe('getPodcastChannels service unit test', () => {
     try {
       await getPodcastChannels();
 
-      const expectedRequest = new Request(URL[GET_PODCAST_CHANNELS]);
+      const expectedRequest = new Request(URL.GET_PODCASTS);
 
       expect(fetch).toHaveBeenCalledWith(expectedRequest);
     } catch (error) {
