@@ -10,7 +10,7 @@ const getPodcast = async (req, res, next) => {
 
     const response = await getPodcastService({ podcastId });
 
-    res.locals.podcast = response;
+    res.locals.data = response;
 
     next();
   } catch (error) {
@@ -29,7 +29,7 @@ const getPodcasts = async (req, res, next) => {
   try {
     const response = await getPodcastsService();
 
-    res.locals.podcasts = response;
+    res.locals.data = response;
 
     next();
   } catch (error) {

@@ -7,6 +7,7 @@ const logger = require('morgan');
 
 const apiRoutes = require('./controller/index');
 const Logger = require('./lib/logger');
+const { cacheInterceptor } = require('./middlewares/cache');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(cors({ origin: '*' }));
 app.use(express.urlencoded({ extended: false }));
 app.use(helmet({ contentSecurityPolicy: false }));
+app.use(cacheInterceptor);
 
 app.use(express.static(path.join(__dirname, '../dist/')));
 
