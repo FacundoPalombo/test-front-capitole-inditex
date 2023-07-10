@@ -4,7 +4,7 @@ const Logger = require('../lib/logger');
 const cache = new Cache({ stdTTL: 100 });
 
 const cacheInterceptor = (req, res, next) => {
-  const cacheKey = `${req.method}-${req.path}-${JSON.stringify(req.params)}`;
+  const cacheKey = `[${req.method}]${req.path}`;
   const cachedResource = cache.get(cacheKey);
   res.locals.cacheKey = cacheKey;
   console.log();
@@ -13,7 +13,7 @@ const cacheInterceptor = (req, res, next) => {
     return next();
   }
   res.locals.cached = true;
-  Logger.info(cacheKey);
+  Logger.info(`New resource Cached: [Key:${cacheKey}]`);
   return res.json(cachedResource).status(304);
 };
 

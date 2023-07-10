@@ -6,14 +6,14 @@
   "scripts": {
     "dev": "concurrently \"npm:watch\" \"npm:serve\"",
     "dev:node": "concurrently \"npm:watch\" \"npm:serve:node\"",
-    "serve:node": "nodemon ./bin/www",
+    "serve:node": "node ./bin/www",
     "prod": "concurrently \"npm:build\" \"npm:start\"",
     "test": "jest --config=jest.config.js",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "watch": "webpack --watch",
     "serve": "webpack serve",
-    "start": "serve -s dist -l 8080",
+    "start": "node ./bin/www",
     "prepare": "husky install",
     "lint": "eslint --fix **/**/*.js",
     "analyze": "webpack --mode=production --profile --json > stats.json"
