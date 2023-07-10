@@ -1,13 +1,7 @@
-// YOUR_BASE_DIRECTORY/netlify/functions/api.ts
-
-const express = require('express');
+// YOUR_BASE_DIRECTORY/netlify/functions/api.js
 const serverless = require('serverless-http');
 const app = require('../../server');
 
-const api = express();
-
-api.use(app);
-
-const handler = serverless(api);
+const handler = serverless(app);
 
 module.exports = { handler };
