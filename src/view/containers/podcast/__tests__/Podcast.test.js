@@ -14,13 +14,13 @@ import {
 import {
   getPodcastEpisodes,
   getPodcastChannels,
-} from '../../../../services/podcast';
+} from '../../../../services/podcasts';
 
 jest.mock('../components/PodcastDetail', () => (props) => (
   <div>PodcastDetail {JSON.stringify(props)}</div>
 ));
 
-jest.mock('../../../../services/podcast');
+jest.mock('../../../../services/podcasts');
 
 jest.mock('../../../components/DetailSkeleton', () => () => (
   <div>DetailSkeleton</div>
