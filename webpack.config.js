@@ -159,15 +159,6 @@ module.exports = () => {
       loader: 'source-map-loader',
     });
 
-    config.devServer = {
-      open: true,
-      host: 'localhost',
-      historyApiFallback: true,
-      devMiddleware: {
-        writeToDisk: true,
-      },
-    };
-
     config.devtool = 'source-map';
   }
   return config;

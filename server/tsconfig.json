@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "es5",
+    "allowJs": true,
+    "paths": {
+      "@utils/*": ["../utils/*"]
+    }
+  },
+  "include": ["./"]
+}
