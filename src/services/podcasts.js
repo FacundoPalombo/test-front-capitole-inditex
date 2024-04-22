@@ -51,7 +51,6 @@ export const getPodcastChannels = () => {
       return res.json();
     })
     .then((data) => {
-      console.log(data);
       return data;
     })
     .catch((err) => {

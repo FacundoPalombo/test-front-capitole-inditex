@@ -7,7 +7,6 @@ const cacheInterceptor = (req, res, next) => {
   const cacheKey = `[${req.method}]${req.path}`;
   const cachedResource = cache.get(cacheKey);
   res.locals.cacheKey = cacheKey;
-  console.log();
   if (cachedResource === undefined) {
     res.locals.cached = false;
     return next();
