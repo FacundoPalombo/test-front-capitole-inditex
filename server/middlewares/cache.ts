@@ -1,38 +1,48 @@
-const Cache = require('node-cache');
-const Logger = require('../lib/logger');
+import Cache from 'node-cache';
+import Logger from '../lib/logger';
+import { Request, Response, NextFunction } from 'express';
 
 const cache = new Cache({ stdTTL: 100 });
 
-const cacheInterceptor = (req, res, next) => {
+export const cacheInterceptor = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void => {
   const cacheKey = `[${req.method}]${req.path}`;
   const cachedResource = cache.get(cacheKey);
   res.locals.cacheKey = cacheKey;
   if (cachedResource === undefined) {
     res.locals.cached = false;
-    return next();
+    next();
+    return;
   }
   res.locals.cached = true;
-  return res.json(cachedResource).status(201);
+  res.status(201).json(cachedResource);
 };
 
-const cacheLoader = (req, res, next) => {
+export const cacheLoader = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void => {
   if (!res.locals.cached) {
     if (typeof res.locals.data === 'undefined') {
       const error = new Error(
         'Should not load data from cache, no data is provided.'
       );
-      return next(error);
+      next(error);
+      return;
     }
     if (typeof res.locals.cacheKey === 'undefined') {
       const error = new Error(
         'Should not load data from cache, no cacheKey found in controllers.'
       );
-      return next(error);
+      next(error);
+      return;
     }
     Logger.info(`New resource Cached: [Key:${res.locals.cacheKey}]`);
     cache.set(res.locals.cacheKey, res.locals.data, 100);
   }
-  return next();
+  next();
 };
-
-module.exports = { cacheInterceptor, cacheLoader };

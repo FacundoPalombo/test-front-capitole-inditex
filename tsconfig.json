@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "jsx": "react",
+    "target": "es5",
+    "allowJs": true,
+    "paths": {
+      "@App/*": ["./src/*"],
+      "@utils/*": ["./utils/*"],
+      "@containers/*": ["./src/view/containers/*"],
+      "@components/*": ["./src/view/components/*"]
+    }
+  },
+  "include": ["./src/"]
+}

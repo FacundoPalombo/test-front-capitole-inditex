@@ -1,16 +1,18 @@
-const Axios = require('axios').default;
-
-const {
+import Axios, { AxiosInstance } from 'axios';
+import {
+  baseURL,
   GET_PODCAST_CHANNELS,
   GET_PODCAST_EPISODES,
-  baseURL,
-} = require('../utils/URL');
+} from '../utils/URL';
+import Logger from '../lib/logger';
 
-const Logger = require('../lib/logger');
+const restclient: AxiosInstance = Axios.create({ baseURL });
 
-const restclient = Axios.create({ baseURL });
+type GetPodcastParams = {
+  podcastId: string;
+};
 
-const getPodcasts = async () => {
+export const getPodcasts = async (): Promise<any> => {
   try {
     const { data } = await restclient.get(GET_PODCAST_CHANNELS);
     return data;
@@ -20,7 +22,9 @@ const getPodcasts = async () => {
   }
 };
 
-const getPodcast = async ({ podcastId }) => {
+export const getPodcast = async ({
+  podcastId,
+}: GetPodcastParams): Promise<any> => {
   try {
     const { data } = await restclient.get(GET_PODCAST_EPISODES, {
       params: {
@@ -35,9 +39,4 @@ const getPodcast = async ({ podcastId }) => {
     Logger.error(error);
     throw error;
   }
-};
-
-module.exports = {
-  getPodcasts,
-  getPodcast,
 };

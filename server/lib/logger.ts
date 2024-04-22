@@ -1,6 +1,6 @@
-const winston = require('winston');
+import winston from 'winston';
 
-const levels = {
+const levels: winston.config.AbstractConfigSetLevels = {
   error: 0,
   warn: 1,
   info: 2,
@@ -8,13 +8,13 @@ const levels = {
   debug: 4,
 };
 
-const level = () => {
+const level = (): string => {
   const env = process.env.NODE_ENV || 'development';
   const isDevelopment = env === 'development';
   return isDevelopment ? 'debug' : 'warn';
 };
 
-const colors = {
+const colors: winston.config.AbstractConfigSetColors = {
   error: 'red',
   warn: 'yellow',
   info: 'green',
@@ -32,7 +32,7 @@ const format = winston.format.combine(
   )
 );
 
-const transports = [
+const transports: winston.transport[] = [
   new winston.transports.Console(),
   // deactivated because in netlify breaks on serverless.
   // new winston.transports.File({
@@ -42,11 +42,11 @@ const transports = [
   // new winston.transports.File({ filename: 'logs/all.log' }),
 ];
 
-const Logger = winston.createLogger({
+const Logger: winston.Logger = winston.createLogger({
   level: level(),
   levels,
   format,
   transports,
 });
 
-module.exports = Logger;
+export default Logger;

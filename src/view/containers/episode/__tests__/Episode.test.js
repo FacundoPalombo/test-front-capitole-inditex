@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import episodesFixture from '../../podcast/__tests__/podcastEpisodes.fixture';
 import Episode from '../Episode';
 import { getPodcastEpisodes } from '../../../../services/podcasts';
+import noop from '@utils/noop';
 
 jest.mock('../components/EpisodeDetail', () => (props) => (
   <div id="episode-detail">{JSON.stringify(props)}</div>
@@ -28,7 +29,7 @@ describe('Episode unit test', () => {
       logger: {
         log: console.log,
         warn: console.warn,
-        error: () => {},
+        error: noop,
       },
     });
     getPodcastEpisodes.mockResolvedValue(episodesFixture);
@@ -44,7 +45,7 @@ describe('Episode unit test', () => {
       logger: {
         log: console.log,
         warn: console.warn,
-        error: () => {},
+        error: noop,
       },
     });
     getPodcastEpisodes.mockResolvedValue(episodesFixture);
