@@ -9,25 +9,19 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
   : 'style-loader';
 
 const config = {
-  entry: './src/view/index.js',
+  entry: './src/view/index.tsx',
   output: {
     filename: '[name][contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     clean: true,
-  },
-  devServer: {
-    open: true,
-    host: 'localhost',
-    historyApiFallback: true,
-    devMiddleware: {
-      writeToDisk: true,
-    },
   },
   optimization: {
     splitChunks: {
@@ -63,8 +57,9 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/i,
-        loader: 'babel-loader',
+        test: /\.(t|j)sx?$/,
+        use: { loader: 'ts-loader' },
+        exclude: /node_modules/,
       },
       {
         test: /\.s[ac]ss$/i,
@@ -102,7 +97,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.ts', '.tsx', '.jsx', '.js'],
     modules: [
       'node_modules',
       'bower_components',
@@ -152,8 +147,28 @@ module.exports = () => {
           ],
         })
       );
-  } else {
+  }
+  if (isDev) {
     config.mode = 'development';
+
+    // addition - add source-map support
+    config.module.rules.push({
+      enforce: 'pre',
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'source-map-loader',
+    });
+
+    config.devServer = {
+      open: true,
+      host: 'localhost',
+      historyApiFallback: true,
+      devMiddleware: {
+        writeToDisk: true,
+      },
+    };
+
+    config.devtool = 'source-map';
   }
   return config;
 };
