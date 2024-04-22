@@ -1,10 +1,11 @@
 {
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["jest", "testing-library"],
+  "plugins": ["@typescript-eslint", "jest", "testing-library"],
 
   "ecmaFeatures": {
     "modules": true,
@@ -20,9 +21,11 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
+
   "rules": {
-    "linebreak-style": ["error", "unix"] // changes the file to CRLF
+    "linebreak-style": ["error", "unix"], // changes the file to CRLF
+    "@typescript-eslint/no-var-requires": 0
   },
   "overrides": [
     {
@@ -32,5 +35,6 @@
         "react/display-name": 0
       }
     }
-  ]
+  ],
+  "root": true
 }

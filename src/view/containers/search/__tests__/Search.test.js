@@ -5,6 +5,7 @@ import dataFixture from './podcastChannels.fixture';
 import { channels as channelsQuery } from '../../../../queries/podcasts';
 import Search, { loader as searchLoader } from '../Search';
 import { getPodcastChannels } from '../../../../services/podcasts';
+import noop from '@utils/noop';
 
 jest.mock('../components/Channel', () => (props) => (
   <div>Channel{JSON.stringify(props)}</div>
@@ -25,7 +26,7 @@ describe('Search unit test', () => {
       logger: {
         log: console.log,
         warn: console.warn,
-        error: () => {},
+        error: noop,
       },
     });
     getPodcastChannels.mockResolvedValue(dataFixture);
@@ -41,7 +42,7 @@ describe('Search unit test', () => {
       logger: {
         log: console.log,
         warn: console.warn,
-        error: () => {},
+        error: noop,
       },
     });
     getPodcastChannels.mockResolvedValue(dataFixture);

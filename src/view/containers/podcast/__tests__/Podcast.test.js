@@ -16,6 +16,8 @@ import {
   getPodcastChannels,
 } from '../../../../services/podcasts';
 
+import noop from '@utils/noop';
+
 jest.mock('../components/PodcastDetail', () => (props) => (
   <div>PodcastDetail {JSON.stringify(props)}</div>
 ));
@@ -37,7 +39,7 @@ describe('Podcast unit test', () => {
       logger: {
         log: console.log,
         warn: console.warn,
-        error: () => {},
+        error: noop,
       },
     });
 
@@ -56,7 +58,7 @@ describe('Podcast unit test', () => {
       logger: {
         log: console.log,
         warn: console.warn,
-        error: () => {},
+        error: noop,
       },
     });
 

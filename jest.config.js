@@ -1,5 +1,4 @@
 /** @type {import('jest').Config} */
-
 const config = {
   automock: false,
   silent: true,
@@ -14,8 +13,12 @@ const config = {
       setupFiles: ['<rootDir>/jest.env.setup.js'],
       setupFilesAfterEnv: ['<rootDir>/jest.client.setup.js'],
       moduleNameMapper: {
-        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+        '^@utils/(.*)$': '<rootDir>/utils/$1',
+        '^@App/(.*)$': '<rootDir>/src/$1',
+        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
+        '^@components/(.*)$': '<rootDir>/src/view/components/$1',
 
+        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
           '<rootDir>/__mocks__/fileMock.js',
       },
@@ -53,8 +56,12 @@ const config = {
         '^use[a-zA-Z0-9]+$',
       ],
       moduleNameMapper: {
-        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+        '^@utils/(.*)$': '<rootDir>/utils/$1',
+        '^@App/(.*)$': '<rootDir>/src/$1',
+        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
+        '^@components/(.*)$': '<rootDir>/src/view/components/$1',
 
+        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
           '<rootDir>/__mocks__/fileMock.js',
       },
@@ -76,8 +83,12 @@ const config = {
         '^use[a-zA-Z0-9]+$',
       ],
       moduleNameMapper: {
-        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+        '^@utils/(.*)$': '<rootDir>/utils/$1',
+        '^@App/(.*)$': '<rootDir>/src/$1',
+        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
+        '^@components/(.*)$': '<rootDir>/src/view/components/$1',
 
+        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
           '<rootDir>/__mocks__/fileMock.js',
       },

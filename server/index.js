@@ -28,7 +28,7 @@ app.get('*', (req, res) => {
 
 // error handler
 // eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   const error = createError(err);
   Logger.error(err);
   // return the error
