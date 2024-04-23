@@ -36,4 +36,4 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     .json({ error: { message: error?.message, status: error?.status } });
 });
 
-export default app;
+export = app;
