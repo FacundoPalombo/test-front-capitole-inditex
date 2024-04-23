@@ -4,6 +4,7 @@ import {
   getPodcast as getPodcastService,
   getPodcasts as getPodcastsService,
 } from '../services/podcasts';
+import Axios, { AxiosError } from 'axios';
 
 export const getPodcast = async (
   req: Request,
@@ -18,8 +19,8 @@ export const getPodcast = async (
     res.locals.data = response;
 
     next();
-  } catch (error) {
-    if (error.response && typeof error.response.status === 'number') {
+  } catch (error: unknown | Error | AxiosError) {
+    if (Axios.isAxiosError(error) && error.response) {
       next(
         createHttpError(error.response.status, {
           stack: error.stack,
@@ -43,8 +44,8 @@ export const getPodcasts = async (
     res.locals.data = response;
 
     next();
-  } catch (error) {
-    if (error.response && typeof error.response.status === 'number') {
+  } catch (error: unknown | Error | AxiosError) {
+    if (Axios.isAxiosError(error) && error.response) {
       next(
         createHttpError(error.response.status, {
           stack: error.stack,
