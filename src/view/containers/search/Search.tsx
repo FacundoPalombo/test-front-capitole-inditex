@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import ChannelComponent from './components/Channel/Channel';
+import Channel from './components/Channel/Channel';
 import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox/SearchBox';
 import { channels as channelsQuery } from '@App/queries/podcasts';
@@ -31,11 +31,11 @@ const Search = () => {
   const renderChannels = () =>
     channelsFiltered?.map((channel) => {
       const podcastId = channel?.id?.attributes['im:id'];
-      const image = channel['im:image']?.at(-1)?.label;
+      const image = channel['im:image']?.at(-1)?.label!;
       const artist = channel['im:artist'].label;
       const title = channel['im:name']?.label;
       return (
-        <ChannelComponent
+        <Channel
           key={podcastId}
           podcastId={podcastId}
           image={image}
@@ -56,7 +56,7 @@ const Search = () => {
         <SearchBox
           onChange={handleSearchBox}
           value={searchValue}
-          resultsCount={resultsCount}
+          resultsCount={resultsCount!}
         />
         {renderChannels()}
       </section>
