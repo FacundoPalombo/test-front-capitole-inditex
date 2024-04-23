@@ -4,7 +4,7 @@ import Routes from '../Routes';
 
 jest.mock('../Error', () => jest.fn());
 jest.mock('../../main', () => jest.fn());
-jest.mock('../../episode', () => jest.fn());
+jest.mock('../../episode/Episode', () => jest.fn());
 jest.mock('../../podcast/components/PodcastList/PodcastList', () => jest.fn());
 jest.mock('../../podcast', () => {
   return {

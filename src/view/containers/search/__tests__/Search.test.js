@@ -14,7 +14,7 @@ jest.mock('../components/SearchBox/SearchBox.jsx', () => (props) => (
   <div>SearchBox {JSON.stringify(props)}</div>
 ));
 
-jest.mock('@components/SearchSkeleton/SearchSkeleton.tsx', () => () => (
+jest.mock('@components/SearchSkeleton/SearchSkeleton', () => () => (
   <div>SearchSkeleton</div>
 ));
 

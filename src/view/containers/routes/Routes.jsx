@@ -3,7 +3,7 @@ import React from 'react';
 import ErrorPage from './Error';
 import Main from '../main';
 import Podcast, { loader as podcastLoader } from '../podcast';
-import Episode from '../episode';
+import Episode from '../episode/Episode';
 import Search, { loader as searchLoader } from '../search';
 import PodcastList from '../podcast/components/PodcastList/PodcastList';
 import { QueryClient } from '@tanstack/react-query';
