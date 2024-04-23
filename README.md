@@ -1,6 +1,6 @@
-# test-front-capitole-inditex
+# App de Podcasts con Itunes
 
-Prueba técnica frontend de capitole para el cliente inditex
+Esta app es una Prueba técnica frontend de capitole para el cliente inditex
 
 Visualizar la app en
 https://tourmaline-cactus-b946da.netlify.app
