@@ -1,9 +1,9 @@
 import createError from 'http-errors';
 
-import URL from '../utils/constants/URL';
+import { GET_PODCAST, GET_PODCASTS } from '@App/utils/constants/URL';
 
 export const getPodcastEpisodes = ({ podcastId }) => {
-  const req = new Request(URL.GET_PODCAST({ podcastId }), {
+  const req = new Request(GET_PODCAST({ podcastId }), {
     cache: 'default',
   });
 
@@ -31,7 +31,7 @@ export const getPodcastEpisodes = ({ podcastId }) => {
 };
 
 export const getPodcastChannels = () => {
-  const req = new Request(URL.GET_PODCASTS, {
+  const req = new Request(GET_PODCASTS, {
     cache: 'default',
   });
 

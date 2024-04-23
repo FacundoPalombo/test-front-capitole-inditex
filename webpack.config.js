@@ -104,6 +104,12 @@ const config = {
       'shared',
       '/shared/vendor/modules',
     ],
+    alias: {
+      '@App': path.resolve(__dirname, 'src'),
+      '@utils': path.resolve(__dirname, 'utils'),
+      '@containers': path.resolve(__dirname, 'src/view/containers/'),
+      '@components': path.resolve(__dirname, 'src/view/components/'),
+    },
   },
   performance: {
     hints: false,

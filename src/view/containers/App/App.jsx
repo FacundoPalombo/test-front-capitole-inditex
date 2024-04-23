@@ -7,7 +7,7 @@ import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
 
 import Routes from '../routes/Routes';
-import { DAY_IN_MILLISECONDS } from '../../../utils/constants/various';
+import { DAY_IN_MILLISECONDS } from '@App/utils/constants/various';
 
 //? Acá puse el stale time en un día tambien por que en el ejercicio "forzosamente" pide que se actualice la cache por un dia,
 //? asi que "simule" una estrategia de cache-first configurando (stale-while-revalidata === max-age),
