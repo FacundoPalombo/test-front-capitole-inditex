@@ -19,9 +19,9 @@ const Episode = () => {
   return (
     podcast && (
       <EpisodeDetail
-        description={podcast.description}
-        episodeUrl={podcast.episodeUrl}
-        trackName={podcast.trackName}
+        description={podcast.description!}
+        episodeUrl={podcast.episodeUrl!}
+        trackName={podcast.trackName!}
       />
     )
   );

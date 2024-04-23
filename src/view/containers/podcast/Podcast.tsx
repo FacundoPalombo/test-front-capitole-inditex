@@ -28,10 +28,10 @@ const Podcasts = () => {
       <div data-testid="podcast-detail" className={styles.podcasts__page}>
         {episode && (
           <PodcastDetail
-            image={episode.artworkUrl600}
-            title={episode.trackName}
-            artist={episode.artistName}
-            description={description}
+            image={episode.artworkUrl600!}
+            title={episode.trackName!}
+            artist={episode.artistName!}
+            description={description!}
           />
         )}
         <Outlet />

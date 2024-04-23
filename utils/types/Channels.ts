@@ -34,7 +34,6 @@ export type URI = {
 export type Entry = {
   readonly category: Category;
   readonly id: EntryID;
-  readonly 'im:artist': IMArtist;
   readonly 'im:contentType': IMContentType;
   readonly 'im:image': IMImage[];
   readonly 'im:name': IMName;

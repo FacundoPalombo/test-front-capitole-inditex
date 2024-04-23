@@ -19,8 +19,8 @@ const PodcastList = () => {
       data-testid="podcast-list"
       className={styles.podcast_list__content}
     >
-      <Results results={podcasts?.resultCount} />
-      <PodcastEpisodesTable podcasts={podcasts?.results} />
+      <Results results={podcasts?.resultCount!} />
+      <PodcastEpisodesTable podcasts={podcasts?.results!} />
     </section>
   );
 };
