@@ -2,23 +2,23 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import dataFixture from './podcastChannels.fixture';
-import { channels as channelsQuery } from '../../../../queries/podcasts';
+import { channels as channelsQuery } from '@App/queries/podcasts';
 import Search, { loader as searchLoader } from '../Search';
-import { getPodcastChannels } from '../../../../services/podcasts';
+import { getPodcastChannels } from '@App/services/podcasts.js';
 import noop from '@utils/noop';
 
-jest.mock('../components/Channel', () => (props) => (
+jest.mock('../components/Channel/Channel.jsx', () => (props) => (
   <div>Channel{JSON.stringify(props)}</div>
 ));
-jest.mock('../components/SearchBox', () => (props) => (
+jest.mock('../components/SearchBox/SearchBox.jsx', () => (props) => (
   <div>SearchBox {JSON.stringify(props)}</div>
 ));
 
-jest.mock('../../../components/SearchSkeleton', () => () => (
+jest.mock('@components/SearchSkeleton/SearchSkeleton.tsx', () => () => (
   <div>SearchSkeleton</div>
 ));
 
-jest.mock('../../../../services/podcasts');
+jest.mock('../../../../services/podcasts.js');
 
 describe('Search unit test', () => {
   it('should match snapshot when isFetching shows skeleton', () => {
