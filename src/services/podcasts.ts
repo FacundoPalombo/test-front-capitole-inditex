@@ -1,6 +1,8 @@
 import createError from 'http-errors';
 
 import { GET_PODCAST, GET_PODCASTS } from '@App/utils/constants/URL';
+import { Channels } from '@utils/types/Channels';
+import { EpisodesResults } from '@utils/types/Episodes';
 
 export type PodcastParams = {
   podcastId: string;
@@ -28,7 +30,7 @@ export const getPodcastEpisodes = ({ podcastId }: PodcastParams) => {
       }
       return res.json();
     })
-    .then((data) => data)
+    .then((data: EpisodesResults) => data)
     .catch((err) => {
       console.error(err);
       throw err;
@@ -56,7 +58,7 @@ export const getPodcastChannels = () => {
       }
       return res.json();
     })
-    .then((data) => {
+    .then((data: Channels) => {
       return data;
     })
     .catch((err) => {

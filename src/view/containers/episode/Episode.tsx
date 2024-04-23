@@ -11,8 +11,8 @@ const Episode = () => {
 
   const isLoading = useIsFetching() > 0;
 
-  const podcast = podcasts?.results.find(
-    (podcast) => podcast.trackId.toString() === params.episodeId
+  const podcast = podcasts?.results?.find(
+    (podcast) => podcast?.trackId?.toString() === params.episodeId
   );
 
   if (isLoading) return <DetailSkeleton />;

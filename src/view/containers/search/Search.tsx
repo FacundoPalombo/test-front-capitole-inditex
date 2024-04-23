@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from 'react';
-import Channel from './components/Channel/Channel';
+import ChannelComponent from './components/Channel/Channel';
 import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox/SearchBox';
 import { channels as channelsQuery } from '@App/queries/podcasts';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
 import SearchSkeleton from '@components/SearchSkeleton/SearchSkeleton';
+import { Channel } from '@utils/types/Channels';
 
 const Search = () => {
   const { data: channels } = useQuery(channelsQuery());
@@ -13,6 +14,7 @@ const Search = () => {
     (e) => setSearchValue(e.target.value),
     [searchValue]
   );
+
   const isLoading = useIsFetching() > 0;
 
   const channelsFiltered = channels?.feed.entry.filter(
@@ -30,11 +32,11 @@ const Search = () => {
   const renderChannels = () =>
     channelsFiltered?.map((channel) => {
       const podcastId = channel.id.attributes['im:id'];
-      const image = channel['im:image'].at(-1).label;
+      const image = channel['im:image'].at(-1)?.label;
       const artist = channel['im:artist'].label;
       const title = channel['im:name'].label;
       return (
-        <Channel
+        <ChannelComponent
           key={podcastId}
           podcastId={podcastId}
           image={image}
