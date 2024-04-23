@@ -2,8 +2,10 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import PodcastList from '../PodcastList';
 
-jest.mock('../../Results', () => () => <div id="mockResults">Results</div>);
-jest.mock('../../PodcastEpisodesTable', () => () => (
+jest.mock('../../Results/Results', () => () => (
+  <div id="mockResults">Results</div>
+));
+jest.mock('../../PodcastEpisodesTable/PodcastEpisodesTable', () => () => (
   <div id="mockPodcastEpisodesTable">PodcastEpisodesTable</div>
 ));
 

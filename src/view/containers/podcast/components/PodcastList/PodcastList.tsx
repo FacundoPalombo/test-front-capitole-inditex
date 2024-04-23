@@ -1,10 +1,10 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
-import Results from '../Results';
-import PodcastEpisodesTable from '../PodcastEpisodesTable';
+import Results from '../Results/Results';
+import PodcastEpisodesTable from '../PodcastEpisodesTable/PodcastEpisodesTable';
 import { useQuery } from '@tanstack/react-query';
-import { episodes as episodesQuery } from '../../../../../queries/podcasts';
+import { episodes as episodesQuery } from '@App/queries/podcasts';
 import { useParams } from 'react-router-dom';
 
 const PodcastList = () => {

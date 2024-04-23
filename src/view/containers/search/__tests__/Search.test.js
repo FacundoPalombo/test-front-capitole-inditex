@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import dataFixture from './podcastChannels.fixture';
 import { channels as channelsQuery } from '@App/queries/podcasts';
 import Search, { loader as searchLoader } from '../Search';
-import { getPodcastChannels } from '@App/services/podcasts.js';
+import { getPodcastChannels } from '@App/services/podcasts';
 import noop from '@utils/noop';
 
 jest.mock('../components/Channel/Channel.jsx', () => (props) => (
@@ -18,7 +18,7 @@ jest.mock('@components/SearchSkeleton/SearchSkeleton', () => () => (
   <div>SearchSkeleton</div>
 ));
 
-jest.mock('../../../../services/podcasts.js');
+jest.mock('../../../../services/podcasts');
 
 describe('Search unit test', () => {
   it('should match snapshot when isFetching shows skeleton', () => {

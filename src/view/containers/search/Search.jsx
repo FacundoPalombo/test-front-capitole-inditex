@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import Channel from './components/Channel/Channel.jsx';
 import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox/SearchBox.jsx';
-import { channels as channelsQuery } from '../../../queries/podcasts.js';
+import { channels as channelsQuery } from '../../../queries/podcasts';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
 import SearchSkeleton from '@components/SearchSkeleton/SearchSkeleton';
 

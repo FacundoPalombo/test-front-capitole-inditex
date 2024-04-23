@@ -1,13 +1,13 @@
 import React from 'react';
 import { Outlet, useParams } from 'react-router-dom';
-import PodcastDetail from './components/PodcastDetail';
+import PodcastDetail from './components/PodcastDetail/PodcastDetail';
 import styles from './styles.module.scss';
 import {
   episodes as episodesQuery,
   channels as channelsQuery,
-} from '../../../queries/podcasts';
+} from '@App/queries/podcasts';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
-import DetailSkeleton from '../../components/DetailSkeleton/DetailSkeleton';
+import DetailSkeleton from '@components/DetailSkeleton/DetailSkeleton';
 
 const Podcasts = () => {
   const params = useParams();
