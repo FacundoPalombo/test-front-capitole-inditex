@@ -18,7 +18,7 @@ const Main = () => {
         <Link
           className={styles.navigation__linkBack}
           aria-label="Go back to home"
-          tabIndex="1"
+          tabIndex={1}
           to="/"
         >
           <h2 className={styles.navigation__title}>Podcaster</h2>

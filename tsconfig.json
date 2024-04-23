@@ -8,6 +8,7 @@
     "jsx": "react",
     "target": "es5",
     "allowJs": true,
+    "composite": true,
     "paths": {
       "@App/*": ["./src/*"],
       "@utils/*": ["./utils/*"],
@@ -15,5 +16,5 @@
       "@components/*": ["./src/view/components/*"]
     }
   },
-  "include": ["./src/"]
+  "include": ["./src/", "./utils/"]
 }

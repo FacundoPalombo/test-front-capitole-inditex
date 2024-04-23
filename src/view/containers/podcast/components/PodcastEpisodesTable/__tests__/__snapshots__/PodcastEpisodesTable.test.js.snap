@@ -21,7 +21,6 @@ exports[`PodcastEpisodesTable unit tests should match snapshot 1`] = `
             align="left"
             class="table__title"
             id="col-title"
-            itemscope=""
           >
             Title
           </th>
@@ -29,7 +28,6 @@ exports[`PodcastEpisodesTable unit tests should match snapshot 1`] = `
             align="right"
             class="table__title"
             id="col-date"
-            itemscope=""
             style="text-align: left;"
           >
             Date
@@ -38,7 +36,6 @@ exports[`PodcastEpisodesTable unit tests should match snapshot 1`] = `
             align="right"
             class="table__title"
             id="col-duration"
-            itemscope=""
             style="text-align: left;"
           >
             Duration

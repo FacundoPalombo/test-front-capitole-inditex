@@ -9,22 +9,19 @@ import episodesFixture from './podcastEpisodes.fixture';
 import {
   channels as channelsQuery,
   episodes as episodesQuery,
-} from '../../../../queries/podcasts';
+} from '@App/queries/podcasts';
 
-import {
-  getPodcastEpisodes,
-  getPodcastChannels,
-} from '../../../../services/podcasts';
+import { getPodcastEpisodes, getPodcastChannels } from '@App/services/podcasts';
 
 import noop from '@utils/noop';
 
-jest.mock('../components/PodcastDetail', () => (props) => (
+jest.mock('../components/PodcastDetail/PodcastDetail', () => (props) => (
   <div>PodcastDetail {JSON.stringify(props)}</div>
 ));
 
-jest.mock('../../../../services/podcasts');
+jest.mock('@App/services/podcasts');
 
-jest.mock('../../../components/DetailSkeleton', () => () => (
+jest.mock('@components/DetailSkeleton/DetailSkeleton', () => () => (
   <div>DetailSkeleton</div>
 ));
 

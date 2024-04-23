@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useRouteError } from 'react-router-dom';
+import { HttpError } from 'http-errors';
 
 const Error = () => {
-  const error = useRouteError();
+  const error = useRouteError() as HttpError;
   console.error(error);
+  const message = error.statusText ?? error.message ?? 'Unexpected Error';
 
   return (
     <div id="error" data-testid="error">
@@ -11,7 +13,7 @@ const Error = () => {
       <Link to="/">Go back to home</Link>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
-        <i>{error.statusText || error.message}</i>
+        <i>{message}</i>
       </p>
     </div>
   );

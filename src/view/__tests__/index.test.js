@@ -4,7 +4,7 @@ jest.mock('react-dom/client', () => ({
   createRoot: jest.fn().mockImplementation(() => ({ render: jest.fn() })),
 }));
 
-jest.mock('../containers/App', () => () => 'MyComponent');
+jest.mock('../containers/App/App', () => () => 'MyComponent');
 
 import '../index';
 

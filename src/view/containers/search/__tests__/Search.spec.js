@@ -1,8 +1,8 @@
-import { renderWithMemoryRouter } from '../../../../utils/tests/renderWithRouter';
+import { renderWithMemoryRouter } from '@App/utils/tests/renderWithRouter';
 import searchFixture from './podcastChannels.fixture';
-import { getPodcastChannels } from '../../../../services/podcasts';
+import { getPodcastChannels } from '@App/services/podcasts';
 
-jest.mock('../../../../services/podcasts');
+jest.mock('@App/services/podcasts');
 
 describe('Search integration tests', () => {
   it('should list channels by default', async () => {

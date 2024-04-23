@@ -1,15 +1,18 @@
 import React, { useCallback, useState } from 'react';
-import Channel from './components/Channel';
+import Channel from './components/Channel/Channel';
 import styles from './styles.module.scss';
-import SearchBox from './components/SearchBox';
-import { channels as channelsQuery } from '../../../queries/podcasts';
+import SearchBox from './components/SearchBox/SearchBox';
+import { channels as channelsQuery } from '@App/queries/podcasts';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
-import SearchSkeleton from '../../components/SearchSkeleton';
+import SearchSkeleton from '@components/SearchSkeleton/SearchSkeleton';
 
 const Search = () => {
   const { data: channels } = useQuery(channelsQuery());
   const [searchValue, setSearchValue] = useState('');
-  const handleSearchBox = useCallback((e) => setSearchValue(e.target.value));
+  const handleSearchBox = useCallback(
+    (e) => setSearchValue(e.target.value),
+    [searchValue]
+  );
   const isLoading = useIsFetching() > 0;
 
   const channelsFiltered = channels?.feed.entry.filter(
