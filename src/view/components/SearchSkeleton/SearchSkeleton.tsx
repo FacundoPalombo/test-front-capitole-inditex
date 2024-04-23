@@ -2,6 +2,7 @@ import React from 'react';
 import Channel from '@containers/search/components/Channel/Channel';
 import image from './asset.jpg';
 import styles from './styles.module.scss';
+import noop from '@utils/noop';
 
 const SearchSkeleton = () => {
   const skeletonMock = 'abcdefghijklmnopqrstu'.split('').map((i) => ({
@@ -12,8 +13,6 @@ const SearchSkeleton = () => {
     key: i,
     skeleton: true,
   }));
-  /* istanbul ignore next */
-  const noop = () => {};
 
   return (
     <section id="search-skeleton" className={styles.search_skeleton__container}>
