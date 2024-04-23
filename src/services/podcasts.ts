@@ -2,8 +2,14 @@ import createError from 'http-errors';
 
 import { GET_PODCAST, GET_PODCASTS } from '@App/utils/constants/URL';
 
-export const getPodcastEpisodes = ({ podcastId }) => {
-  const req = new Request(GET_PODCAST({ podcastId }), {
+export type PodcastParams = {
+  podcastId: string;
+};
+
+export const getPodcastEpisodes = ({ podcastId }: PodcastParams) => {
+  const podcastParams: PodcastParams = { podcastId };
+
+  const req = new Request(GET_PODCAST(podcastParams), {
     cache: 'default',
   });
 
