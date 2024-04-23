@@ -3,7 +3,19 @@ import styles from './styles.module.scss';
 import { string } from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 
-const PodcastDetail = ({ image, title, artist, description }) => {
+type PodcastDetailProps = {
+  image: string;
+  title: string;
+  artist: string;
+  description: string;
+};
+
+const PodcastDetail = ({
+  image,
+  title,
+  artist,
+  description,
+}: PodcastDetailProps) => {
   const params = useParams();
 
   return (

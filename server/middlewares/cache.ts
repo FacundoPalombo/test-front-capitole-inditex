@@ -4,12 +4,14 @@ import { Request, Response, NextFunction } from 'express';
 
 const cache = new Cache({ stdTTL: 100 });
 
+export type CacheKey = `[${string}]${string}`;
+
 export const cacheInterceptor = (
   req: Request,
   res: Response,
   next: NextFunction
 ): void => {
-  const cacheKey = `[${req.method}]${req.path}`;
+  const cacheKey: CacheKey = `[${req.method}]${req.path}`;
   const cachedResource = cache.get(cacheKey);
   res.locals.cacheKey = cacheKey;
   if (cachedResource === undefined) {

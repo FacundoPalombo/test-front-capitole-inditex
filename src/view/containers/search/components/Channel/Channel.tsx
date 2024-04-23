@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { string } from 'prop-types';
 
-const Channel = ({ image, artist, title, podcastId }) => {
+type ChannelProps = {
+  image: string;
+  artist: string;
+  title: string;
+  podcastId: string;
+};
+
+const Channel = ({ image, artist, title, podcastId }: ChannelProps) => {
   return (
     <Link
       aria-label={`${title}, Author: ${artist}`}

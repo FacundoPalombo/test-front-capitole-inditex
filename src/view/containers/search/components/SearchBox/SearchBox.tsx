@@ -2,7 +2,13 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { func, number, string } from 'prop-types';
 
-const SearchBox = ({ onChange, value, resultsCount = 0 }) => {
+type SearchBoxProps = {
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  resultsCount: number;
+};
+
+const SearchBox = ({ onChange, value, resultsCount = 0 }: SearchBoxProps) => {
   return (
     <span className={styles.search_box}>
       <label

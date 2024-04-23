@@ -13,15 +13,16 @@ const Search = () => {
     (e) => setSearchValue(e.target.value),
     [searchValue]
   );
+
   const isLoading = useIsFetching() > 0;
 
-  const channelsFiltered = channels?.feed.entry.filter(
+  const channelsFiltered = channels?.feed?.entry?.filter(
     (channel) =>
       channel['im:artist'].label
-        .toLowerCase()
-        .includes(searchValue.toLowerCase().trim()) ||
-      channel['im:name'].label
-        .toLowerCase()
+        ?.toLowerCase()
+        .includes(searchValue.toLowerCase().trim())! ||
+      channel['im:name']?.label
+        ?.toLowerCase()
         .includes(searchValue.toLowerCase().trim())
   );
 
@@ -29,10 +30,10 @@ const Search = () => {
 
   const renderChannels = () =>
     channelsFiltered?.map((channel) => {
-      const podcastId = channel.id.attributes['im:id'];
-      const image = channel['im:image'].at(-1).label;
+      const podcastId = channel?.id?.attributes['im:id'];
+      const image = channel['im:image']?.at(-1)?.label!;
       const artist = channel['im:artist'].label;
-      const title = channel['im:name'].label;
+      const title = channel['im:name']?.label;
       return (
         <Channel
           key={podcastId}
@@ -55,7 +56,7 @@ const Search = () => {
         <SearchBox
           onChange={handleSearchBox}
           value={searchValue}
-          resultsCount={resultsCount}
+          resultsCount={resultsCount!}
         />
         {renderChannels()}
       </section>

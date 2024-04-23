@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import randomSizer from '../../../utils/functions/randomSizer';
+import randomSizer from '@App/utils/functions/randomSizer';
 
 const DetailSkeleton = () => {
   return (

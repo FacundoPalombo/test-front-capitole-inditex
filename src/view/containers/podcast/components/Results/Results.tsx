@@ -3,7 +3,11 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-const Results = ({ results }) => {
+type ResultsProps = {
+  results: number;
+};
+
+const Results = ({ results }: ResultsProps) => {
   return (
     <div className={styles.results__card}>
       <h2 className={styles.results__title}>Episodes: {results}</h2>

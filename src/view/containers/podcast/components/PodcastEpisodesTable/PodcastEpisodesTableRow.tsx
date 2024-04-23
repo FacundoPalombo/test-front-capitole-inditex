@@ -1,13 +1,22 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
+import { number, shape, string, arrayOf } from 'prop-types';
+import { Episode } from '@utils/types/Episodes';
+
+type PodcastEpisodesTableRowProps = {
+  trackId: number;
+  trackName: string;
+  releaseDate: string;
+  trackTimeMillis: number;
+};
 
 const PodcastEpisodesTableRow = ({
   trackId,
   trackName,
   releaseDate,
   trackTimeMillis,
-}) => {
+}: PodcastEpisodesTableRowProps) => {
   const trackMinutes = useMemo(
     () => (trackTimeMillis - (trackTimeMillis % 60000)) / 60000,
     [trackTimeMillis]
@@ -47,6 +56,17 @@ const PodcastEpisodesTableRow = ({
       </th>
     </tr>
   );
+};
+
+PodcastEpisodesTableRow.propTypes = {
+  podcasts: arrayOf(
+    shape({
+      trackId: number,
+      trackName: string,
+      releaseDate: string,
+      trackTimeMillis: number,
+    })
+  ),
 };
 
 export default PodcastEpisodesTableRow;

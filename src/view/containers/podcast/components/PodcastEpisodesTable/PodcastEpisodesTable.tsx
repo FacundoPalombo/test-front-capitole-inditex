@@ -2,8 +2,13 @@ import { number, shape, string, arrayOf } from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
 import PodcastEpisodesTableRow from './PodcastEpisodesTableRow';
+import { Episode } from '@utils/types/Episodes';
 
-const PodcastEpisodesTable = ({ podcasts }) => {
+type PodcastEpisodesTableProps = {
+  podcasts: Episode[];
+};
+
+const PodcastEpisodesTable = ({ podcasts }: PodcastEpisodesTableProps) => {
   return (
     <div className={styles.table__container}>
       <table className={styles.table}>
@@ -33,11 +38,11 @@ const PodcastEpisodesTable = ({ podcasts }) => {
         <tbody className={styles.table__body}>
           {podcasts?.map((episode) => (
             <PodcastEpisodesTableRow
-              key={episode.trackId}
-              trackId={episode.trackId}
-              trackName={episode.trackName}
-              releaseDate={episode.releaseDate}
-              trackTimeMillis={episode.trackTimeMillis}
+              key={episode.trackId!}
+              trackId={episode.trackId!}
+              trackName={episode.trackName!}
+              releaseDate={episode.releaseDate!}
+              trackTimeMillis={episode.trackTimeMillis!}
             />
           ))}
         </tbody>

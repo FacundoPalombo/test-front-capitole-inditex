@@ -1,8 +1,19 @@
 import React from 'react';
 import Markdown from '@components/Markdown';
 import styles from './styles.module.scss';
+import { string } from 'prop-types';
 
-const EpisodeDetail = ({ description, episodeUrl, trackName }) => {
+type EpisodeDetailProps = {
+  description: string;
+  episodeUrl: string;
+  trackName: string;
+};
+
+const EpisodeDetail = ({
+  description,
+  episodeUrl,
+  trackName,
+}: EpisodeDetailProps) => {
   return (
     <section id="episode" data-testid="episode" className={styles.episode}>
       <div className={styles.episode__content}>
@@ -19,6 +30,12 @@ const EpisodeDetail = ({ description, episodeUrl, trackName }) => {
       </div>
     </section>
   );
+};
+
+EpisodeDetail.propTypes = {
+  description: string,
+  episodeUrl: string,
+  trackName: string,
 };
 
 export default EpisodeDetail;
