@@ -13,7 +13,7 @@ jest.mock('../../podcast/Podcast', () => {
     loader: jest.fn(),
   };
 });
-jest.mock('../../search', () => {
+jest.mock('../../search/Search', () => {
   return {
     __esModules: true,
     default: jest.fn(),

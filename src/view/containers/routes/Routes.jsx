@@ -4,7 +4,7 @@ import ErrorPage from './Error';
 import Main from '../main/Main';
 import Podcast, { loader as podcastLoader } from '../podcast/Podcast';
 import Episode from '../episode/Episode';
-import Search, { loader as searchLoader } from '../search';
+import Search, { loader as searchLoader } from '../search/Search';
 import PodcastList from '../podcast/components/PodcastList/PodcastList';
 import { QueryClient } from '@tanstack/react-query';
 
