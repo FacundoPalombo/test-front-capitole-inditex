@@ -7,7 +7,7 @@ import {
   channels as channelsQuery,
 } from '../../../queries/podcasts';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
-import DetailSkeleton from '../../components/DetailSkeleton';
+import DetailSkeleton from '../../components/DetailSkeleton/DetailSkeleton';
 
 const Podcasts = () => {
   const params = useParams();

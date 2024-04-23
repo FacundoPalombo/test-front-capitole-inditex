@@ -11,7 +11,7 @@ jest.mock('../components/EpisodeDetail', () => (props) => (
   <div id="episode-detail">{JSON.stringify(props)}</div>
 ));
 
-jest.mock('../../../components/DetailSkeleton', () => () => (
+jest.mock('../../../components/DetailSkeleton/DetailSkeleton', () => () => (
   <div>DetailSkeleton</div>
 ));
 

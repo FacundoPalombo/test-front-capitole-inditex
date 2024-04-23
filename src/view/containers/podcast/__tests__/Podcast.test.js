@@ -24,7 +24,7 @@ jest.mock('../components/PodcastDetail', () => (props) => (
 
 jest.mock('../../../../services/podcasts');
 
-jest.mock('../../../components/DetailSkeleton', () => () => (
+jest.mock('../../../components/DetailSkeleton/DetailSkeleton', () => () => (
   <div>DetailSkeleton</div>
 ));
 
