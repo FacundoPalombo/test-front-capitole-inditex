@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import SearchBox from './components/SearchBox/SearchBox';
 import { channels as channelsQuery } from '@App/queries/podcasts';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
-import SearchSkeleton from '@components/SearchSkeleton/SearchSkeleton';
+import SearchSkeleton from './components/SearchSkeleton/SearchSkeleton';
 
 const Search = () => {
   const { data: channels } = useQuery(channelsQuery());

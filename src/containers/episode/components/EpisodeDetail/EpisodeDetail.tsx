@@ -1,5 +1,5 @@
 import React from 'react';
-import Markdown from '@components/Markdown';
+import Markdown from '../Markdown';
 import styles from './styles.module.scss';
 import { string } from 'prop-types';
 

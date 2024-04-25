@@ -12,7 +12,7 @@
     "paths": {
       "@App/*": ["./src/*"],
       "@utils/*": ["./utils/*"],
-      "@containers/*": ["./src/view/containers/*"],
+      "@containers/*": ["./src/containers/*"],
       "@components/*": ["./src/view/components/*"]
     }
   },

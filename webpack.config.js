@@ -107,7 +107,7 @@ const config = {
     alias: {
       '@App': path.resolve(__dirname, 'src'),
       '@utils': path.resolve(__dirname, 'utils'),
-      '@containers': path.resolve(__dirname, 'src/view/containers/'),
+      '@containers': path.resolve(__dirname, 'src/containers/'),
       '@components': path.resolve(__dirname, 'src/view/components/'),
     },
   },

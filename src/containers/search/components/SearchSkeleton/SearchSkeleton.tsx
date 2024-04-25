@@ -1,5 +1,5 @@
 import React from 'react';
-import Channel from '@containers/search/components/Channel/Channel';
+import Channel from '../Channel/Channel';
 import image from './asset.jpg';
 import styles from './styles.module.scss';
 import noop from '@utils/noop';

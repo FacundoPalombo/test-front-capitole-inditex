@@ -15,7 +15,7 @@ const config = {
       moduleNameMapper: {
         '^@utils/(.*)$': '<rootDir>/utils/$1',
         '^@App/(.*)$': '<rootDir>/src/$1',
-        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
+        '^@containers/(.*)$': '<rootDir>/src/containers/$1',
         '^@components/(.*)$': '<rootDir>/src/view/components/$1',
 
         '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
@@ -58,7 +58,7 @@ const config = {
       moduleNameMapper: {
         '^@utils/(.*)$': '<rootDir>/utils/$1',
         '^@App/(.*)$': '<rootDir>/src/$1',
-        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
+        '^@containers/(.*)$': '<rootDir>/src/containers/$1',
         '^@components/(.*)$': '<rootDir>/src/view/components/$1',
 
         '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
@@ -85,7 +85,7 @@ const config = {
       moduleNameMapper: {
         '^@utils/(.*)$': '<rootDir>/utils/$1',
         '^@App/(.*)$': '<rootDir>/src/$1',
-        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
+        '^@containers/(.*)$': '<rootDir>/src/containers/$1',
         '^@components/(.*)$': '<rootDir>/src/view/components/$1',
 
         '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
