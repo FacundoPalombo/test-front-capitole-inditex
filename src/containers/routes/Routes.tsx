@@ -1,13 +1,15 @@
 import React from 'react';
 
+import { QueryClient } from '@tanstack/react-query';
+import type { RouteObject } from 'react-router';
+
 import ErrorPage from './Error';
 import Layout from '../layout/Layout';
+
 import Podcast, { loader as podcastLoader } from '../podcast/Podcast';
 import Episode from '../episode/Episode';
 import Search, { loader as searchLoader } from '../search/Search';
 import PodcastList from '../podcast/components/PodcastList/PodcastList';
-import { QueryClient } from '@tanstack/react-query';
-import type { RouteObject } from 'react-router';
 
 const queryClient = new QueryClient();
 

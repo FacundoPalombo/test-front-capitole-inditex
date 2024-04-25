@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
+
 import { func, number, string } from 'prop-types';
 
 type SearchBoxProps = {

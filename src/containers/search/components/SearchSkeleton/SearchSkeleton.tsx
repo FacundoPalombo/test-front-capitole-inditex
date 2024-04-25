@@ -1,7 +1,10 @@
 import React from 'react';
-import Channel from '../Channel/Channel';
-import image from './asset.jpg';
+
 import styles from './styles.module.scss';
+import image from './asset.jpg';
+
+import Channel from '../Channel/Channel';
+
 import noop from '@utils/noop';
 
 const SearchSkeleton = () => {

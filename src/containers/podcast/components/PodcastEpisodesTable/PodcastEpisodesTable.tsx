@@ -38,11 +38,11 @@ const PodcastEpisodesTable = ({ podcasts }: PodcastEpisodesTableProps) => {
         <tbody className={styles.table__body}>
           {podcasts?.map((episode) => (
             <PodcastEpisodesTableRow
-              key={episode.trackId!}
-              trackId={episode.trackId!}
-              trackName={episode.trackName!}
-              releaseDate={episode.releaseDate!}
-              trackTimeMillis={episode.trackTimeMillis!}
+              key={episode.trackId}
+              trackId={episode.trackId}
+              trackName={episode.trackName}
+              releaseDate={episode.releaseDate}
+              trackTimeMillis={episode.trackTimeMillis}
             />
           ))}
         </tbody>

@@ -2,14 +2,17 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
 
-import { episodes as episodesQuery } from '../../queries/podcasts';
+import { EpisodesResults } from '@App/model/Episodes';
 
+import { episodes as episodesQuery } from '../../queries/podcasts';
 import EpisodeDetail from './components/EpisodeDetail/EpisodeDetail';
 import Skeleton from './components/EpisodeDetailSkeleton/EpisodeDetailSkeleton';
 
 const Episode = () => {
   const params = useParams();
-  const { data: podcasts } = useQuery(episodesQuery(params.podcastId));
+  const { data: podcasts } = useQuery<EpisodesResults>(
+    episodesQuery(params.podcastId)
+  );
 
   const isLoading = useIsFetching() > 0;
 
@@ -21,9 +24,9 @@ const Episode = () => {
   return (
     podcast && (
       <EpisodeDetail
-        description={podcast.description!}
-        episodeUrl={podcast.episodeUrl!}
-        trackName={podcast.trackName!}
+        description={podcast.description}
+        episodeUrl={podcast.episodeUrl}
+        trackName={podcast.trackName}
       />
     )
   );

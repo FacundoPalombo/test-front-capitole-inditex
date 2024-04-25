@@ -1,8 +1,7 @@
 import React from 'react';
+import styles from './styles.module.scss';
 import { Link, Outlet } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
-
-import styles from './styles.module.scss';
 import { useIsFetching } from '@tanstack/react-query';
 
 const Layout = () => {

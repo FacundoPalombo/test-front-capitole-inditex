@@ -1,13 +1,15 @@
 import React from 'react';
 import './styles.scss';
+
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
 
-import Routes from '../routes/Routes';
 import { DAY_IN_MILLISECONDS } from '@App/utils/constants/various';
+
+import Routes from '../routes/Routes';
 
 //? Acá puse el stale time en un día tambien por que en el ejercicio "forzosamente" pide que se actualice la cache por un dia,
 //? asi que "simule" una estrategia de cache-first configurando (stale-while-revalidata === max-age),
