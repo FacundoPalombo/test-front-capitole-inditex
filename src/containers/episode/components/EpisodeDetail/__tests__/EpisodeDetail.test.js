@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import EpisodeDetail from '../EpisodeDetail';
 
-jest.mock('../../Markdown', () => ({ children }) => (
+jest.mock('@App/shared/Markdown', () => ({ children }) => (
   <div id="markdown">{children}</div>
 ));
 
