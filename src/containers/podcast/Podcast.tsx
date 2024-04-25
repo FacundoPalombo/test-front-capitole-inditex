@@ -53,8 +53,14 @@ export const loader =
   async ({ params }) => {
     const episodesResolvedQuery = episodesQuery(params.podcastId);
     const channelsResolvedQuery = channelsQuery();
-    const episodes = await queryClient.ensureQueryData(episodesResolvedQuery);
-    const channels = await queryClient.ensureQueryData(channelsResolvedQuery);
+
+    const episodes: EpisodesResults = await queryClient.ensureQueryData(
+      episodesResolvedQuery
+    );
+    const channels: Channels = await queryClient.ensureQueryData(
+      channelsResolvedQuery
+    );
+
     return { channels, episodes };
   };
 

@@ -69,7 +69,8 @@ const Search = () => {
 
 export const loader = (queryClient) => async () => {
   const query = channelsQuery();
-  const channels = await queryClient.ensureQueryData(query);
+
+  const channels: Channels = await queryClient.ensureQueryData(query);
   return channels;
 };
 
