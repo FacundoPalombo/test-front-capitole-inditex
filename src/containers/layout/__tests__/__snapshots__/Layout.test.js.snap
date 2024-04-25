@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout unit test should render ok with props, when is loading 1`] = `
+<DocumentFragment>
+  <main
+    data-testid="layout"
+    id="layout"
+  >
+    <nav
+      aria-label="Navigate back to list of channels"
+      class="navigation"
+      id="nav"
+    >
+      <a
+        href="/"
+      >
+        <h2
+          class="navigation__title"
+        >
+          Podcaster
+        </h2>
+      </a>
+      <div
+        class="navigation__loader"
+      />
+    </nav>
+    <hr
+      class="navigation__separator"
+    />
+    <div>
+      MockOutlet
+    </div>
+  </main>
+</DocumentFragment>
+`;
+
+exports[`Layout unit test should render ok with props, when loading is false 1`] = `
+<DocumentFragment>
+  <main
+    data-testid="layout"
+    id="layout"
+  >
+    <nav
+      aria-label="Navigate back to list of channels"
+      class="navigation"
+      id="nav"
+    >
+      <a
+        href="/"
+      >
+        <h2
+          class="navigation__title"
+        >
+          Podcaster
+        </h2>
+      </a>
+      <div
+        class="navigation__loader"
+      >
+        <div>
+          Loading...
+        </div>
+      </div>
+    </nav>
+    <hr
+      class="navigation__separator"
+    />
+    <div>
+      MockOutlet
+    </div>
+  </main>
+</DocumentFragment>
+`;

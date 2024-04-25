@@ -15,8 +15,6 @@ const config = {
       moduleNameMapper: {
         '^@utils/(.*)$': '<rootDir>/utils/$1',
         '^@App/(.*)$': '<rootDir>/src/$1',
-        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
-        '^@components/(.*)$': '<rootDir>/src/view/components/$1',
 
         '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
@@ -34,6 +32,8 @@ const config = {
     //   setupFilesAfterEnv: ['<rootDir>/jest.client.setup.js'],
     //   moduleNameMapper: {
     //     '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+    //     '^@utils/(.*)$': '<rootDir>/utils/$1',
+    //     '^@App/(.*)$': '<rootDir>/src/$1',
 
     //     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
     //       '<rootDir>/__mocks__/fileMock.js',
@@ -41,37 +41,10 @@ const config = {
     // },
     {
       displayName: {
-        name: '[Node][Integration Tests]',
-        color: 'green',
-      },
-      testMatch: ['**/*.spec.[jt]s'],
-      testEnvironment: 'node',
-      setupFiles: ['<rootDir>/jest.env.setup.js'],
-      setupFilesAfterEnv: ['<rootDir>/jest.server.setup.js'],
-      testPathIgnorePatterns: [
-        'components',
-        'view',
-        'container',
-        'hooks',
-        '^use[a-zA-Z0-9]+$',
-      ],
-      moduleNameMapper: {
-        '^@utils/(.*)$': '<rootDir>/utils/$1',
-        '^@App/(.*)$': '<rootDir>/src/$1',
-        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
-        '^@components/(.*)$': '<rootDir>/src/view/components/$1',
-
-        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-          '<rootDir>/__mocks__/fileMock.js',
-      },
-    },
-    {
-      displayName: {
-        name: '[Node][Unit Tests]',
+        name: '[Server][Unit Tests]',
         color: 'yellow',
       },
-      testMatch: ['**/*.test.[jt]s'],
+      testMatch: ['**/server/*.test.[jt]s'],
       testEnvironment: 'node',
       setupFiles: ['<rootDir>/jest.env.setup.js'],
       setupFilesAfterEnv: ['<rootDir>/jest.server.setup.js'],
@@ -85,9 +58,6 @@ const config = {
       moduleNameMapper: {
         '^@utils/(.*)$': '<rootDir>/utils/$1',
         '^@App/(.*)$': '<rootDir>/src/$1',
-        '^@containers/(.*)$': '<rootDir>/src/view/containers/$1',
-        '^@components/(.*)$': '<rootDir>/src/view/components/$1',
-
         '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
           '<rootDir>/__mocks__/fileMock.js',

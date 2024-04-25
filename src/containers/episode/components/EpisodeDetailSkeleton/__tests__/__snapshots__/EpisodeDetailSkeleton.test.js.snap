@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EpisodeDetailSkeleton unit tests should match snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="skeleton__container"
+    data-testid="detail-skeleton"
+  >
+    <div
+      class="skeleton__detail"
+    >
+      <div
+        class="skeleton__animation"
+        style="height: 250px; width: 100%;"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 120px; width: 100%;"
+      />
+      <div
+        class="skeleton__detail_text"
+      >
+        <div
+          class="skeleton__animation"
+          style="height: 24px; width: calc(100% - 20%);"
+        />
+        <div
+          class="skeleton__animation"
+          style="height: 24px; width: calc(100% - 20%);"
+        />
+        <div
+          class="skeleton__animation"
+          style="height: 24px; width: calc(100% - 20%);"
+        />
+        <div
+          class="skeleton__animation"
+          style="height: 24px; width: calc(100% - 20%);"
+        />
+        <div
+          class="skeleton__animation"
+          style="height: 24px; width: calc(100% - 20%);"
+        />
+        <div
+          class="skeleton__animation"
+          style="height: 24px; width: calc(100% - 20%);"
+        />
+        <div
+          class="skeleton__animation"
+          style="height: 24px; width: calc(100% - 20%);"
+        />
+        <div
+          class="skeleton__animation"
+          style="height: 24px; width: calc(100% - 20%);"
+        />
+      </div>
+    </div>
+    <div
+      class="skeleton__content"
+    >
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+      <div
+        class="skeleton__animation"
+        style="height: 36px; width: calc(100% - 20vw);"
+      />
+    </div>
+  </section>
+</DocumentFragment>
+`;

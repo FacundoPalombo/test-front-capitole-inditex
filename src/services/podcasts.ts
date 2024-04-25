@@ -1,8 +1,8 @@
 import createError from 'http-errors';
 
 import { GET_PODCAST, GET_PODCASTS } from '@App/utils/constants/URL';
-import { Channels } from '@utils/types/Channels';
-import { EpisodesResults } from '@utils/types/Episodes';
+import { Channels } from '@App/model/Channels';
+import { EpisodesResults } from '@App/model/Episodes';
 
 export type PodcastParams = {
   podcastId: string;

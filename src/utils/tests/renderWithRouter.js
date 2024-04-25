@@ -3,7 +3,7 @@
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render } from '@testing-library/react';
-import routes from '../../view/containers/routes/Routes';
+import routes from '../../containers/routes/Routes';
 import {
   RouterProvider,
   createBrowserRouter,

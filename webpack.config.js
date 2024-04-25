@@ -16,7 +16,7 @@ const stylesHandler = isProduction
   : 'style-loader';
 
 const config = {
-  entry: './src/view/index.tsx',
+  entry: './src/index.tsx',
   output: {
     filename: '[name][contenthash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -107,8 +107,6 @@ const config = {
     alias: {
       '@App': path.resolve(__dirname, 'src'),
       '@utils': path.resolve(__dirname, 'utils'),
-      '@containers': path.resolve(__dirname, 'src/view/containers/'),
-      '@components': path.resolve(__dirname, 'src/view/components/'),
     },
   },
   performance: {

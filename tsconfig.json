@@ -11,9 +11,7 @@
     "composite": true,
     "paths": {
       "@App/*": ["./src/*"],
-      "@utils/*": ["./utils/*"],
-      "@containers/*": ["./src/view/containers/*"],
-      "@components/*": ["./src/view/components/*"]
+      "@utils/*": ["./utils/*"]
     }
   },
   "include": ["./src/", "./utils/"]
