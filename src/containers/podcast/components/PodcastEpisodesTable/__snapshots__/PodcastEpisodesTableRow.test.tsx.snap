@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PodcastEpisodesTableRow unit tests should match snapshot 1`] = `
+<DocumentFragment>
+  <a
+    href="episode/12324"
+  >
+    A la santa catalina chibirin chibirin bombom
+  </a>
+  24/6/202360min 2s
+</DocumentFragment>
+`;

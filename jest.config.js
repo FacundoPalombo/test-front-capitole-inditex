@@ -2,68 +2,6 @@
 const config = {
   automock: false,
   silent: true,
-  projects: [
-    {
-      displayName: {
-        name: '[UI][Unit Tests]',
-        color: 'cyan',
-      },
-      testMatch: ['**/(components|containers|view|hooks)/**/*.test.[jt]s'],
-      testEnvironment: 'jsdom',
-      setupFiles: ['<rootDir>/jest.env.setup.js'],
-      setupFilesAfterEnv: ['<rootDir>/jest.client.setup.js'],
-      moduleNameMapper: {
-        '^@utils/(.*)$': '<rootDir>/utils/$1',
-        '^@App/(.*)$': '<rootDir>/src/$1',
-
-        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-          '<rootDir>/__mocks__/fileMock.js',
-      },
-    },
-    // {
-    //   displayName: {
-    //     name: '[UI][Integration Tests]',
-    //     color: 'magenta',
-    //   },
-    //   testMatch: ['**/(components|containers|view|hooks)/**/*.spec.[jt]s'],
-    //   testEnvironment: 'jsdom',
-    //   setupFiles: ['<rootDir>/jest.env.setup.js'],
-    //   setupFilesAfterEnv: ['<rootDir>/jest.client.setup.js'],
-    //   moduleNameMapper: {
-    //     '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
-    //     '^@utils/(.*)$': '<rootDir>/utils/$1',
-    //     '^@App/(.*)$': '<rootDir>/src/$1',
-
-    //     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-    //       '<rootDir>/__mocks__/fileMock.js',
-    //   },
-    // },
-    {
-      displayName: {
-        name: '[Server][Unit Tests]',
-        color: 'yellow',
-      },
-      testMatch: ['**/server/*.test.[jt]s'],
-      testEnvironment: 'node',
-      setupFiles: ['<rootDir>/jest.env.setup.js'],
-      setupFilesAfterEnv: ['<rootDir>/jest.server.setup.js'],
-      testPathIgnorePatterns: [
-        'components',
-        'view',
-        'container',
-        'hooks',
-        '^use[a-zA-Z0-9]+$',
-      ],
-      moduleNameMapper: {
-        '^@utils/(.*)$': '<rootDir>/utils/$1',
-        '^@App/(.*)$': '<rootDir>/src/$1',
-        '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-          '<rootDir>/__mocks__/fileMock.js',
-      },
-    },
-  ],
   collectCoverage: true,
   coverageThreshold: {
     global: {
@@ -79,21 +17,37 @@ const config = {
     'dist',
     'build',
     'coverage',
-    'coverage',
     'test',
     'tests',
   ],
+
+  testPathIgnorePatterns: ['config', 'fixture', 'dist', 'build', 'coverage'],
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.(js|jsx)',
-    '!**/**/*.(test|spec|config|fixture|mock|story|stories).(js|jsx)',
+    '**/*.{ts,js,jsx,tsx}',
+    '!**/**/*.(test|spec|config|fixture|mock|story|stories).(js|jsx|ts|tsx)',
     '!<rootDir>/src/assets',
     '!<rootDir>/src/utils/constants',
     '!<rootDir>/src/utils/tests',
   ],
+  moduleNameMapper: {
+    '^@utils/(.*)$': '<rootDir>/utils/$1',
+    '^@App/(.*)$': '<rootDir>/src/$1',
+    '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
+  },
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/jest.client.setup.js'],
+  moduleDirectories: ['node_modules', 'bower_components', 'shared'],
+
   transform: {
     '\\.[jt]sx?$': 'babel-jest',
   },
-  moduleDirectories: ['node_modules', 'bower_components', 'shared'],
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.json',
+    },
+  },
 };
 
 module.exports = config;

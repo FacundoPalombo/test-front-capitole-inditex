@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBox unit tests should match snapshot 1`] = `
+<DocumentFragment>
+  <span
+    class="search_box"
+  >
+    <label
+      aria-label="Filter over all the 100 best podcasts on itunes."
+      class="search_box__label"
+      for="search_box"
+    >
+      2
+    </label>
+    <input
+      class="search_box__input"
+      data-testid="search_box"
+      id="search_box"
+      name="search_box"
+      placeholder="Filter podcasts..."
+      type="text"
+      value="123"
+    />
+  </span>
+</DocumentFragment>
+`;
+
+exports[`SearchBox unit tests should match snapshot 2`] = `
+<DocumentFragment>
+  <span
+    class="search_box"
+  >
+    <label
+      aria-label="Filter over all the 100 best podcasts on itunes."
+      class="search_box__label"
+      for="search_box"
+    >
+      2
+    </label>
+    <input
+      class="search_box__input"
+      data-testid="search_box"
+      id="search_box"
+      name="search_box"
+      placeholder="Filter podcasts..."
+      type="text"
+      value="321"
+    />
+  </span>
+</DocumentFragment>
+`;
