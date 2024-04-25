@@ -2,10 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import episodesFixture from '../../podcast/__tests__/podcastEpisodes.fixture';
-import Episode from '../Episode';
-import { getPodcastEpisodes } from '@App/services/podcasts';
+import episodesFixture from '@App/utils/tests/fixtures/episodes';
 import noop from '@utils/noop';
+
+import { getPodcastEpisodes } from '@App/services/podcasts';
+
+import Episode from '../Episode';
 
 jest.mock('../components/EpisodeDetail/EpisodeDetail', () => (props) => (
   <div id="episode-detail">{JSON.stringify(props)}</div>

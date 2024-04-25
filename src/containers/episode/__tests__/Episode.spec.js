@@ -1,15 +1,15 @@
 import { renderWithMemoryRouter } from '@App/utils/tests/renderWithRouter';
 import { getPodcastEpisodes, getPodcastChannels } from '@App/services/podcasts';
 
-import podcastFixture from '../../podcast/__tests__/podcastEpisodes.fixture';
-import searchFixture from '../../search/__tests__/podcastChannels.fixture';
+import episodesFixture from '@App/utils/tests/fixtures/episodes';
+import channelsFixture from '@App/utils/tests/fixtures/channels';
 
 jest.mock('@App/services/podcasts');
 
 describe('Episode integration test', () => {
   it.only('should render ok with props', async () => {
-    getPodcastEpisodes.mockReturnValue(podcastFixture);
-    getPodcastChannels.mockReturnValue(searchFixture);
+    getPodcastEpisodes.mockReturnValue(episodesFixture);
+    getPodcastChannels.mockReturnValue(channelsFixture);
     const { getByRole, findByRole } = renderWithMemoryRouter({
       initialEntries: ['/podcast/1535809341/episode/1000616377855'],
     });

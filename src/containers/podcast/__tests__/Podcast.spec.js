@@ -1,19 +1,19 @@
-import { renderWithMemoryRouter } from '../../../utils/tests/renderWithRouter';
-import {
-  getPodcastEpisodes,
-  getPodcastChannels,
-} from '../../../services/podcasts';
+import { renderWithMemoryRouter } from '@App/utils/tests/renderWithRouter';
 
-import podcastFixture, { fail as failFixture } from './podcastEpisodes.fixture';
-import podcastChannels from '../search/__tests__/podcastChannels.fixture';
+import { getPodcastEpisodes, getPodcastChannels } from '@App/services/podcasts';
 
-jest.mock('../../../services/podcasts');
+import episodesFixture, {
+  fail as failEpisodeFixture,
+} from '@App/utils/tests/fixtures/episodes';
+import channelsFixture from '@App/utils/tests/fixtures/channels';
+
+jest.mock('@App/services/podcasts');
 
 describe('Podcast integration test', () => {
   afterEach(jest.clearAllMocks);
   it('should render ok when api call is correct', async () => {
-    getPodcastEpisodes.mockResolvedValueOnce(podcastFixture);
-    getPodcastChannels.mockResolvedValueOnce(podcastChannels);
+    getPodcastEpisodes.mockResolvedValueOnce(episodesFixture);
+    getPodcastChannels.mockResolvedValueOnce(channelsFixture);
 
     const { findByTestId, getByRole } = renderWithMemoryRouter({
       initialEntries: ['/podcast/1535809341'],
@@ -26,8 +26,8 @@ describe('Podcast integration test', () => {
   });
 
   it('should render fail when api call is incorrect', async () => {
-    getPodcastEpisodes.mockRejectedValueOnce(failFixture);
-    getPodcastChannels.mockRejectedValueOnce(failFixture);
+    getPodcastEpisodes.mockRejectedValueOnce(failEpisodeFixture);
+    getPodcastChannels.mockRejectedValueOnce(failEpisodeFixture);
 
     const { findByText, getByText } = renderWithMemoryRouter({
       initialEntries: ['/podcast/1535809341'],

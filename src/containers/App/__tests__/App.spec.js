@@ -1,18 +1,15 @@
-import { renderWithMemoryRouter } from '../../../utils/tests/renderWithRouter';
-import {
-  getPodcastChannels,
-  getPodcastEpisodes,
-} from '../../../services/podcasts';
-import podcastChannelsFixture from '../../search/__tests__/podcastChannels.fixture';
-import podcastEpisodesFixture from './podcastEpisodes.fixture';
+import { renderWithMemoryRouter } from '@App/utils/tests/renderWithRouter';
+import { getPodcastChannels, getPodcastEpisodes } from '@App/services/podcasts';
+import channelsFixture from '@App/utils/tests/fixtures/channels';
+import episodesFixture from '@App/utils/tests/fixtures/episodes';
 
-jest.mock('../../../services/podcasts');
+jest.mock('@App/services/podcasts');
 
 describe('App Full Integration Test', () => {
   afterEach(jest.clearAllMocks);
   it.only('Should navigate between all pages', async () => {
-    getPodcastChannels.mockResolvedValue(podcastChannelsFixture);
-    getPodcastEpisodes.mockResolvedValue(podcastEpisodesFixture);
+    getPodcastChannels.mockResolvedValue(channelsFixture);
+    getPodcastEpisodes.mockResolvedValue(episodesFixture);
 
     const {
       user,

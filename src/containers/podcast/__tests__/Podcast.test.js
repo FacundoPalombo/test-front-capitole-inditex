@@ -3,8 +3,9 @@ import { render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import Podcast, { loader as podcastLoader } from '../Podcast';
-import channelsFixture from '../../search/__tests__/podcastChannels.fixture';
-import episodesFixture from './podcastEpisodes.fixture';
+
+import channelsFixture from '@App/utils/tests/fixtures/channels';
+import episodesFixture from '@App/utils/tests/fixtures/episodes';
 
 import {
   channels as channelsQuery,

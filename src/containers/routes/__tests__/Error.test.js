@@ -2,14 +2,14 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import ErrorComponent from '../Error';
 import { useRouteError } from 'react-router-dom';
-import { fail as fail404Fixture } from './error.fixture';
+import error404Fixture from '@App/utils/tests/fixtures/fail';
 
 jest.mock('react-router-dom');
 
 describe('Error unit test', () => {
   afterAll(jest.clearAllMocks);
   it('should render ok match snapshot', () => {
-    useRouteError.mockReturnValueOnce(fail404Fixture);
+    useRouteError.mockReturnValueOnce(error404Fixture);
     const { asFragment } = render(<ErrorComponent />);
     expect(asFragment()).toMatchSnapshot();
   });

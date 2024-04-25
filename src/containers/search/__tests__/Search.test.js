@@ -1,10 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import dataFixture from './podcastChannels.fixture';
+
 import { channels as channelsQuery } from '@App/queries/podcasts';
-import Search, { loader as searchLoader } from '../Search';
 import { getPodcastChannels } from '@App/services/podcasts';
+
+import channelsFixture from '@App/utils/tests/fixtures/channels';
+
+import Search, { loader as searchLoader } from '../Search';
+
 import noop from '@utils/noop';
 
 jest.mock('../components/Channel/Channel', () => (props) => (
@@ -29,7 +33,7 @@ describe('Search unit test', () => {
         error: noop,
       },
     });
-    getPodcastChannels.mockResolvedValue(dataFixture);
+    getPodcastChannels.mockResolvedValue(channelsFixture);
     const { asFragment } = render(
       <QueryClientProvider client={queryClient}>
         <Search />
@@ -45,7 +49,7 @@ describe('Search unit test', () => {
         error: noop,
       },
     });
-    getPodcastChannels.mockResolvedValue(dataFixture);
+    getPodcastChannels.mockResolvedValue(channelsFixture);
     const { asFragment, findByText } = render(
       <QueryClientProvider client={queryClient}>
         <Search />

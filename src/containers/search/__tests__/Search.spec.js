@@ -1,12 +1,13 @@
 import { renderWithMemoryRouter } from '@App/utils/tests/renderWithRouter';
-import searchFixture from './podcastChannels.fixture';
 import { getPodcastChannels } from '@App/services/podcasts';
+
+import channelsFixture from '@App/utils/tests/fixtures/channels';
 
 jest.mock('@App/services/podcasts');
 
 describe('Search integration tests', () => {
   it('should list channels by default', async () => {
-    getPodcastChannels.mockResolvedValueOnce(searchFixture);
+    getPodcastChannels.mockResolvedValueOnce(channelsFixture);
     const { getByRole, getByTestId, findByRole } = renderWithMemoryRouter();
 
     await findByRole('textbox', {
@@ -21,7 +22,7 @@ describe('Search integration tests', () => {
   });
 
   it('should list channels and handle search input filter', async () => {
-    getPodcastChannels.mockResolvedValueOnce(searchFixture);
+    getPodcastChannels.mockResolvedValueOnce(channelsFixture);
     const { getByRole, getAllByRole, getByTestId, findByRole, user } =
       renderWithMemoryRouter();
 
