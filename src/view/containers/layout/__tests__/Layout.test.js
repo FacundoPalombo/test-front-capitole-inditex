@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from '../Main';
+import Layout from '../Layout';
 import { render } from '@testing-library/react';
 import { useIsFetching } from '@tanstack/react-query';
 
@@ -16,16 +16,16 @@ jest.mock('react-spinners', () => ({
 
 jest.mock('@tanstack/react-query');
 
-describe('Main unit test', () => {
+describe('Layout unit test', () => {
   afterEach(jest.clearAllMocks);
   it('should render ok with props, when is loading', () => {
     useIsFetching.mockReturnValueOnce(0);
-    const { asFragment } = render(<Main />);
+    const { asFragment } = render(<Layout />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should render ok with props, when loading is false', () => {
     useIsFetching.mockReturnValueOnce(2);
-    const { asFragment } = render(<Main />);
+    const { asFragment } = render(<Layout />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

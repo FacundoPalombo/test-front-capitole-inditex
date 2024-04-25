@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DetailSkeleton unit tests should match snapshot 1`] = `
+exports[`EpisodeDetailSkeleton unit tests should match snapshot 1`] = `
 <DocumentFragment>
   <section
     class="skeleton__container"

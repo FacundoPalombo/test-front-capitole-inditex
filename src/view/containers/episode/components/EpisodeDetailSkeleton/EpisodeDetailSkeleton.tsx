@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import randomSizer from '@App/utils/functions/randomSizer';
 
-const DetailSkeleton = () => {
+const EpisodeDetailSkeleton = () => {
   return (
     <section
       data-testid="detail-skeleton"
@@ -46,4 +46,4 @@ const DetailSkeleton = () => {
   );
 };
 
-export default DetailSkeleton;
+export default EpisodeDetailSkeleton;

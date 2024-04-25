@@ -1,9 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
+
 import { episodes as episodesQuery } from '../../../queries/podcasts';
-import DetailSkeleton from '@components/DetailSkeleton/DetailSkeleton';
-import EpisodeDetail from './components/EpisodeDetail';
+
+import EpisodeDetail from './components/EpisodeDetail/EpisodeDetail';
+import Skeleton from './components/EpisodeDetailSkeleton/EpisodeDetailSkeleton';
 
 const Episode = () => {
   const params = useParams();
@@ -15,7 +17,7 @@ const Episode = () => {
     (podcast) => podcast?.trackId?.toString() === params.episodeId
   );
 
-  if (isLoading) return <DetailSkeleton />;
+  if (isLoading) return <Skeleton />;
   return (
     podcast && (
       <EpisodeDetail

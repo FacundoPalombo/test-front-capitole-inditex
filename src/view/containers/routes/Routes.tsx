@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ErrorPage from './Error';
-import Main from '../main/Main';
+import Layout from '../layout/Layout';
 import Podcast, { loader as podcastLoader } from '../podcast/Podcast';
 import Episode from '../episode/Episode';
 import Search, { loader as searchLoader } from '../search/Search';
@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 //? SPA con react-router y utilizar todas las features a la mano... También me tentó hacer SSR pero como el ejercicio pedia CSR, lo respeté.
 const Routes: RouteObject[] = [
   {
-    element: <Main />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       {

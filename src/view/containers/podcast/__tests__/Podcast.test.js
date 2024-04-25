@@ -21,9 +21,10 @@ jest.mock('../components/PodcastDetail/PodcastDetail', () => (props) => (
 
 jest.mock('@App/services/podcasts');
 
-jest.mock('@components/DetailSkeleton/DetailSkeleton', () => () => (
-  <div>DetailSkeleton</div>
-));
+jest.mock(
+  '../components/PodcastDetailSkeleton/PodcastDetailSkeleton',
+  () => () => <div>DetailSkeleton</div>
+);
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

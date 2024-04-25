@@ -1,15 +1,18 @@
 import React from 'react';
 import { Outlet, useParams } from 'react-router-dom';
-import PodcastDetail from './components/PodcastDetail/PodcastDetail';
+import { useIsFetching, useQuery } from '@tanstack/react-query';
+
 import styles from './styles.module.scss';
+
 import {
   episodes as episodesQuery,
   channels as channelsQuery,
 } from '@App/queries/podcasts';
-import { useIsFetching, useQuery } from '@tanstack/react-query';
-import DetailSkeleton from '@components/DetailSkeleton/DetailSkeleton';
 
-const Podcasts = () => {
+import PodcastDetail from './components/PodcastDetail/PodcastDetail';
+import Skeleton from './components/PodcastDetailSkeleton/PodcastDetailSkeleton';
+
+const Podcast = () => {
   const params = useParams();
   const { data: episodes } = useQuery(episodesQuery(params.podcastId));
   const { data: channels } = useQuery(channelsQuery());
@@ -22,7 +25,7 @@ const Podcasts = () => {
   )?.summary.label;
 
   // skeleton for early feedback
-  if (isLoading) return <DetailSkeleton />;
+  if (isLoading) return <Skeleton />;
   return (
     <section id="podcasts" className={styles.podcasts}>
       <div data-testid="podcast-detail" className={styles.podcasts__page}>
@@ -50,4 +53,4 @@ export const loader =
     return { channels, episodes };
   };
 
-export default Podcasts;
+export default Podcast;

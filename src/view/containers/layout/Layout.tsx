@@ -5,11 +5,11 @@ import { BounceLoader } from 'react-spinners';
 import styles from './styles.module.scss';
 import { useIsFetching } from '@tanstack/react-query';
 
-const Main = () => {
+const Layout = () => {
   const isLoading = useIsFetching() > 0;
 
   return (
-    <main id="main" data-testid="main">
+    <main id="layout" data-testid="layout">
       <nav
         id="nav"
         className={styles.navigation}
@@ -40,4 +40,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Layout;

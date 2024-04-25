@@ -16,7 +16,7 @@ const stylesHandler = isProduction
   : 'style-loader';
 
 const config = {
-  entry: './src/view/index.tsx',
+  entry: './src/index.tsx',
   output: {
     filename: '[name][contenthash].js',
     path: path.resolve(__dirname, 'dist'),

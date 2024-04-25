@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import DetailSkeleton from '../DetailSkeleton';
+import PodcastDetailSkeleton from '../PodcastDetailSkeleton';
 
 jest.mock('../../../../utils/functions/randomSizer', () =>
   jest.fn().mockReturnValue(20)
 );
 
-describe('DetailSkeleton unit tests', () => {
+describe('PodcastDetailSkeleton unit tests', () => {
   it('should match snapshot', () => {
-    const { asFragment } = render(<DetailSkeleton />);
+    const { asFragment } = render(<PodcastDetailSkeleton />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
