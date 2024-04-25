@@ -8,12 +8,15 @@ jest.mock('@App/services/podcasts');
 
 xdescribe('Episode integration test', () => {
   it.only('should render ok with props', async () => {
-    (getPodcastEpisodes as jest.Mock).mockReturnValue(episodesFixture);
-    (getPodcastChannels as jest.Mock).mockReturnValue(channelsFixture);
-    const { getByRole, findByRole } = renderWithMemoryRouter({
-      initialEntries: ['/podcast/1535809341/episode/1000616377855'],
+    (getPodcastEpisodes as jest.Mock).mockResolvedValue(episodesFixture);
+    (getPodcastChannels as jest.Mock).mockResolvedValue(channelsFixture);
+    const { getByRole, findByRole, findByTestId } = renderWithMemoryRouter({
+      initialEntries: ['/podcast/1535809341/episode/1000652324873'],
     });
-    const headingMatcher = 'Episode 634 | "Guns & Buns"';
+
+    await findByTestId('episode');
+
+    const headingMatcher = 'Episode 716 | "Room 1108"';
     await findByRole('heading', { name: headingMatcher });
     expect(getByRole('heading', { name: headingMatcher })).toBeInTheDocument();
   });

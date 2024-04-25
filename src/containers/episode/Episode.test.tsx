@@ -23,7 +23,7 @@ jest.mock('@App/services/podcasts');
 jest.mock('react-router-dom', () => ({
   useParams: jest
     .fn()
-    .mockResolvedValue({ episodeId: '1000617803512', podcastId: '1535844019' }),
+    .mockResolvedValue({ episodeId: '1000653044367', podcastId: '1535844019' }),
 }));
 
 describe('Episode unit test', () => {

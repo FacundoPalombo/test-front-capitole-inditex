@@ -6,7 +6,7 @@ import { HttpError } from 'http-errors';
 const Error = () => {
   const error = useRouteError() as HttpError;
   console.error(error);
-  const message = error.statusText ?? error.message ?? 'Unexpected Error';
+  const message = error.statusText ?? error.message;
 
   return (
     <div id="error" data-testid="error">

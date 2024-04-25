@@ -20,7 +20,7 @@ xdescribe('Podcast integration test', () => {
 
     await findByTestId('podcast-detail');
     expect(
-      getByRole('link', { name: 'Episode 638 | "Dudecast"' })
+      getByRole('link', { name: 'Episode 716 | "Room 1108"' })
     ).toBeInTheDocument();
   });
 
