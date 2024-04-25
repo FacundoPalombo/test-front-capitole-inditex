@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search unit test should match snapshot when data is provided 1`] = `
+<DocumentFragment>
+  <section
+    class="search__container"
+    data-testid="search"
+    id="search"
+  >
+    <div>
+      SearchBox {"value":"","resultsCount":100}
+    </div>
+    <div>
+      Channel{"podcastId":"1535809341","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png","artist":"The Joe Budden Network","title":"The Joe Budden Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1623212249","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/06/72/c9/0672c949-e262-23b2-8c29-3db1def67d20/mza_4917860291183321531.jpg/170x170bb.png","artist":"The Black Effect and iHeartPodcasts","title":"R&B Money"}
+    </div>
+    <div>
+      Channel{"podcastId":"1592726009","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/69/db/d2/69dbd2ec-c1d4-9363-0439-49a294311566/mza_11177853187314768025.jpg/170x170bb.png","artist":"The Ringer","title":"Every Single Album"}
+    </div>
+    <div>
+      Channel{"podcastId":"1572182022","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/31/80/56/3180562e-ac0b-f10e-7120-641b1c26e0f8/mza_10135383815267163613.jpg/170x170bb.png","artist":"Rory Farrell & Jamil \\"Mal\\" Clay & Studio71","title":"New Rory & MAL"}
+    </div>
+    <div>
+      Channel{"podcastId":"1574029840","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/75/6f/21/756f219f-111f-b47f-48e5-f39946e643bf/mza_12168793512556367093.jpg/170x170bb.png","artist":"Friday Night Karaoke","title":"Friday Night Karaoke"}
+    </div>
+    <div>
+      Channel{"podcastId":"1711834296","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/de/16/0f/de160f4f-99dd-8b7c-8b3d-a4aeb836b7d2/mza_9707644386971993537.jpeg/170x170bb.png","artist":"Barstool Sports","title":"Taylor Watch"}
+    </div>
+    <div>
+      Channel{"podcastId":"1460157002","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/47/c9/84/47c984c5-bec1-3c87-0fa2-ee4a003c9052/mza_2893667378684577479.jpg/170x170bb.png","artist":"Barstool Sports","title":"Million Dollaz Worth Of Game"}
+    </div>
+    <div>
+      Channel{"podcastId":"1096830182","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/1f/ad/c7/1fadc7d4-1e22-beaa-720a-2e2988dc1521/mza_16091018887573148747.jpg/170x170bb.png","artist":"Interval Presents","title":"Drink Champs"}
+    </div>
+    <div>
+      Channel{"podcastId":"1437402802","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts124/v4/88/18/59/881859a5-f344-c249-f4b9-3d9b62add05a/mza_16428964146354887078.png/170x170bb.png","artist":"Andrew Hickey","title":"A History of Rock Music in 500 Songs"}
+    </div>
+    <div>
+      Channel{"podcastId":"1311004083","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/7b/12/d5/7b12d5ec-7264-6693-8a8e-e6b414a783c3/mza_10388338206053029687.jpg/170x170bb.png","artist":"Pushkin Industries","title":"Broken Record with Rick Rubin, Malcolm Gladwell, Bruce Headlam and Justin Richmond"}
+    </div>
+    <div>
+      Channel{"podcastId":"1676884110","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/fb/8d/0b/fb8d0b0a-f6e0-038c-08cb-8885d7f7fb1e/mza_14964633475917453431.jpg/170x170bb.png","artist":"YOUKNOW MEDIA","title":"THE MORNING SHIFT"}
+    </div>
+    <div>
+      Channel{"podcastId":"1696154359","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/23/af/d5/23afd583-d4a1-a5a5-024f-9a8556aa4aa1/mza_10050319290971063684.jpg/170x170bb.png","artist":"SiriusXM","title":"One Song"}
+    </div>
+    <div>
+      Channel{"podcastId":"1561635433","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts114/v4/79/c8/d2/79c8d2b2-5d5a-365c-a067-8bcefc01d2db/mza_16543696634515633376.jpg/170x170bb.png","artist":"KiddNation","title":"13: A Taylor Swift Fan Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1275172907","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/f1/91/58/f1915829-0639-3bd9-8e3f-8c2ac747acec/mza_14652512068862442143.jpeg/170x170bb.png","artist":"Double Elvis Productions","title":"DISGRACELAND"}
+    </div>
+    <div>
+      Channel{"podcastId":"788236947","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/9c/d8/b0/9cd8b073-0f49-341b-3d3a-ab4da3b2aef2/mza_3440682107671500952.png/170x170bb.png","artist":"Hrishikesh Hirway","title":"Song Exploder"}
+    </div>
+    <div>
+      Channel{"podcastId":"79687345","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/67/ca/18/67ca1846-f942-2a04-aeb1-8e5652d9d6c5/mza_10646182707668815111.jpg/170x170bb.png","artist":"NPR","title":"All Songs Considered"}
+    </div>
+    <div>
+      Channel{"podcastId":"1635211340","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/74/29/f1/7429f163-e7bb-4497-617c-0a62c9f0561c/mza_9306467569213316131.jpg/170x170bb.png","artist":"The Ringer","title":"60 Songs That Explain the '90s"}
+    </div>
+    <div>
+      Channel{"podcastId":"1143845868","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/4f/c4/69/4fc46991-2675-7c9e-6994-d4efab46d736/mza_10353750159708400901.jpg/170x170bb.png","artist":"The Ringer","title":"Dissect"}
+    </div>
+    <div>
+      Channel{"podcastId":"1452608225","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/94/1c/58/941c5802-9c6f-8fc2-071a-aead2a0d304b/mza_7407640302036445318.jpg/170x170bb.png","artist":"The Snakes","title":"Evolution of a Snake: The Taylor Swift Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"120315823","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/0d/00/3d/0d003d69-71dc-54ac-2e49-71344d581ebc/mza_17414366298101550888.jpeg/170x170bb.png","artist":"The New York Times","title":"Popcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1742357059","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/31/5e/45/315e45b4-9e0a-1d8d-43e1-0760ac108dfe/mza_11880157257330453110.jpg/170x170bb.png","artist":"On The Upbeat","title":"Every Song Sucks: A Reel Big Fish Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1671021737","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/db/9c/59/db9c592b-c410-9446-9f4b-7c97c260172e/mza_2651437534972495734.jpg/170x170bb.png","artist":"The Ringer","title":"Bandsplain"}
+    </div>
+    <div>
+      Channel{"podcastId":"1481398762","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/b5/2c/5f/b52c5f0b-e193-a9e2-fde1-295925d5419c/mza_12616703772719032641.jpg/170x170bb.png","artist":"WNYC Studios & OSM Audio","title":"Dolly Parton's America"}
+    </div>
+    <div>
+      Channel{"podcastId":"1236941416","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/0f/95/2b/0f952b75-2da3-a1a4-55ee-5e24eb34a2ed/mza_16604615367747989507.jpg/170x170bb.png","artist":"HOT 97","title":"Ebro in the Morning Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"657476401","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/31/8f/31/318f31f7-afed-f509-d0c2-048c1c4623d9/mza_16723050222813730664.jpg/170x170bb.png","artist":"NPR","title":"Tiny Desk Concerts - Audio"}
+    </div>
+    <div>
+      Channel{"podcastId":"1001659715","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/9a/87/3a/9a873a65-cbd6-e70d-dea6-08128b2876f8/mza_5111931688889829314.png/170x170bb.png","artist":"No Jumper","title":"No Jumper"}
+    </div>
+    <div>
+      Channel{"podcastId":"1485250501","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/8a/c9/23/8ac923d6-32e1-eb00-f331-6fe92226fc58/mza_10801963060470306103.jpg/170x170bb.png","artist":"iHeartPodcasts","title":"Questlove Supreme"}
+    </div>
+    <div>
+      Channel{"podcastId":"934552872","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/4a/87/8c/4a878cc7-0b12-dc80-93b0-c2ce08d5dd0c/mza_8267236680144001404.jpeg/170x170bb.png","artist":"Vulture","title":"Switched on Pop"}
+    </div>
+    <div>
+      Channel{"podcastId":"1742671272","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/1e/85/b5/1e85b57d-3b1b-f54f-c625-aaea0be7fda6/mza_13309562991682230408.jpg/170x170bb.png","artist":"Urban One Podcast Network","title":"The Fun House w/ Kid N Play"}
+    </div>
+    <div>
+      Channel{"podcastId":"1702971290","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/44/e2/8d/44e28d01-b3a5-996e-9373-d04357fdf145/mza_1615793960713046364.jpg/170x170bb.png","artist":"Reagan Baylee","title":"Swiftie School"}
+    </div>
+    <div>
+      Channel{"podcastId":"121393815","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/1b/3a/dd/1b3add6e-e751-87cc-ac71-7f2fb2be34bc/mza_14919276673343161603.jpg/170x170bb.png","artist":"KEXP","title":"In Our Headphones"}
+    </div>
+    <div>
+      Channel{"podcastId":"1171270672","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/df/fb/d7/dffbd730-85cd-cc3f-44ac-324af78e64bb/mza_10893787860356189042.jpg/170x170bb.png","artist":"Dallas Taylor","title":"Twenty Thousand Hertz"}
+    </div>
+    <div>
+      Channel{"podcastId":"1708275587","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/d7/9a/1a/d79a1a7e-347d-69a8-b087-dfc73062f4a1/mza_17711403821719891754.jpeg/170x170bb.png","artist":"Audible | Wondery","title":"Class of '88 with Will Smith"}
+    </div>
+    <div>
+      Channel{"podcastId":"1215386938","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/58/60/74/58607414-6263-9fa9-4fad-d5879c071643/mza_11208751241845350981.jpeg/170x170bb.png","artist":"Joshua Weilerstein","title":"Sticky Notes: The Classical Music Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1220200987","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/50/c9/36/50c9364b-9a66-0437-c441-3b538bc76b80/mza_3986297419301301170.jpg/170x170bb.png","artist":"Nashville Podcast Network","title":"Bobbycast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1542158654","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/61/55/7f/61557f58-8262-51a3-54e2-78b1961e0d0e/mza_18277253036887979300.jpg/170x170bb.png","artist":"Reallyfe Productions LLC","title":"Reallyfe Street Starz Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1734617231","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/ae/34/3e/ae343e48-b939-04fe-47fc-960ba706e95b/mza_4292063000205899533.jpg/170x170bb.png","artist":"iHeartPodcasts","title":"Rolling Stone's 500 Greatest Songs"}
+    </div>
+    <div>
+      Channel{"podcastId":"1368608676","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/5d/3d/dc/5d3ddcd8-8b8c-bdee-62c9-52ca301e0139/mza_3044828676062292455.png/170x170bb.png","artist":"KCRW","title":"Lost Notes"}
+    </div>
+    <div>
+      Channel{"podcastId":"500565620","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/77/d3/5a/77d35a42-530e-45fa-183a-5b3da1e6f413/mza_2446520237044139297.jpg/170x170bb.png","artist":"Datassette","title":"Music For Programming"}
+    </div>
+    <div>
+      Channel{"podcastId":"1461515071","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/63/04/7e/63047ee3-1420-8ccc-3e5d-ee66f80e2f0b/mza_13896228868433996228.jpeg/170x170bb.png","artist":"Apple Music","title":"The Zane Lowe Interview Series"}
+    </div>
+    <div>
+      Channel{"podcastId":"1078431985","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/d7/25/9c/d7259ca7-6b3f-4f31-045c-7f3e91b4c6d8/mza_8823787943358773849.jpeg/170x170bb.png","artist":"Rolling Stone | Cumulus Podcast Network","title":"Rolling Stone Music Now"}
+    </div>
+    <div>
+      Channel{"podcastId":"1493353598","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/c3/1c/5f/c31c5fe5-2ef7-6604-1c4c-d04c703c586a/mza_3268293942379878303.jpg/170x170bb.png","artist":"The Black Effect and iHeartPodcasts","title":"BIG FACTS with Big Bank & DJ Scream"}
+    </div>
+    <div>
+      Channel{"podcastId":"1528435132","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/ca/a0/3e/caa03ed9-5b60-eabc-912e-cf09925e3efa/mza_3557731705189424651.jpg/170x170bb.png","artist":"Devin and Gab","title":"Tay To Z: A Taylor Swift Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1623722509","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/98/3d/d3/983dd3a6-22de-b031-bf52-ff1852bf4e6d/mza_173863752039916960.jpg/170x170bb.png","artist":"Brandon Jay","title":"On Air with Brandon Jay"}
+    </div>
+    <div>
+      Channel{"podcastId":"1670193102","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/36/4e/67/364e6744-ef39-2bef-d07c-5cd4340eb6ae/mza_17670679045660297136.jpg/170x170bb.png","artist":"iHeartPodcasts","title":"Way Up With Angela Yee"}
+    </div>
+    <div>
+      Channel{"podcastId":"1529343755","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts114/v4/2b/09/99/2b0999d3-7460-c15e-1d88-45324984794c/mza_10124972358433702684.jpg/170x170bb.png","artist":"Texas Monthly","title":"One By Willie"}
+    </div>
+    <div>
+      Channel{"podcastId":"1696328318","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/a2/2b/95/a22b95a1-6520-db01-3850-79eb104690c6/mza_12376639698571319756.jpg/170x170bb.png","artist":"Power 106","title":"Brown Bag Mornings"}
+    </div>
+    <div>
+      Channel{"podcastId":"1724974482","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/f9/17/cc/f917ccd3-0d32-acb9-b658-1d965ca8b6be/mza_2819412907146687231.jpg/170x170bb.png","artist":"iHeartPodcasts and MeatEater","title":"God's Country"}
+    </div>
+    <div>
+      Channel{"podcastId":"1707044289","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/b2/53/55/b25355c3-015a-bd65-2eea-a175678b97bc/mza_6140483454301660704.jpg/170x170bb.png","artist":"Karli + Jess","title":"Typical Tuesday Night || A Taylor Swift Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1708480480","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/25/63/ed/2563eded-7d7e-fe07-d79b-1ba8b296ff80/mza_14435148085453835543.jpg/170x170bb.png","artist":"The Akademy","title":"Off the Record with DJ Akademiks"}
+    </div>
+    <div>
+      Channel{"podcastId":"251507798","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/b6/40/6c/b6406c4c-c0c4-c137-7134-e401b9bf7785/mza_13270719876335733767.jpg/170x170bb.png","artist":"Tiësto","title":"CLUBLIFE"}
+    </div>
+    <div>
+      Channel{"podcastId":"1047970546","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/ce/f9/e7/cef9e732-5d98-7f28-efff-43b18905eeae/mza_14418580286030016613.jpeg/170x170bb.png","artist":"Two Friends BB Mixes","title":"Two Friends BB Mixes"}
+    </div>
+    <div>
+      Channel{"podcastId":"708337036","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/4f/8a/49/4f8a4990-37c8-2433-62a6-30cf197db110/mza_38568383574946696.jpg/170x170bb.png","artist":"93X | Cumulus Media Minneapolis | KXXR-FM","title":"93X Half-Assed Morning Show"}
+    </div>
+    <div>
+      Channel{"podcastId":"477534265","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts123/v4/04/c0/81/04c0814e-a769-f4f4-1c22-ca6858766712/mza_7428247299061024805.jpg/170x170bb.png","artist":"TaylorTalk.org - The Taylor Swift Podcast by: Adam Bromberg, Diane, Steve","title":"Taylor Talk: The Taylor Swift Podcast | reputation | 1989 | Red | Speak Now | Fearless | Taylor Swift"}
+    </div>
+    <div>
+      Channel{"podcastId":"1437006895","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/9d/97/ec/9d97ec25-43c7-187c-e970-7c611411fc03/mza_7656373842607027261.jpg/170x170bb.png","artist":"The Drive | Hubbard Radio","title":"Behind The Song"}
+    </div>
+    <div>
+      Channel{"podcastId":"1273079673","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/cb/42/e5/cb42e5b8-901b-d2b1-a00e-2d886c8b2607/mza_7997650980486458488.jpeg/170x170bb.png","artist":"Sangasong, LLC","title":"Zach Sang Show"}
+    </div>
+    <div>
+      Channel{"podcastId":"1520209791","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/9e/53/c7/9e53c70c-4763-6bb3-f6e5-e891fe501e18/mza_6033503424375414624.jpeg/170x170bb.png","artist":"Stony Island Audio & Talkhouse","title":"What Had Happened Was"}
+    </div>
+    <div>
+      Channel{"podcastId":"1729071999","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/69/0f/05/690f0564-7c49-dbf6-a68b-70811ce33c99/mza_12493783332538940227.jpg/170x170bb.png","artist":"SwerveCity Podcast","title":"Swerve City Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1522914723","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/9b/3b/3a/9b3b3a0c-0510-00f5-2131-480672029591/mza_10411425340112524306.jpeg/170x170bb.png","artist":"Grateful Dead","title":"GOOD OL' GRATEFUL DEADCAST"}
+    </div>
+    <div>
+      Channel{"podcastId":"1667648172","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/6b/5d/50/6b5d5098-72f7-39b5-23eb-b406755303d9/mza_2988026521945528095.jpg/170x170bb.png","artist":"KEXP","title":"The Cobain 50"}
+    </div>
+    <div>
+      Channel{"podcastId":"1708100388","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/8d/60/18/8d601884-e8fc-e786-d090-f531163d08ae/mza_6416358408642911203.png/170x170bb.png","artist":"aptaylorswift","title":"AP Taylor Swift"}
+    </div>
+    <div>
+      Channel{"podcastId":"1477850699","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/01/e1/65/01e165aa-0054-049e-3b93-b1f8015c9345/mza_802865069663361104.jpg/170x170bb.png","artist":"WQXR & WNYC Studios","title":"The Open Ears Project"}
+    </div>
+    <div>
+      Channel{"podcastId":"1495604041","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/8c/e0/ae/8ce0aeb3-63e8-bbca-bbd1-5f7b5203a6c4/mza_7154583126326695520.jpg/170x170bb.png","artist":"The Last Podcast Network","title":"No Dogs in Space"}
+    </div>
+    <div>
+      Channel{"podcastId":"1729224578","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/92/66/19/92661982-b9f9-1b3e-1439-68dd5cd42514/mza_6656156766155090805.jpg/170x170bb.png","artist":"Harry Mack","title":"Flow State with Harry Mack"}
+    </div>
+    <div>
+      Channel{"podcastId":"1520856346","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts124/v4/57/2a/52/572a52e3-4af7-9efe-6794-8ad7531e126d/mza_1679659830600619828.png/170x170bb.png","artist":"MalloryBros.","title":"The Mallory Bros Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"472939437","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/be/41/b6/be41b6fa-0d77-2a72-57d6-506e09d8bb69/mza_14544752427345926888.jpg/170x170bb.png","artist":"iHeartPodcasts","title":"Here's The Thing with Alec Baldwin"}
+    </div>
+    <div>
+      Channel{"podcastId":"1291058235","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/43/12/7c/43127cc2-0b8b-c577-e6f3-404bbfa0fb9e/mza_8762436004978395217.jpg/170x170bb.png","artist":"Slate Podcasts","title":"Hit Parade | Music History and Music Trivia"}
+    </div>
+    <div>
+      Channel{"podcastId":"1740144219","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/ce/27/47/ce27479a-7ec8-78db-09da-3275dd14ba87/mza_416048591993233939.jpeg/170x170bb.png","artist":"Jason Thomas Gordon","title":"The Singers Talk"}
+    </div>
+    <div>
+      Channel{"podcastId":"1556457357","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/57/04/2a/57042a2a-95d1-feef-5354-1a389961396f/mza_16203290004257301704.jpg/170x170bb.png","artist":"DJ Louie XIV","title":"Pop Pantheon"}
+    </div>
+    <div>
+      Channel{"podcastId":"1514009373","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/0a/9c/56/0a9c5618-74e1-5603-4fd2-746fbe4ff3a6/mza_833060509803230079.jpg/170x170bb.png","artist":"Steven Wilson & Tim Bowness","title":"The Album Years"}
+    </div>
+    <div>
+      Channel{"podcastId":"897935770","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts123/v4/b8/c1/ef/b8c1effc-5b18-d66c-3cb1-1006d2c61111/mza_4034407569205460193.jpg/170x170bb.png","artist":"This Is Distorted","title":"Nora En Pure - Purified Radio"}
+    </div>
+    <div>
+      Channel{"podcastId":"1631941198","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/79/41/e5/7941e55e-bf95-4f9d-7d86-26f135c7ac98/mza_10563522648998842383.jpg/170x170bb.png","artist":"Mission Studios","title":"Worship is my Weapon Podcast with Rita Springer"}
+    </div>
+    <div>
+      Channel{"podcastId":"1443417194","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/92/6c/21/926c2126-9a3e-1721-8a2a-b56828588ecc/mza_2461144758927510644.jpg/170x170bb.png","artist":"Kirk Hamilton","title":"Strong Songs"}
+    </div>
+    <div>
+      Channel{"podcastId":"1633466636","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/41/10/7c/41107c15-030c-c70b-786f-b7f978a728dc/mza_3228597433083288230.jpg/170x170bb.png","artist":"iHeartPodcasts","title":"Angie Martinez IRL"}
+    </div>
+    <div>
+      Channel{"podcastId":"1431698171","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/20/85/9a/20859a35-f7ee-ef7e-c42a-dab134b7b6ac/mza_16268946140868825553.jpg/170x170bb.png","artist":"Craig Reynolds","title":"The Downbeat"}
+    </div>
+    <div>
+      Channel{"podcastId":"1728521271","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/4a/46/35/4a46353b-0123-3bdf-ff74-e674a3aff4bc/mza_17721281104024359628.jpg/170x170bb.png","artist":"TMZ","title":"The TMZ Swift-Tea"}
+    </div>
+    <div>
+      Channel{"podcastId":"1728148476","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/47/5a/0f/475a0f14-0e39-a0ea-0e58-af32edb5c479/mza_1663518380693636484.jpg/170x170bb.png","artist":"YG and Stevie","title":"4HUNNID Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1534096260","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/9f/fb/91/9ffb916a-af0d-0fb8-3646-57eeda5314c3/mza_945735870779170317.jpeg/170x170bb.png","artist":"All The Things Productions","title":"\\"See, The Thing Is...\\""}
+    </div>
+    <div>
+      Channel{"podcastId":"1286770630","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/28/ae/ba/28aebaef-86c3-62e1-00b8-6bde0beaa85e/mza_13363439944907994191.png/170x170bb.png","artist":"101.3 KDWB (KDWB-FM)","title":"The Dave Ryan Show"}
+    </div>
+    <div>
+      Channel{"podcastId":"1449669906","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts123/v4/a0/1a/af/a01aaf2e-08ad-8dd3-371b-88f59c6682b9/mza_2186108355281145764.jpg/170x170bb.png","artist":"One Life One Chance with Toby Morse","title":"One Life One Chance with Toby Morse"}
+    </div>
+    <div>
+      Channel{"podcastId":"897720614","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/3e/2f/e6/3e2fe655-c9fa-82ae-0183-ddf96bfcde42/mza_6470601623943401921.jpg/170x170bb.png","artist":"SiriusXM","title":"The Eddie Trunk Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1455965877","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/22/9b/d0/229bd0eb-8aba-5c0b-247c-fb180ef1bb4e/mza_13589345754917631598.jpeg/170x170bb.png","artist":"David Guetta","title":"David Guetta"}
+    </div>
+    <div>
+      Channel{"podcastId":"1442604220","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/74/4f/0f/744f0fb5-c809-e2bc-c4fd-93c12cfa61aa/mza_13829604431152977285.jpeg/170x170bb.png","artist":"WQXR & The Metropolitan Opera","title":"Aria Code"}
+    </div>
+    <div>
+      Channel{"podcastId":"1223799338","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/a4/ab/63/a4ab63f3-0e5b-dacf-ae2e-1e8ca5a9231e/mza_5827553722597933312.png/170x170bb.png","artist":"Rick Beato","title":"Sounding Off with Rick Beato"}
+    </div>
+    <div>
+      Channel{"podcastId":"1671899958","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/5c/b5/fb/5cb5fbe7-68ef-7573-3ee6-feadee4bf14a/mza_6541361054561193987.jpg/170x170bb.png","artist":"My Cultura and Sonoro","title":"Becoming An Icon"}
+    </div>
+    <div>
+      Channel{"podcastId":"1060567066","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/51/0e/2d/510e2d01-e090-7b6e-1ad2-d25c2c6a2e19/mza_6708834397484792013.jpg/170x170bb.png","artist":"Scott's Bass Lessons","title":"The SBL Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1132914986","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/c4/ae/83/c4ae8346-74b8-bcfc-15be-5e8023097d6c/mza_16020154731636882473.jpg/170x170bb.png","artist":"Martin Garrix","title":"The Martin Garrix Show"}
+    </div>
+    <div>
+      Channel{"podcastId":"1703257857","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/56/a4/4e/56a44ef0-520a-ab6e-5f95-22b9eae67db2/mza_14108872251782129158.jpg/170x170bb.png","artist":"Andrew Gill and Leah Payne","title":"Rock That Doesn't Roll: The Story of Christian Music"}
+    </div>
+    <div>
+      Channel{"podcastId":"1449000632","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/04/72/4b/04724bc1-a982-3019-0990-115a14ebae91/mza_17759916364696250015.jpg/170x170bb.png","artist":"Bardia Barj","title":"Album | آلبوم"}
+    </div>
+    <div>
+      Channel{"podcastId":"1483392342","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/02/71/ee/0271ee79-679e-d981-543d-7d46472d8e9f/mza_18429966954556139858.jpg/170x170bb.png","artist":"Evergreen Podcasts","title":"Something About the Beatles"}
+    </div>
+    <div>
+      Channel{"podcastId":"1566134877","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/12/d0/6a/12d06a60-3de4-022a-0069-9c77beb21251/mza_14833436082684958648.jpg/170x170bb.png","artist":"iHeartPodcasts","title":"On Air With Ryan Seacrest"}
+    </div>
+    <div>
+      Channel{"podcastId":"1734510849","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/81/ab/07/81ab077f-738d-e61d-2295-879c81f0162b/mza_13825656653291945407.jpeg/170x170bb.png","artist":"Vampire Weekend","title":"Vampire Campfire"}
+    </div>
+    <div>
+      Channel{"podcastId":"686784798","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/33/61/e9/3361e914-e4a3-cb13-40bb-5554a24aa8a4/mza_12832889788386799120.jpg/170x170bb.png","artist":"Afrojack","title":"Afrojack - JACKED Radio (Official Podcast)"}
+    </div>
+    <div>
+      Channel{"podcastId":"1477660645","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/6e/a7/b8/6ea7b8f1-9677-446f-64f9-11cd0a4a6904/mza_16367007117275913321.jpg/170x170bb.png","artist":"WETA Classical","title":"Classical Breakdown"}
+    </div>
+    <div>
+      Channel{"podcastId":"1042342868","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/26/2b/cd/262bcdc3-aa88-3aaf-7b18-df8d3eb7b29f/mza_13647723567653034700.jpg/170x170bb.png","artist":"KRBE | Cumulus Media Houston","title":"Best of Roula & Ryan"}
+    </div>
+    <div>
+      Channel{"podcastId":"1513405224","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts114/v4/d5/fa/79/d5fa79d6-d7e1-e454-43b8-e651432d0397/mza_12366899039235468319.jpg/170x170bb.png","artist":"Premier Guitar","title":"Wong Notes"}
+    </div>
+    <div>
+      Channel{"podcastId":"1621352294","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/df/b7/b5/dfb7b5cd-53ed-702d-04a7-07fd508bf729/mza_10455584412972394849.jpg/170x170bb.png","artist":"Colin Young, Bo Lueders, Knotfest","title":"HardLore: Stories from Tour"}
+    </div>
+    <div>
+      Channel{"podcastId":"1551076579","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/49/bf/a3/49bfa33a-b2ba-85ff-325d-7622a3fcbbd3/mza_14676012581507887052.jpg/170x170bb.png","artist":"Chris Garza","title":"Garza Podcast"}
+    </div>
+    <div>
+      Channel{"podcastId":"1701601088","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/17/a0/f2/17a0f213-8c3e-7d23-fa1c-ef68e500293c/mza_8322814314591639326.jpg/170x170bb.png","artist":"iHeartPodcasts","title":"King Slime: The Prosecution of Young Thug and YSL"}
+    </div>
+    <div>
+      Channel{"podcastId":"94793843","image":"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/6a/dc/6b/6adc6bfe-1c53-5e01-ca27-ba7240c7714d/mza_16602220621514135066.jpeg/170x170bb.png","artist":"Sound Opinions","title":"Sound Opinions"}
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Search unit test should match snapshot when isFetching shows skeleton 1`] = `
+<DocumentFragment>
+  <div>
+    SearchSkeleton
+  </div>
+</DocumentFragment>
+`;
