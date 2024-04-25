@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import { number, shape, string, arrayOf } from 'prop-types';
-import { Episode } from '@utils/types/Episodes';
+import { Episode } from '@App/model/Episodes';
 
 type PodcastEpisodesTableRowProps = {
   trackId: number;

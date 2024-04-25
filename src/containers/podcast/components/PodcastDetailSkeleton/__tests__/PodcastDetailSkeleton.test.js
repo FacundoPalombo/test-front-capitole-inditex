@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import PodcastDetailSkeleton from '../PodcastDetailSkeleton';
 
-jest.mock('../../../../utils/functions/randomSizer', () =>
+jest.mock('@App/utils/functions/randomSizer', () =>
   jest.fn().mockReturnValue(20)
 );
 

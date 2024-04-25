@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Markdown from '../Markdown';
+import Markdown from '@App/shared/Markdown';
 
 jest.mock('react-markdown', () => ({ children }) => (
   <div id="react-markdown-wrapper">{children}</div>

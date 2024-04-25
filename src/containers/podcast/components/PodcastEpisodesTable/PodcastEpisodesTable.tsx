@@ -2,7 +2,7 @@ import { number, shape, string, arrayOf } from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
 import PodcastEpisodesTableRow from './PodcastEpisodesTableRow';
-import { Episode } from '@utils/types/Episodes';
+import { Episode } from '@App/model/Episodes';
 
 type PodcastEpisodesTableProps = {
   podcasts: Episode[];

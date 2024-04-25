@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useIsFetching, useQuery } from '@tanstack/react-query';
 
-import { episodes as episodesQuery } from '../../../queries/podcasts';
+import { episodes as episodesQuery } from '../../queries/podcasts';
 
 import EpisodeDetail from './components/EpisodeDetail/EpisodeDetail';
 import Skeleton from './components/EpisodeDetailSkeleton/EpisodeDetailSkeleton';

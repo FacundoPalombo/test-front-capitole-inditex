@@ -7,7 +7,7 @@ import Episode from '../Episode';
 import { getPodcastEpisodes } from '@App/services/podcasts';
 import noop from '@utils/noop';
 
-jest.mock('../components/EpisodeDetail', () => (props) => (
+jest.mock('../components/EpisodeDetail/EpisodeDetail', () => (props) => (
   <div id="episode-detail">{JSON.stringify(props)}</div>
 ));
 
